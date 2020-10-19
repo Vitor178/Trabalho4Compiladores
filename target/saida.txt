@@ -1,0 +1,89 @@
+<'<html>','<html>'>
+<'<head>','<head>'>
+<'<title>','<title>'>
+<'Page Title',FRASE>
+<'</title>','</title>'>
+<'</head>','</head>'>
+<'<body>','<body>'>
+<'<form','<form'>
+<' id="questionario" name ="questionario" method = "post" action="resposta.php">',FRASE>
+<'1) Observe o video abaixo, e assinale o que ele representa:',FRASE>
+<'<p>','<p>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao1" value="a" /> A) Melancia;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao1" value="b" /> B) Abobora;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao1" value="c" /> C) Abacate;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao1" value="d" /> D) Laranja.',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<br/>','<br/>'>
+<' ',FRASE>
+<'<h5>','<h5>'>
+<'1) Observe o video abaixo, e assinale o que ele representa:',FRASE>
+<'</h5>','</h5>'>
+<' ',FRASE>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao2" value="a" /> A) Melancia;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao2" value="b" /> B) Abobora;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao2" value="c" /> C) Abacate;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao2" value="d" /> D) Laranja.',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<br/>','<br/>'>
+<' ',FRASE>
+<'<h5>','<h5>'>
+<'1) Observe o video abaixo, e assinale o que ele representa:',FRASE>
+<'</h5>','</h5>'>
+<' ',FRASE>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao3" value="a" /> A) Melancia;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao3" value="b" /> B) Abobora;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao3" value="c" /> C) Abacate;',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<label>','<label>'>
+<'<input','<input'>
+<' type="radio" name="questao3" value="d" /> D) Laranja.',FRASE>
+<'</label>','</label>'>
+<'<br/>','<br/>'>
+<'<br/>','<br/>'>
+<'<input','<input'>
+<' type="submit" name="enviar" id = "enviar" value="Enviar" />',FRASE>
+<'</form>','</form>'>
+<'</body>','</body>'>
+<'</html>','</html>'>

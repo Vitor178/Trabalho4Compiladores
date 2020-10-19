@@ -8,503 +8,213 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface trab4Listener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#programa}.
+	 * Enter a parse tree produced by {@link trab4Parser#codigo}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrograma(trab4Parser.ProgramaContext ctx);
+	void enterCodigo(trab4Parser.CodigoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#programa}.
+	 * Exit a parse tree produced by {@link trab4Parser#codigo}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrograma(trab4Parser.ProgramaContext ctx);
+	void exitCodigo(trab4Parser.CodigoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#declaracoes}.
+	 * Enter a parse tree produced by {@link trab4Parser#head}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracoes(trab4Parser.DeclaracoesContext ctx);
+	void enterHead(trab4Parser.HeadContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#declaracoes}.
+	 * Exit a parse tree produced by {@link trab4Parser#head}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracoes(trab4Parser.DeclaracoesContext ctx);
+	void exitHead(trab4Parser.HeadContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#decl_local_global}.
+	 * Enter a parse tree produced by {@link trab4Parser#body}.
 	 * @param ctx the parse tree
 	 */
-	void enterDecl_local_global(trab4Parser.Decl_local_globalContext ctx);
+	void enterBody(trab4Parser.BodyContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#decl_local_global}.
+	 * Exit a parse tree produced by {@link trab4Parser#body}.
 	 * @param ctx the parse tree
 	 */
-	void exitDecl_local_global(trab4Parser.Decl_local_globalContext ctx);
+	void exitBody(trab4Parser.BodyContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#declaracao_local}.
+	 * Enter a parse tree produced by {@link trab4Parser#head_interno}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracao_local(trab4Parser.Declaracao_localContext ctx);
+	void enterHead_interno(trab4Parser.Head_internoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#declaracao_local}.
+	 * Exit a parse tree produced by {@link trab4Parser#head_interno}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracao_local(trab4Parser.Declaracao_localContext ctx);
+	void exitHead_interno(trab4Parser.Head_internoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#variavel}.
+	 * Enter a parse tree produced by {@link trab4Parser#body_interno}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariavel(trab4Parser.VariavelContext ctx);
+	void enterBody_interno(trab4Parser.Body_internoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#variavel}.
+	 * Exit a parse tree produced by {@link trab4Parser#body_interno}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariavel(trab4Parser.VariavelContext ctx);
+	void exitBody_interno(trab4Parser.Body_internoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#identificador}.
+	 * Enter a parse tree produced by {@link trab4Parser#title}.
 	 * @param ctx the parse tree
 	 */
-	void enterIdentificador(trab4Parser.IdentificadorContext ctx);
+	void enterTitle(trab4Parser.TitleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#identificador}.
+	 * Exit a parse tree produced by {@link trab4Parser#title}.
 	 * @param ctx the parse tree
 	 */
-	void exitIdentificador(trab4Parser.IdentificadorContext ctx);
+	void exitTitle(trab4Parser.TitleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#dimensao}.
+	 * Enter a parse tree produced by {@link trab4Parser#form}.
 	 * @param ctx the parse tree
 	 */
-	void enterDimensao(trab4Parser.DimensaoContext ctx);
+	void enterForm(trab4Parser.FormContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#dimensao}.
+	 * Exit a parse tree produced by {@link trab4Parser#form}.
 	 * @param ctx the parse tree
 	 */
-	void exitDimensao(trab4Parser.DimensaoContext ctx);
+	void exitForm(trab4Parser.FormContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#tipo}.
+	 * Enter a parse tree produced by {@link trab4Parser#form_interno}.
 	 * @param ctx the parse tree
 	 */
-	void enterTipo(trab4Parser.TipoContext ctx);
+	void enterForm_interno(trab4Parser.Form_internoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#tipo}.
+	 * Exit a parse tree produced by {@link trab4Parser#form_interno}.
 	 * @param ctx the parse tree
 	 */
-	void exitTipo(trab4Parser.TipoContext ctx);
+	void exitForm_interno(trab4Parser.Form_internoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#tipo_basico}.
+	 * Enter a parse tree produced by {@link trab4Parser#label}.
 	 * @param ctx the parse tree
 	 */
-	void enterTipo_basico(trab4Parser.Tipo_basicoContext ctx);
+	void enterLabel(trab4Parser.LabelContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#tipo_basico}.
+	 * Exit a parse tree produced by {@link trab4Parser#label}.
 	 * @param ctx the parse tree
 	 */
-	void exitTipo_basico(trab4Parser.Tipo_basicoContext ctx);
+	void exitLabel(trab4Parser.LabelContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#tipo_basico_ident}.
+	 * Enter a parse tree produced by {@link trab4Parser#input}.
 	 * @param ctx the parse tree
 	 */
-	void enterTipo_basico_ident(trab4Parser.Tipo_basico_identContext ctx);
+	void enterInput(trab4Parser.InputContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#tipo_basico_ident}.
+	 * Exit a parse tree produced by {@link trab4Parser#input}.
 	 * @param ctx the parse tree
 	 */
-	void exitTipo_basico_ident(trab4Parser.Tipo_basico_identContext ctx);
+	void exitInput(trab4Parser.InputContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#tipo_estendido}.
+	 * Enter a parse tree produced by {@link trab4Parser#h1}.
 	 * @param ctx the parse tree
 	 */
-	void enterTipo_estendido(trab4Parser.Tipo_estendidoContext ctx);
+	void enterH1(trab4Parser.H1Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#tipo_estendido}.
+	 * Exit a parse tree produced by {@link trab4Parser#h1}.
 	 * @param ctx the parse tree
 	 */
-	void exitTipo_estendido(trab4Parser.Tipo_estendidoContext ctx);
+	void exitH1(trab4Parser.H1Context ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#valor_constante}.
+	 * Enter a parse tree produced by {@link trab4Parser#h2}.
 	 * @param ctx the parse tree
 	 */
-	void enterValor_constante(trab4Parser.Valor_constanteContext ctx);
+	void enterH2(trab4Parser.H2Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#valor_constante}.
+	 * Exit a parse tree produced by {@link trab4Parser#h2}.
 	 * @param ctx the parse tree
 	 */
-	void exitValor_constante(trab4Parser.Valor_constanteContext ctx);
+	void exitH2(trab4Parser.H2Context ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#registro}.
+	 * Enter a parse tree produced by {@link trab4Parser#h3}.
 	 * @param ctx the parse tree
 	 */
-	void enterRegistro(trab4Parser.RegistroContext ctx);
+	void enterH3(trab4Parser.H3Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#registro}.
+	 * Exit a parse tree produced by {@link trab4Parser#h3}.
 	 * @param ctx the parse tree
 	 */
-	void exitRegistro(trab4Parser.RegistroContext ctx);
+	void exitH3(trab4Parser.H3Context ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#declaracao_global}.
+	 * Enter a parse tree produced by {@link trab4Parser#h4}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracao_global(trab4Parser.Declaracao_globalContext ctx);
+	void enterH4(trab4Parser.H4Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#declaracao_global}.
+	 * Exit a parse tree produced by {@link trab4Parser#h4}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracao_global(trab4Parser.Declaracao_globalContext ctx);
+	void exitH4(trab4Parser.H4Context ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#parametro}.
+	 * Enter a parse tree produced by {@link trab4Parser#h5}.
 	 * @param ctx the parse tree
 	 */
-	void enterParametro(trab4Parser.ParametroContext ctx);
+	void enterH5(trab4Parser.H5Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#parametro}.
+	 * Exit a parse tree produced by {@link trab4Parser#h5}.
 	 * @param ctx the parse tree
 	 */
-	void exitParametro(trab4Parser.ParametroContext ctx);
+	void exitH5(trab4Parser.H5Context ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#parametros}.
+	 * Enter a parse tree produced by {@link trab4Parser#id}.
 	 * @param ctx the parse tree
 	 */
-	void enterParametros(trab4Parser.ParametrosContext ctx);
+	void enterId(trab4Parser.IdContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#parametros}.
+	 * Exit a parse tree produced by {@link trab4Parser#id}.
 	 * @param ctx the parse tree
 	 */
-	void exitParametros(trab4Parser.ParametrosContext ctx);
+	void exitId(trab4Parser.IdContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#corpo}.
+	 * Enter a parse tree produced by {@link trab4Parser#type}.
 	 * @param ctx the parse tree
 	 */
-	void enterCorpo(trab4Parser.CorpoContext ctx);
+	void enterType(trab4Parser.TypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#corpo}.
+	 * Exit a parse tree produced by {@link trab4Parser#type}.
 	 * @param ctx the parse tree
 	 */
-	void exitCorpo(trab4Parser.CorpoContext ctx);
+	void exitType(trab4Parser.TypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmd}.
+	 * Enter a parse tree produced by {@link trab4Parser#name}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmd(trab4Parser.CmdContext ctx);
+	void enterName(trab4Parser.NameContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmd}.
+	 * Exit a parse tree produced by {@link trab4Parser#name}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmd(trab4Parser.CmdContext ctx);
+	void exitName(trab4Parser.NameContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdLeia}.
+	 * Enter a parse tree produced by {@link trab4Parser#method}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmdLeia(trab4Parser.CmdLeiaContext ctx);
+	void enterMethod(trab4Parser.MethodContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdLeia}.
+	 * Exit a parse tree produced by {@link trab4Parser#method}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmdLeia(trab4Parser.CmdLeiaContext ctx);
+	void exitMethod(trab4Parser.MethodContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdEscreva}.
+	 * Enter a parse tree produced by {@link trab4Parser#action}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmdEscreva(trab4Parser.CmdEscrevaContext ctx);
+	void enterAction(trab4Parser.ActionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdEscreva}.
+	 * Exit a parse tree produced by {@link trab4Parser#action}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmdEscreva(trab4Parser.CmdEscrevaContext ctx);
+	void exitAction(trab4Parser.ActionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdSe}.
+	 * Enter a parse tree produced by {@link trab4Parser#value}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmdSe(trab4Parser.CmdSeContext ctx);
+	void enterValue(trab4Parser.ValueContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdSe}.
+	 * Exit a parse tree produced by {@link trab4Parser#value}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmdSe(trab4Parser.CmdSeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdCaso}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdCaso(trab4Parser.CmdCasoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdCaso}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdCaso(trab4Parser.CmdCasoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdPara}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdPara(trab4Parser.CmdParaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdPara}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdPara(trab4Parser.CmdParaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdEnquanto}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdEnquanto(trab4Parser.CmdEnquantoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdEnquanto}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdEnquanto(trab4Parser.CmdEnquantoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdFaca}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdFaca(trab4Parser.CmdFacaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdFaca}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdFaca(trab4Parser.CmdFacaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdAtribuicao}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdAtribuicao(trab4Parser.CmdAtribuicaoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdAtribuicao}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdAtribuicao(trab4Parser.CmdAtribuicaoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdChamada}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdChamada(trab4Parser.CmdChamadaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdChamada}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdChamada(trab4Parser.CmdChamadaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#cmdRetorne}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdRetorne(trab4Parser.CmdRetorneContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#cmdRetorne}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdRetorne(trab4Parser.CmdRetorneContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#selecao}.
-	 * @param ctx the parse tree
-	 */
-	void enterSelecao(trab4Parser.SelecaoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#selecao}.
-	 * @param ctx the parse tree
-	 */
-	void exitSelecao(trab4Parser.SelecaoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#item_selecao}.
-	 * @param ctx the parse tree
-	 */
-	void enterItem_selecao(trab4Parser.Item_selecaoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#item_selecao}.
-	 * @param ctx the parse tree
-	 */
-	void exitItem_selecao(trab4Parser.Item_selecaoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#constantes}.
-	 * @param ctx the parse tree
-	 */
-	void enterConstantes(trab4Parser.ConstantesContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#constantes}.
-	 * @param ctx the parse tree
-	 */
-	void exitConstantes(trab4Parser.ConstantesContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#numero_intervalo}.
-	 * @param ctx the parse tree
-	 */
-	void enterNumero_intervalo(trab4Parser.Numero_intervaloContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#numero_intervalo}.
-	 * @param ctx the parse tree
-	 */
-	void exitNumero_intervalo(trab4Parser.Numero_intervaloContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#op_unario}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp_unario(trab4Parser.Op_unarioContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#op_unario}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp_unario(trab4Parser.Op_unarioContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#exp_aritmetica}.
-	 * @param ctx the parse tree
-	 */
-	void enterExp_aritmetica(trab4Parser.Exp_aritmeticaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#exp_aritmetica}.
-	 * @param ctx the parse tree
-	 */
-	void exitExp_aritmetica(trab4Parser.Exp_aritmeticaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#termo}.
-	 * @param ctx the parse tree
-	 */
-	void enterTermo(trab4Parser.TermoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#termo}.
-	 * @param ctx the parse tree
-	 */
-	void exitTermo(trab4Parser.TermoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#fator}.
-	 * @param ctx the parse tree
-	 */
-	void enterFator(trab4Parser.FatorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#fator}.
-	 * @param ctx the parse tree
-	 */
-	void exitFator(trab4Parser.FatorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#op1}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp1(trab4Parser.Op1Context ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#op1}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp1(trab4Parser.Op1Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#op2}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp2(trab4Parser.Op2Context ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#op2}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp2(trab4Parser.Op2Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#op3}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp3(trab4Parser.Op3Context ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#op3}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp3(trab4Parser.Op3Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#parcela}.
-	 * @param ctx the parse tree
-	 */
-	void enterParcela(trab4Parser.ParcelaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#parcela}.
-	 * @param ctx the parse tree
-	 */
-	void exitParcela(trab4Parser.ParcelaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#parcela_unario}.
-	 * @param ctx the parse tree
-	 */
-	void enterParcela_unario(trab4Parser.Parcela_unarioContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#parcela_unario}.
-	 * @param ctx the parse tree
-	 */
-	void exitParcela_unario(trab4Parser.Parcela_unarioContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#parcela_nao_unario}.
-	 * @param ctx the parse tree
-	 */
-	void enterParcela_nao_unario(trab4Parser.Parcela_nao_unarioContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#parcela_nao_unario}.
-	 * @param ctx the parse tree
-	 */
-	void exitParcela_nao_unario(trab4Parser.Parcela_nao_unarioContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#exp_relacional}.
-	 * @param ctx the parse tree
-	 */
-	void enterExp_relacional(trab4Parser.Exp_relacionalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#exp_relacional}.
-	 * @param ctx the parse tree
-	 */
-	void exitExp_relacional(trab4Parser.Exp_relacionalContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#op_relacional}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp_relacional(trab4Parser.Op_relacionalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#op_relacional}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp_relacional(trab4Parser.Op_relacionalContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#expressao}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpressao(trab4Parser.ExpressaoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#expressao}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpressao(trab4Parser.ExpressaoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#termo_logico}.
-	 * @param ctx the parse tree
-	 */
-	void enterTermo_logico(trab4Parser.Termo_logicoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#termo_logico}.
-	 * @param ctx the parse tree
-	 */
-	void exitTermo_logico(trab4Parser.Termo_logicoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#fator_logico}.
-	 * @param ctx the parse tree
-	 */
-	void enterFator_logico(trab4Parser.Fator_logicoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#fator_logico}.
-	 * @param ctx the parse tree
-	 */
-	void exitFator_logico(trab4Parser.Fator_logicoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#parcela_logica}.
-	 * @param ctx the parse tree
-	 */
-	void enterParcela_logica(trab4Parser.Parcela_logicaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#parcela_logica}.
-	 * @param ctx the parse tree
-	 */
-	void exitParcela_logica(trab4Parser.Parcela_logicaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#op_logico_1}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp_logico_1(trab4Parser.Op_logico_1Context ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#op_logico_1}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp_logico_1(trab4Parser.Op_logico_1Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#op_logico_2}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp_logico_2(trab4Parser.Op_logico_2Context ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#op_logico_2}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp_logico_2(trab4Parser.Op_logico_2Context ctx);
+	void exitValue(trab4Parser.ValueContext ctx);
 }

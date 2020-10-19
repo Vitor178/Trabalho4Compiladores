@@ -17,74 +17,58 @@ public class trab4Parser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		Algoritmo=1, Declare=2, Literal=3, Inteiro=4, Constante=5, Falso=6, Verdadeiro=7, 
-		Real=8, Logico=9, Leia=10, Escreva=11, E=12, Nao=13, Ou=14, Se=15, Entao=16, 
-		Senao=17, Fim_se=18, Caso=19, Seja=20, Fim_caso=21, Para=22, Ate=23, Faca=24, 
-		Fim_para=25, Enquanto=26, Fim_enquanto=27, Registro=28, Fim_registro=29, 
-		Tipo=30, Procedimento=31, Var=32, Fim_procedimento=33, Funcao=34, Fim_funcao=35, 
-		Retorne=36, Fim_alg=37, Abre_colchete=38, Fecha_colchete=39, Virgula=40, 
-		Ponto=41, PontoPonto=42, DELIM=43, ABREPAR=44, FECHAPAR=45, CADEIA=46, 
-		NUM_INT=47, NUM_REAL=48, IDENT=49, COMENTARIO=50, WS=51, Ponteiro=52, 
-		Endereco=53, Porcent=54, Seta=55, Maior=56, MaiorIgual=57, Menor=58, MenosIgual=59, 
-		Diferente=60, Igual=61, Mais=62, Menos=63, Vezes=64, Dividir=65, Coment_errado=66, 
-		Cadeia_errada=67, ERROR=68;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, HTML_abre=7, HTML_fecha=8, 
+		HEAD_abre=9, HEAD_fecha=10, BODY_abre=11, BODY_fecha=12, TITLE_abre=13, 
+		TITLE_fecha=14, FORM_abre=15, FORM_fecha=16, LABEL_abre=17, LABEL_fecha=18, 
+		INPUT_abre=19, INPUT_fecha=20, TYPE=21, NAME=22, VALUE=23, ID=24, METHOD=25, 
+		ACTION=26, CLASS=27, BR=28, P=29, H1_abre=30, H1_fecha=31, H2_abre=32, 
+		H2_fecha=33, H3_abre=34, H3_fecha=35, H4_abre=36, H4_fecha=37, H5_abre=38, 
+		H5_fecha=39, Menor=40, Maior=41, Barra=42, Abre_colchete=43, Fecha_colchete=44, 
+		Virgula=45, Ponto=46, DELIM=47, ABREPAR=48, FECHAPAR=49, CADEIA=50, NUM_INT=51, 
+		NUM_REAL=52, IDENT=53, COMENTARIO=54, FRASE=55, WS=56, Ponteiro=57, Endereco=58, 
+		Porcent=59, MaiorIgual=60, MenosIgual=61, Diferente=62, Igual=63, Mais=64, 
+		Menos=65, Vezes=66, Cadeia_errada=67, ERROR=68;
 	public static final int
-		RULE_programa = 0, RULE_declaracoes = 1, RULE_decl_local_global = 2, RULE_declaracao_local = 3, 
-		RULE_variavel = 4, RULE_identificador = 5, RULE_dimensao = 6, RULE_tipo = 7, 
-		RULE_tipo_basico = 8, RULE_tipo_basico_ident = 9, RULE_tipo_estendido = 10, 
-		RULE_valor_constante = 11, RULE_registro = 12, RULE_declaracao_global = 13, 
-		RULE_parametro = 14, RULE_parametros = 15, RULE_corpo = 16, RULE_cmd = 17, 
-		RULE_cmdLeia = 18, RULE_cmdEscreva = 19, RULE_cmdSe = 20, RULE_cmdCaso = 21, 
-		RULE_cmdPara = 22, RULE_cmdEnquanto = 23, RULE_cmdFaca = 24, RULE_cmdAtribuicao = 25, 
-		RULE_cmdChamada = 26, RULE_cmdRetorne = 27, RULE_selecao = 28, RULE_item_selecao = 29, 
-		RULE_constantes = 30, RULE_numero_intervalo = 31, RULE_op_unario = 32, 
-		RULE_exp_aritmetica = 33, RULE_termo = 34, RULE_fator = 35, RULE_op1 = 36, 
-		RULE_op2 = 37, RULE_op3 = 38, RULE_parcela = 39, RULE_parcela_unario = 40, 
-		RULE_parcela_nao_unario = 41, RULE_exp_relacional = 42, RULE_op_relacional = 43, 
-		RULE_expressao = 44, RULE_termo_logico = 45, RULE_fator_logico = 46, RULE_parcela_logica = 47, 
-		RULE_op_logico_1 = 48, RULE_op_logico_2 = 49;
+		RULE_codigo = 0, RULE_head = 1, RULE_body = 2, RULE_head_interno = 3, 
+		RULE_body_interno = 4, RULE_title = 5, RULE_form = 6, RULE_form_interno = 7, 
+		RULE_label = 8, RULE_input = 9, RULE_h1 = 10, RULE_h2 = 11, RULE_h3 = 12, 
+		RULE_h4 = 13, RULE_h5 = 14, RULE_id = 15, RULE_type = 16, RULE_name = 17, 
+		RULE_method = 18, RULE_action = 19, RULE_value = 20;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"programa", "declaracoes", "decl_local_global", "declaracao_local", "variavel", 
-			"identificador", "dimensao", "tipo", "tipo_basico", "tipo_basico_ident", 
-			"tipo_estendido", "valor_constante", "registro", "declaracao_global", 
-			"parametro", "parametros", "corpo", "cmd", "cmdLeia", "cmdEscreva", "cmdSe", 
-			"cmdCaso", "cmdPara", "cmdEnquanto", "cmdFaca", "cmdAtribuicao", "cmdChamada", 
-			"cmdRetorne", "selecao", "item_selecao", "constantes", "numero_intervalo", 
-			"op_unario", "exp_aritmetica", "termo", "fator", "op1", "op2", "op3", 
-			"parcela", "parcela_unario", "parcela_nao_unario", "exp_relacional", 
-			"op_relacional", "expressao", "termo_logico", "fator_logico", "parcela_logica", 
-			"op_logico_1", "op_logico_2"
+			"codigo", "head", "body", "head_interno", "body_interno", "title", "form", 
+			"form_interno", "label", "input", "h1", "h2", "h3", "h4", "h5", "id", 
+			"type", "name", "method", "action", "value"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'algoritmo'", "'declare'", "'literal'", "'inteiro'", "'constante'", 
-			"'falso'", "'verdadeiro'", "'real'", "'logico'", "'leia'", "'escreva'", 
-			"'e'", "'nao'", "'ou'", "'se'", "'entao'", "'senao'", "'fim_se'", "'caso'", 
-			"'seja'", "'fim_caso'", "'para'", "'ate'", "'faca'", "'fim_para'", "'enquanto'", 
-			"'fim_enquanto'", "'registro'", "'fim_registro'", "'tipo'", "'procedimento'", 
-			"'var'", "'fim_procedimento'", "'funcao'", "'fim_funcao'", "'retorne'", 
-			"'fim_algoritmo'", "'['", "']'", "','", "'.'", "'..'", "':'", "'('", 
-			"')'", null, null, null, null, null, null, "'^'", "'&'", "'%'", "'<-'", 
-			"'>'", "'>='", "'<'", "'<='", "'<>'", "'='", "'+'", "'-'", "'*'", "'/'"
+			null, "'<p/>'", "'h1'", "'h2'", "'h3'", "'h4'", "'h5'", "'<html>'", "'</html>'", 
+			"'<head>'", "'</head>'", "'<body>'", "'</body>'", "'<title>'", "'</title>'", 
+			"'<form'", "'</form>'", "'<label>'", "'</label>'", "'<input'", "'/>'", 
+			"'type'", "'name'", "'value'", "'id'", "'method'", "'action'", "'class'", 
+			"'<br/>'", "'<p>'", "'<h1>'", "'</h1>'", "'<h2>'", "'</h2>'", "'<h3>'", 
+			"'</h3>'", "'<h4>'", "'</h4>'", "'<h5>'", "'</h5>'", "'<'", "'>'", "'/'", 
+			"'['", "']'", "','", "'.'", "':'", "'('", "')'", null, null, null, null, 
+			null, null, null, "'^'", "'&'", "'%'", "'>='", "'<='", "'<>'", "'='", 
+			"'+'", "'-'", "'*'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "Algoritmo", "Declare", "Literal", "Inteiro", "Constante", "Falso", 
-			"Verdadeiro", "Real", "Logico", "Leia", "Escreva", "E", "Nao", "Ou", 
-			"Se", "Entao", "Senao", "Fim_se", "Caso", "Seja", "Fim_caso", "Para", 
-			"Ate", "Faca", "Fim_para", "Enquanto", "Fim_enquanto", "Registro", "Fim_registro", 
-			"Tipo", "Procedimento", "Var", "Fim_procedimento", "Funcao", "Fim_funcao", 
-			"Retorne", "Fim_alg", "Abre_colchete", "Fecha_colchete", "Virgula", "Ponto", 
-			"PontoPonto", "DELIM", "ABREPAR", "FECHAPAR", "CADEIA", "NUM_INT", "NUM_REAL", 
-			"IDENT", "COMENTARIO", "WS", "Ponteiro", "Endereco", "Porcent", "Seta", 
-			"Maior", "MaiorIgual", "Menor", "MenosIgual", "Diferente", "Igual", "Mais", 
-			"Menos", "Vezes", "Dividir", "Coment_errado", "Cadeia_errada", "ERROR"
+			null, null, null, null, null, null, null, "HTML_abre", "HTML_fecha", 
+			"HEAD_abre", "HEAD_fecha", "BODY_abre", "BODY_fecha", "TITLE_abre", "TITLE_fecha", 
+			"FORM_abre", "FORM_fecha", "LABEL_abre", "LABEL_fecha", "INPUT_abre", 
+			"INPUT_fecha", "TYPE", "NAME", "VALUE", "ID", "METHOD", "ACTION", "CLASS", 
+			"BR", "P", "H1_abre", "H1_fecha", "H2_abre", "H2_fecha", "H3_abre", "H3_fecha", 
+			"H4_abre", "H4_fecha", "H5_abre", "H5_fecha", "Menor", "Maior", "Barra", 
+			"Abre_colchete", "Fecha_colchete", "Virgula", "Ponto", "DELIM", "ABREPAR", 
+			"FECHAPAR", "CADEIA", "NUM_INT", "NUM_REAL", "IDENT", "COMENTARIO", "FRASE", 
+			"WS", "Ponteiro", "Endereco", "Porcent", "MaiorIgual", "MenosIgual", 
+			"Diferente", "Igual", "Mais", "Menos", "Vezes", "Cadeia_errada", "ERROR"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -138,43 +122,630 @@ public class trab4Parser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	public static class ProgramaContext extends ParserRuleContext {
-		public DeclaracoesContext declaracoes() {
-			return getRuleContext(DeclaracoesContext.class,0);
+	public static class CodigoContext extends ParserRuleContext {
+		public TerminalNode HTML_abre() { return getToken(trab4Parser.HTML_abre, 0); }
+		public HeadContext head() {
+			return getRuleContext(HeadContext.class,0);
 		}
-		public TerminalNode Algoritmo() { return getToken(trab4Parser.Algoritmo, 0); }
-		public CorpoContext corpo() {
-			return getRuleContext(CorpoContext.class,0);
+		public BodyContext body() {
+			return getRuleContext(BodyContext.class,0);
 		}
-		public TerminalNode Fim_alg() { return getToken(trab4Parser.Fim_alg, 0); }
-		public ProgramaContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode HTML_fecha() { return getToken(trab4Parser.HTML_fecha, 0); }
+		public CodigoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_programa; }
+		@Override public int getRuleIndex() { return RULE_codigo; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterPrograma(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCodigo(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitPrograma(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCodigo(this);
 		}
 	}
 
-	public final ProgramaContext programa() throws RecognitionException {
-		ProgramaContext _localctx = new ProgramaContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_programa);
+	public final CodigoContext codigo() throws RecognitionException {
+		CodigoContext _localctx = new CodigoContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_codigo);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(42);
+			match(HTML_abre);
+			setState(43);
+			head();
+			setState(44);
+			body();
+			setState(45);
+			match(HTML_fecha);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class HeadContext extends ParserRuleContext {
+		public TerminalNode HEAD_abre() { return getToken(trab4Parser.HEAD_abre, 0); }
+		public Head_internoContext head_interno() {
+			return getRuleContext(Head_internoContext.class,0);
+		}
+		public TerminalNode HEAD_fecha() { return getToken(trab4Parser.HEAD_fecha, 0); }
+		public HeadContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_head; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterHead(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitHead(this);
+		}
+	}
+
+	public final HeadContext head() throws RecognitionException {
+		HeadContext _localctx = new HeadContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_head);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(47);
+			match(HEAD_abre);
+			setState(48);
+			head_interno();
+			setState(49);
+			match(HEAD_fecha);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class BodyContext extends ParserRuleContext {
+		public TerminalNode BODY_abre() { return getToken(trab4Parser.BODY_abre, 0); }
+		public Body_internoContext body_interno() {
+			return getRuleContext(Body_internoContext.class,0);
+		}
+		public TerminalNode BODY_fecha() { return getToken(trab4Parser.BODY_fecha, 0); }
+		public BodyContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_body; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterBody(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitBody(this);
+		}
+	}
+
+	public final BodyContext body() throws RecognitionException {
+		BodyContext _localctx = new BodyContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_body);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(51);
+			match(BODY_abre);
+			setState(52);
+			body_interno();
+			setState(53);
+			match(BODY_fecha);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Head_internoContext extends ParserRuleContext {
+		public TitleContext title() {
+			return getRuleContext(TitleContext.class,0);
+		}
+		public Head_internoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_head_interno; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterHead_interno(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitHead_interno(this);
+		}
+	}
+
+	public final Head_internoContext head_interno() throws RecognitionException {
+		Head_internoContext _localctx = new Head_internoContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_head_interno);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			{
+			setState(55);
+			title();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Body_internoContext extends ParserRuleContext {
+		public List<TerminalNode> FRASE() { return getTokens(trab4Parser.FRASE); }
+		public TerminalNode FRASE(int i) {
+			return getToken(trab4Parser.FRASE, i);
+		}
+		public List<FormContext> form() {
+			return getRuleContexts(FormContext.class);
+		}
+		public FormContext form(int i) {
+			return getRuleContext(FormContext.class,i);
+		}
+		public List<LabelContext> label() {
+			return getRuleContexts(LabelContext.class);
+		}
+		public LabelContext label(int i) {
+			return getRuleContext(LabelContext.class,i);
+		}
+		public List<TerminalNode> BR() { return getTokens(trab4Parser.BR); }
+		public TerminalNode BR(int i) {
+			return getToken(trab4Parser.BR, i);
+		}
+		public List<H1Context> h1() {
+			return getRuleContexts(H1Context.class);
+		}
+		public H1Context h1(int i) {
+			return getRuleContext(H1Context.class,i);
+		}
+		public List<H2Context> h2() {
+			return getRuleContexts(H2Context.class);
+		}
+		public H2Context h2(int i) {
+			return getRuleContext(H2Context.class,i);
+		}
+		public List<H3Context> h3() {
+			return getRuleContexts(H3Context.class);
+		}
+		public H3Context h3(int i) {
+			return getRuleContext(H3Context.class,i);
+		}
+		public List<H4Context> h4() {
+			return getRuleContexts(H4Context.class);
+		}
+		public H4Context h4(int i) {
+			return getRuleContext(H4Context.class,i);
+		}
+		public List<H5Context> h5() {
+			return getRuleContexts(H5Context.class);
+		}
+		public H5Context h5(int i) {
+			return getRuleContext(H5Context.class,i);
+		}
+		public Body_internoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_body_interno; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterBody_interno(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitBody_interno(this);
+		}
+	}
+
+	public final Body_internoContext body_interno() throws RecognitionException {
+		Body_internoContext _localctx = new Body_internoContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_body_interno);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(68);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << FORM_abre) | (1L << LABEL_abre) | (1L << BR) | (1L << Menor) | (1L << FRASE))) != 0)) {
+				{
+				setState(66);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+				case 1:
+					{
+					setState(57);
+					match(FRASE);
+					}
+					break;
+				case 2:
+					{
+					setState(58);
+					form();
+					}
+					break;
+				case 3:
+					{
+					setState(59);
+					label();
+					}
+					break;
+				case 4:
+					{
+					setState(60);
+					match(BR);
+					}
+					break;
+				case 5:
+					{
+					setState(61);
+					h1();
+					}
+					break;
+				case 6:
+					{
+					setState(62);
+					h2();
+					}
+					break;
+				case 7:
+					{
+					setState(63);
+					h3();
+					}
+					break;
+				case 8:
+					{
+					setState(64);
+					h4();
+					}
+					break;
+				case 9:
+					{
+					setState(65);
+					h5();
+					}
+					break;
+				}
+				}
+				setState(70);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class TitleContext extends ParserRuleContext {
+		public TerminalNode TITLE_abre() { return getToken(trab4Parser.TITLE_abre, 0); }
+		public TerminalNode FRASE() { return getToken(trab4Parser.FRASE, 0); }
+		public TerminalNode TITLE_fecha() { return getToken(trab4Parser.TITLE_fecha, 0); }
+		public TitleContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_title; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTitle(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTitle(this);
+		}
+	}
+
+	public final TitleContext title() throws RecognitionException {
+		TitleContext _localctx = new TitleContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_title);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(71);
+			match(TITLE_abre);
+			setState(72);
+			match(FRASE);
+			setState(73);
+			match(TITLE_fecha);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FormContext extends ParserRuleContext {
+		public TerminalNode FORM_abre() { return getToken(trab4Parser.FORM_abre, 0); }
+		public TerminalNode Maior() { return getToken(trab4Parser.Maior, 0); }
+		public Form_internoContext form_interno() {
+			return getRuleContext(Form_internoContext.class,0);
+		}
+		public TerminalNode FORM_fecha() { return getToken(trab4Parser.FORM_fecha, 0); }
+		public List<IdContext> id() {
+			return getRuleContexts(IdContext.class);
+		}
+		public IdContext id(int i) {
+			return getRuleContext(IdContext.class,i);
+		}
+		public List<NameContext> name() {
+			return getRuleContexts(NameContext.class);
+		}
+		public NameContext name(int i) {
+			return getRuleContext(NameContext.class,i);
+		}
+		public List<MethodContext> method() {
+			return getRuleContexts(MethodContext.class);
+		}
+		public MethodContext method(int i) {
+			return getRuleContext(MethodContext.class,i);
+		}
+		public List<ActionContext> action() {
+			return getRuleContexts(ActionContext.class);
+		}
+		public ActionContext action(int i) {
+			return getRuleContext(ActionContext.class,i);
+		}
+		public FormContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_form; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterForm(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitForm(this);
+		}
+	}
+
+	public final FormContext form() throws RecognitionException {
+		FormContext _localctx = new FormContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_form);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(75);
+			match(FORM_abre);
+			setState(82);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << NAME) | (1L << ID) | (1L << METHOD) | (1L << ACTION))) != 0)) {
+				{
+				setState(80);
+				_errHandler.sync(this);
+				switch (_input.LA(1)) {
+				case ID:
+					{
+					setState(76);
+					id();
+					}
+					break;
+				case NAME:
+					{
+					setState(77);
+					name();
+					}
+					break;
+				case METHOD:
+					{
+					setState(78);
+					method();
+					}
+					break;
+				case ACTION:
+					{
+					setState(79);
+					action();
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
+				}
+				}
+				setState(84);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(85);
+			match(Maior);
+			setState(86);
+			form_interno();
+			setState(87);
+			match(FORM_fecha);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Form_internoContext extends ParserRuleContext {
+		public List<TerminalNode> FRASE() { return getTokens(trab4Parser.FRASE); }
+		public TerminalNode FRASE(int i) {
+			return getToken(trab4Parser.FRASE, i);
+		}
+		public List<LabelContext> label() {
+			return getRuleContexts(LabelContext.class);
+		}
+		public LabelContext label(int i) {
+			return getRuleContext(LabelContext.class,i);
+		}
+		public List<TerminalNode> BR() { return getTokens(trab4Parser.BR); }
+		public TerminalNode BR(int i) {
+			return getToken(trab4Parser.BR, i);
+		}
+		public List<H1Context> h1() {
+			return getRuleContexts(H1Context.class);
+		}
+		public H1Context h1(int i) {
+			return getRuleContext(H1Context.class,i);
+		}
+		public List<H2Context> h2() {
+			return getRuleContexts(H2Context.class);
+		}
+		public H2Context h2(int i) {
+			return getRuleContext(H2Context.class,i);
+		}
+		public List<H3Context> h3() {
+			return getRuleContexts(H3Context.class);
+		}
+		public H3Context h3(int i) {
+			return getRuleContext(H3Context.class,i);
+		}
+		public List<H4Context> h4() {
+			return getRuleContexts(H4Context.class);
+		}
+		public H4Context h4(int i) {
+			return getRuleContext(H4Context.class,i);
+		}
+		public List<H5Context> h5() {
+			return getRuleContexts(H5Context.class);
+		}
+		public H5Context h5(int i) {
+			return getRuleContext(H5Context.class,i);
+		}
+		public Form_internoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_form_interno; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterForm_interno(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitForm_interno(this);
+		}
+	}
+
+	public final Form_internoContext form_interno() throws RecognitionException {
+		Form_internoContext _localctx = new Form_internoContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_form_interno);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(100);
-			declaracoes();
-			setState(101);
-			match(Algoritmo);
-			setState(102);
-			corpo();
-			setState(103);
-			match(Fim_alg);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << LABEL_abre) | (1L << BR) | (1L << Menor) | (1L << FRASE))) != 0)) {
+				{
+				setState(98);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+				case 1:
+					{
+					setState(89);
+					match(FRASE);
+					}
+					break;
+				case 2:
+					{
+					setState(90);
+					match(T__0);
+					}
+					break;
+				case 3:
+					{
+					setState(91);
+					label();
+					}
+					break;
+				case 4:
+					{
+					setState(92);
+					match(BR);
+					}
+					break;
+				case 5:
+					{
+					setState(93);
+					h1();
+					}
+					break;
+				case 6:
+					{
+					setState(94);
+					h2();
+					}
+					break;
+				case 7:
+					{
+					setState(95);
+					h3();
+					}
+					break;
+				case 8:
+					{
+					setState(96);
+					h4();
+					}
+					break;
+				case 9:
+					{
+					setState(97);
+					h5();
+					}
+					break;
+				}
+				}
+				setState(102);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -188,48 +759,96 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class DeclaracoesContext extends ParserRuleContext {
-		public List<Decl_local_globalContext> decl_local_global() {
-			return getRuleContexts(Decl_local_globalContext.class);
+	public static class LabelContext extends ParserRuleContext {
+		public TerminalNode LABEL_abre() { return getToken(trab4Parser.LABEL_abre, 0); }
+		public InputContext input() {
+			return getRuleContext(InputContext.class,0);
 		}
-		public Decl_local_globalContext decl_local_global(int i) {
-			return getRuleContext(Decl_local_globalContext.class,i);
-		}
-		public DeclaracoesContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode FRASE() { return getToken(trab4Parser.FRASE, 0); }
+		public TerminalNode LABEL_fecha() { return getToken(trab4Parser.LABEL_fecha, 0); }
+		public LabelContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_declaracoes; }
+		@Override public int getRuleIndex() { return RULE_label; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterDeclaracoes(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterLabel(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitDeclaracoes(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitLabel(this);
 		}
 	}
 
-	public final DeclaracoesContext declaracoes() throws RecognitionException {
-		DeclaracoesContext _localctx = new DeclaracoesContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_declaracoes);
-		int _la;
+	public final LabelContext label() throws RecognitionException {
+		LabelContext _localctx = new LabelContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_label);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(103);
+			match(LABEL_abre);
+			setState(104);
+			input();
+			setState(105);
+			match(FRASE);
+			setState(106);
+			match(LABEL_fecha);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class InputContext extends ParserRuleContext {
+		public TerminalNode INPUT_abre() { return getToken(trab4Parser.INPUT_abre, 0); }
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
+		}
+		public NameContext name() {
+			return getRuleContext(NameContext.class,0);
+		}
+		public ValueContext value() {
+			return getRuleContext(ValueContext.class,0);
+		}
+		public TerminalNode INPUT_fecha() { return getToken(trab4Parser.INPUT_fecha, 0); }
+		public InputContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_input; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterInput(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitInput(this);
+		}
+	}
+
+	public final InputContext input() throws RecognitionException {
+		InputContext _localctx = new InputContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_input);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(108);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Declare) | (1L << Constante) | (1L << Tipo) | (1L << Procedimento) | (1L << Funcao))) != 0)) {
-				{
-				{
-				setState(105);
-				decl_local_global();
-				}
-				}
-				setState(110);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
+			match(INPUT_abre);
+			setState(109);
+			type();
+			setState(110);
+			name();
+			setState(111);
+			value();
+			setState(112);
+			match(INPUT_fecha);
 			}
 		}
 		catch (RecognitionException re) {
@@ -243,218 +862,53 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class Decl_local_globalContext extends ParserRuleContext {
-		public Declaracao_localContext declaracao_local() {
-			return getRuleContext(Declaracao_localContext.class,0);
+	public static class H1Context extends ParserRuleContext {
+		public List<TerminalNode> Menor() { return getTokens(trab4Parser.Menor); }
+		public TerminalNode Menor(int i) {
+			return getToken(trab4Parser.Menor, i);
 		}
-		public Declaracao_globalContext declaracao_global() {
-			return getRuleContext(Declaracao_globalContext.class,0);
+		public List<TerminalNode> Maior() { return getTokens(trab4Parser.Maior); }
+		public TerminalNode Maior(int i) {
+			return getToken(trab4Parser.Maior, i);
 		}
-		public Decl_local_globalContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode FRASE() { return getToken(trab4Parser.FRASE, 0); }
+		public TerminalNode Barra() { return getToken(trab4Parser.Barra, 0); }
+		public H1Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_decl_local_global; }
+		@Override public int getRuleIndex() { return RULE_h1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterDecl_local_global(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterH1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitDecl_local_global(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitH1(this);
 		}
 	}
 
-	public final Decl_local_globalContext decl_local_global() throws RecognitionException {
-		Decl_local_globalContext _localctx = new Decl_local_globalContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_decl_local_global);
-		try {
-			setState(113);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Declare:
-			case Constante:
-			case Tipo:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(111);
-				declaracao_local();
-				}
-				break;
-			case Procedimento:
-			case Funcao:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(112);
-				declaracao_global();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Declaracao_localContext extends ParserRuleContext {
-		public TerminalNode Declare() { return getToken(trab4Parser.Declare, 0); }
-		public VariavelContext variavel() {
-			return getRuleContext(VariavelContext.class,0);
-		}
-		public TerminalNode Constante() { return getToken(trab4Parser.Constante, 0); }
-		public TerminalNode IDENT() { return getToken(trab4Parser.IDENT, 0); }
-		public TerminalNode DELIM() { return getToken(trab4Parser.DELIM, 0); }
-		public Tipo_basicoContext tipo_basico() {
-			return getRuleContext(Tipo_basicoContext.class,0);
-		}
-		public TerminalNode Igual() { return getToken(trab4Parser.Igual, 0); }
-		public Valor_constanteContext valor_constante() {
-			return getRuleContext(Valor_constanteContext.class,0);
-		}
-		public TerminalNode Tipo() { return getToken(trab4Parser.Tipo, 0); }
-		public TipoContext tipo() {
-			return getRuleContext(TipoContext.class,0);
-		}
-		public Declaracao_localContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_declaracao_local; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterDeclaracao_local(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitDeclaracao_local(this);
-		}
-	}
-
-	public final Declaracao_localContext declaracao_local() throws RecognitionException {
-		Declaracao_localContext _localctx = new Declaracao_localContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_declaracao_local);
-		try {
-			setState(128);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Declare:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(115);
-				match(Declare);
-				setState(116);
-				variavel();
-				}
-				break;
-			case Constante:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(117);
-				match(Constante);
-				setState(118);
-				match(IDENT);
-				setState(119);
-				match(DELIM);
-				setState(120);
-				tipo_basico();
-				setState(121);
-				match(Igual);
-				setState(122);
-				valor_constante();
-				}
-				break;
-			case Tipo:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(124);
-				match(Tipo);
-				setState(125);
-				match(IDENT);
-				setState(126);
-				match(DELIM);
-				setState(127);
-				tipo();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VariavelContext extends ParserRuleContext {
-		public List<IdentificadorContext> identificador() {
-			return getRuleContexts(IdentificadorContext.class);
-		}
-		public IdentificadorContext identificador(int i) {
-			return getRuleContext(IdentificadorContext.class,i);
-		}
-		public TerminalNode DELIM() { return getToken(trab4Parser.DELIM, 0); }
-		public TipoContext tipo() {
-			return getRuleContext(TipoContext.class,0);
-		}
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public VariavelContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variavel; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterVariavel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitVariavel(this);
-		}
-	}
-
-	public final VariavelContext variavel() throws RecognitionException {
-		VariavelContext _localctx = new VariavelContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_variavel);
-		int _la;
+	public final H1Context h1() throws RecognitionException {
+		H1Context _localctx = new H1Context(_ctx, getState());
+		enterRule(_localctx, 20, RULE_h1);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(130);
-			identificador();
-			setState(135);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Virgula) {
-				{
-				{
-				setState(131);
-				match(Virgula);
-				setState(132);
-				identificador();
-				}
-				}
-				setState(137);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(138);
-			match(DELIM);
-			setState(139);
-			tipo();
+			setState(114);
+			match(Menor);
+			setState(115);
+			match(T__1);
+			setState(116);
+			match(Maior);
+			setState(117);
+			match(FRASE);
+			setState(118);
+			match(Menor);
+			setState(119);
+			match(Barra);
+			setState(120);
+			match(T__1);
+			setState(121);
+			match(Maior);
 			}
 		}
 		catch (RecognitionException re) {
@@ -468,59 +922,173 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class IdentificadorContext extends ParserRuleContext {
-		public List<TerminalNode> IDENT() { return getTokens(trab4Parser.IDENT); }
-		public TerminalNode IDENT(int i) {
-			return getToken(trab4Parser.IDENT, i);
+	public static class H2Context extends ParserRuleContext {
+		public List<TerminalNode> Menor() { return getTokens(trab4Parser.Menor); }
+		public TerminalNode Menor(int i) {
+			return getToken(trab4Parser.Menor, i);
 		}
-		public DimensaoContext dimensao() {
-			return getRuleContext(DimensaoContext.class,0);
+		public List<TerminalNode> Maior() { return getTokens(trab4Parser.Maior); }
+		public TerminalNode Maior(int i) {
+			return getToken(trab4Parser.Maior, i);
 		}
-		public List<TerminalNode> Ponto() { return getTokens(trab4Parser.Ponto); }
-		public TerminalNode Ponto(int i) {
-			return getToken(trab4Parser.Ponto, i);
-		}
-		public IdentificadorContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode FRASE() { return getToken(trab4Parser.FRASE, 0); }
+		public TerminalNode Barra() { return getToken(trab4Parser.Barra, 0); }
+		public H2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_identificador; }
+		@Override public int getRuleIndex() { return RULE_h2; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterIdentificador(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterH2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitIdentificador(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitH2(this);
 		}
 	}
 
-	public final IdentificadorContext identificador() throws RecognitionException {
-		IdentificadorContext _localctx = new IdentificadorContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_identificador);
-		int _la;
+	public final H2Context h2() throws RecognitionException {
+		H2Context _localctx = new H2Context(_ctx, getState());
+		enterRule(_localctx, 22, RULE_h2);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(123);
+			match(Menor);
+			setState(124);
+			match(T__2);
+			setState(125);
+			match(Maior);
+			setState(126);
+			match(FRASE);
+			setState(127);
+			match(Menor);
+			setState(128);
+			match(Barra);
+			setState(129);
+			match(T__2);
+			setState(130);
+			match(Maior);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class H3Context extends ParserRuleContext {
+		public List<TerminalNode> Menor() { return getTokens(trab4Parser.Menor); }
+		public TerminalNode Menor(int i) {
+			return getToken(trab4Parser.Menor, i);
+		}
+		public List<TerminalNode> Maior() { return getTokens(trab4Parser.Maior); }
+		public TerminalNode Maior(int i) {
+			return getToken(trab4Parser.Maior, i);
+		}
+		public TerminalNode FRASE() { return getToken(trab4Parser.FRASE, 0); }
+		public TerminalNode Barra() { return getToken(trab4Parser.Barra, 0); }
+		public H3Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_h3; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterH3(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitH3(this);
+		}
+	}
+
+	public final H3Context h3() throws RecognitionException {
+		H3Context _localctx = new H3Context(_ctx, getState());
+		enterRule(_localctx, 24, RULE_h3);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(132);
+			match(Menor);
+			setState(133);
+			match(T__3);
+			setState(134);
+			match(Maior);
+			setState(135);
+			match(FRASE);
+			setState(136);
+			match(Menor);
+			setState(137);
+			match(Barra);
+			setState(138);
+			match(T__3);
+			setState(139);
+			match(Maior);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class H4Context extends ParserRuleContext {
+		public List<TerminalNode> Menor() { return getTokens(trab4Parser.Menor); }
+		public TerminalNode Menor(int i) {
+			return getToken(trab4Parser.Menor, i);
+		}
+		public List<TerminalNode> Maior() { return getTokens(trab4Parser.Maior); }
+		public TerminalNode Maior(int i) {
+			return getToken(trab4Parser.Maior, i);
+		}
+		public TerminalNode FRASE() { return getToken(trab4Parser.FRASE, 0); }
+		public TerminalNode Barra() { return getToken(trab4Parser.Barra, 0); }
+		public H4Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_h4; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterH4(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitH4(this);
+		}
+	}
+
+	public final H4Context h4() throws RecognitionException {
+		H4Context _localctx = new H4Context(_ctx, getState());
+		enterRule(_localctx, 26, RULE_h4);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(141);
-			match(IDENT);
+			match(Menor);
+			setState(142);
+			match(T__4);
+			setState(143);
+			match(Maior);
+			setState(144);
+			match(FRASE);
+			setState(145);
+			match(Menor);
 			setState(146);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Ponto) {
-				{
-				{
-				setState(142);
-				match(Ponto);
-				setState(143);
-				match(IDENT);
-				}
-				}
-				setState(148);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(149);
-			dimensao();
+			match(Barra);
+			setState(147);
+			match(T__4);
+			setState(148);
+			match(Maior);
 			}
 		}
 		catch (RecognitionException re) {
@@ -534,60 +1102,53 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class DimensaoContext extends ParserRuleContext {
-		public List<TerminalNode> Abre_colchete() { return getTokens(trab4Parser.Abre_colchete); }
-		public TerminalNode Abre_colchete(int i) {
-			return getToken(trab4Parser.Abre_colchete, i);
+	public static class H5Context extends ParserRuleContext {
+		public List<TerminalNode> Menor() { return getTokens(trab4Parser.Menor); }
+		public TerminalNode Menor(int i) {
+			return getToken(trab4Parser.Menor, i);
 		}
-		public List<Exp_aritmeticaContext> exp_aritmetica() {
-			return getRuleContexts(Exp_aritmeticaContext.class);
+		public List<TerminalNode> Maior() { return getTokens(trab4Parser.Maior); }
+		public TerminalNode Maior(int i) {
+			return getToken(trab4Parser.Maior, i);
 		}
-		public Exp_aritmeticaContext exp_aritmetica(int i) {
-			return getRuleContext(Exp_aritmeticaContext.class,i);
-		}
-		public List<TerminalNode> Fecha_colchete() { return getTokens(trab4Parser.Fecha_colchete); }
-		public TerminalNode Fecha_colchete(int i) {
-			return getToken(trab4Parser.Fecha_colchete, i);
-		}
-		public DimensaoContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode FRASE() { return getToken(trab4Parser.FRASE, 0); }
+		public TerminalNode Barra() { return getToken(trab4Parser.Barra, 0); }
+		public H5Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_dimensao; }
+		@Override public int getRuleIndex() { return RULE_h5; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterDimensao(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterH5(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitDimensao(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitH5(this);
 		}
 	}
 
-	public final DimensaoContext dimensao() throws RecognitionException {
-		DimensaoContext _localctx = new DimensaoContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_dimensao);
-		int _la;
+	public final H5Context h5() throws RecognitionException {
+		H5Context _localctx = new H5Context(_ctx, getState());
+		enterRule(_localctx, 28, RULE_h5);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
+			setState(150);
+			match(Menor);
+			setState(151);
+			match(T__5);
+			setState(152);
+			match(Maior);
+			setState(153);
+			match(FRASE);
+			setState(154);
+			match(Menor);
+			setState(155);
+			match(Barra);
+			setState(156);
+			match(T__5);
 			setState(157);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Abre_colchete) {
-				{
-				{
-				setState(151);
-				match(Abre_colchete);
-				setState(152);
-				exp_aritmetica();
-				setState(153);
-				match(Fecha_colchete);
-				}
-				}
-				setState(159);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
+			match(Maior);
 			}
 		}
 		catch (RecognitionException re) {
@@ -601,104 +1162,36 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class TipoContext extends ParserRuleContext {
-		public RegistroContext registro() {
-			return getRuleContext(RegistroContext.class,0);
-		}
-		public Tipo_estendidoContext tipo_estendido() {
-			return getRuleContext(Tipo_estendidoContext.class,0);
-		}
-		public TipoContext(ParserRuleContext parent, int invokingState) {
+	public static class IdContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(trab4Parser.ID, 0); }
+		public TerminalNode Igual() { return getToken(trab4Parser.Igual, 0); }
+		public TerminalNode CADEIA() { return getToken(trab4Parser.CADEIA, 0); }
+		public IdContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_tipo; }
+		@Override public int getRuleIndex() { return RULE_id; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTipo(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterId(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTipo(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitId(this);
 		}
 	}
 
-	public final TipoContext tipo() throws RecognitionException {
-		TipoContext _localctx = new TipoContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_tipo);
-		try {
-			setState(162);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Registro:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(160);
-				registro();
-				}
-				break;
-			case Literal:
-			case Inteiro:
-			case Real:
-			case Logico:
-			case IDENT:
-			case Ponteiro:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(161);
-				tipo_estendido();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Tipo_basicoContext extends ParserRuleContext {
-		public TerminalNode Literal() { return getToken(trab4Parser.Literal, 0); }
-		public TerminalNode Inteiro() { return getToken(trab4Parser.Inteiro, 0); }
-		public TerminalNode Real() { return getToken(trab4Parser.Real, 0); }
-		public TerminalNode Logico() { return getToken(trab4Parser.Logico, 0); }
-		public Tipo_basicoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_tipo_basico; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTipo_basico(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTipo_basico(this);
-		}
-	}
-
-	public final Tipo_basicoContext tipo_basico() throws RecognitionException {
-		Tipo_basicoContext _localctx = new Tipo_basicoContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_tipo_basico);
-		int _la;
+	public final IdContext id() throws RecognitionException {
+		IdContext _localctx = new IdContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_id);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(164);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Literal) | (1L << Inteiro) | (1L << Real) | (1L << Logico))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(159);
+			match(ID);
+			setState(160);
+			match(Igual);
+			setState(161);
+			match(CADEIA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -712,51 +1205,36 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class Tipo_basico_identContext extends ParserRuleContext {
-		public Tipo_basicoContext tipo_basico() {
-			return getRuleContext(Tipo_basicoContext.class,0);
-		}
-		public TerminalNode IDENT() { return getToken(trab4Parser.IDENT, 0); }
-		public Tipo_basico_identContext(ParserRuleContext parent, int invokingState) {
+	public static class TypeContext extends ParserRuleContext {
+		public TerminalNode TYPE() { return getToken(trab4Parser.TYPE, 0); }
+		public TerminalNode Igual() { return getToken(trab4Parser.Igual, 0); }
+		public TerminalNode CADEIA() { return getToken(trab4Parser.CADEIA, 0); }
+		public TypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_tipo_basico_ident; }
+		@Override public int getRuleIndex() { return RULE_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTipo_basico_ident(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTipo_basico_ident(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitType(this);
 		}
 	}
 
-	public final Tipo_basico_identContext tipo_basico_ident() throws RecognitionException {
-		Tipo_basico_identContext _localctx = new Tipo_basico_identContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_tipo_basico_ident);
+	public final TypeContext type() throws RecognitionException {
+		TypeContext _localctx = new TypeContext(_ctx, getState());
+		enterRule(_localctx, 32, RULE_type);
 		try {
-			setState(168);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Literal:
-			case Inteiro:
-			case Real:
-			case Logico:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(166);
-				tipo_basico();
-				}
-				break;
-			case IDENT:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(167);
-				match(IDENT);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(163);
+			match(TYPE);
+			setState(164);
+			match(Igual);
+			setState(165);
+			match(CADEIA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -770,44 +1248,79 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class Tipo_estendidoContext extends ParserRuleContext {
-		public Tipo_basico_identContext tipo_basico_ident() {
-			return getRuleContext(Tipo_basico_identContext.class,0);
-		}
-		public TerminalNode Ponteiro() { return getToken(trab4Parser.Ponteiro, 0); }
-		public Tipo_estendidoContext(ParserRuleContext parent, int invokingState) {
+	public static class NameContext extends ParserRuleContext {
+		public TerminalNode NAME() { return getToken(trab4Parser.NAME, 0); }
+		public TerminalNode Igual() { return getToken(trab4Parser.Igual, 0); }
+		public TerminalNode CADEIA() { return getToken(trab4Parser.CADEIA, 0); }
+		public NameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_tipo_estendido; }
+		@Override public int getRuleIndex() { return RULE_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTipo_estendido(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTipo_estendido(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitName(this);
 		}
 	}
 
-	public final Tipo_estendidoContext tipo_estendido() throws RecognitionException {
-		Tipo_estendidoContext _localctx = new Tipo_estendidoContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_tipo_estendido);
-		int _la;
+	public final NameContext name() throws RecognitionException {
+		NameContext _localctx = new NameContext(_ctx, getState());
+		enterRule(_localctx, 34, RULE_name);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(167);
+			match(NAME);
+			setState(168);
+			match(Igual);
+			setState(169);
+			match(CADEIA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class MethodContext extends ParserRuleContext {
+		public TerminalNode METHOD() { return getToken(trab4Parser.METHOD, 0); }
+		public TerminalNode Igual() { return getToken(trab4Parser.Igual, 0); }
+		public TerminalNode CADEIA() { return getToken(trab4Parser.CADEIA, 0); }
+		public MethodContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_method; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterMethod(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitMethod(this);
+		}
+	}
+
+	public final MethodContext method() throws RecognitionException {
+		MethodContext _localctx = new MethodContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_method);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(171);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Ponteiro) {
-				{
-				setState(170);
-				match(Ponteiro);
-				}
-			}
-
+			match(METHOD);
+			setState(172);
+			match(Igual);
 			setState(173);
-			tipo_basico_ident();
+			match(CADEIA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -821,104 +1334,36 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class Valor_constanteContext extends ParserRuleContext {
+	public static class ActionContext extends ParserRuleContext {
+		public TerminalNode ACTION() { return getToken(trab4Parser.ACTION, 0); }
+		public TerminalNode Igual() { return getToken(trab4Parser.Igual, 0); }
 		public TerminalNode CADEIA() { return getToken(trab4Parser.CADEIA, 0); }
-		public TerminalNode NUM_INT() { return getToken(trab4Parser.NUM_INT, 0); }
-		public TerminalNode NUM_REAL() { return getToken(trab4Parser.NUM_REAL, 0); }
-		public TerminalNode Verdadeiro() { return getToken(trab4Parser.Verdadeiro, 0); }
-		public TerminalNode Falso() { return getToken(trab4Parser.Falso, 0); }
-		public Valor_constanteContext(ParserRuleContext parent, int invokingState) {
+		public ActionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_valor_constante; }
+		@Override public int getRuleIndex() { return RULE_action; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterValor_constante(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterAction(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitValor_constante(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitAction(this);
 		}
 	}
 
-	public final Valor_constanteContext valor_constante() throws RecognitionException {
-		Valor_constanteContext _localctx = new Valor_constanteContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_valor_constante);
-		int _la;
+	public final ActionContext action() throws RecognitionException {
+		ActionContext _localctx = new ActionContext(_ctx, getState());
+		enterRule(_localctx, 38, RULE_action);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(175);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Falso) | (1L << Verdadeiro) | (1L << CADEIA) | (1L << NUM_INT) | (1L << NUM_REAL))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class RegistroContext extends ParserRuleContext {
-		public TerminalNode Registro() { return getToken(trab4Parser.Registro, 0); }
-		public TerminalNode Fim_registro() { return getToken(trab4Parser.Fim_registro, 0); }
-		public List<VariavelContext> variavel() {
-			return getRuleContexts(VariavelContext.class);
-		}
-		public VariavelContext variavel(int i) {
-			return getRuleContext(VariavelContext.class,i);
-		}
-		public RegistroContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_registro; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterRegistro(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitRegistro(this);
-		}
-	}
-
-	public final RegistroContext registro() throws RecognitionException {
-		RegistroContext _localctx = new RegistroContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_registro);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
+			match(ACTION);
+			setState(176);
+			match(Igual);
 			setState(177);
-			match(Registro);
-			setState(181);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==IDENT) {
-				{
-				{
-				setState(178);
-				variavel();
-				}
-				}
-				setState(183);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(184);
-			match(Fim_registro);
+			match(CADEIA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -932,2584 +1377,36 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class Declaracao_globalContext extends ParserRuleContext {
-		public TerminalNode Procedimento() { return getToken(trab4Parser.Procedimento, 0); }
-		public TerminalNode IDENT() { return getToken(trab4Parser.IDENT, 0); }
-		public TerminalNode ABREPAR() { return getToken(trab4Parser.ABREPAR, 0); }
-		public TerminalNode FECHAPAR() { return getToken(trab4Parser.FECHAPAR, 0); }
-		public TerminalNode Fim_procedimento() { return getToken(trab4Parser.Fim_procedimento, 0); }
-		public ParametrosContext parametros() {
-			return getRuleContext(ParametrosContext.class,0);
-		}
-		public List<Declaracao_localContext> declaracao_local() {
-			return getRuleContexts(Declaracao_localContext.class);
-		}
-		public Declaracao_localContext declaracao_local(int i) {
-			return getRuleContext(Declaracao_localContext.class,i);
-		}
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public TerminalNode Funcao() { return getToken(trab4Parser.Funcao, 0); }
-		public TerminalNode DELIM() { return getToken(trab4Parser.DELIM, 0); }
-		public Tipo_estendidoContext tipo_estendido() {
-			return getRuleContext(Tipo_estendidoContext.class,0);
-		}
-		public TerminalNode Fim_funcao() { return getToken(trab4Parser.Fim_funcao, 0); }
-		public Declaracao_globalContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_declaracao_global; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterDeclaracao_global(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitDeclaracao_global(this);
-		}
-	}
-
-	public final Declaracao_globalContext declaracao_global() throws RecognitionException {
-		Declaracao_globalContext _localctx = new Declaracao_globalContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_declaracao_global);
-		int _la;
-		try {
-			setState(229);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Procedimento:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(186);
-				match(Procedimento);
-				setState(187);
-				match(IDENT);
-				setState(188);
-				match(ABREPAR);
-				setState(190);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==Var || _la==IDENT) {
-					{
-					setState(189);
-					parametros();
-					}
-				}
-
-				setState(192);
-				match(FECHAPAR);
-				setState(196);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Declare) | (1L << Constante) | (1L << Tipo))) != 0)) {
-					{
-					{
-					setState(193);
-					declaracao_local();
-					}
-					}
-					setState(198);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(202);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-					{
-					{
-					setState(199);
-					cmd();
-					}
-					}
-					setState(204);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(205);
-				match(Fim_procedimento);
-				}
-				break;
-			case Funcao:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(206);
-				match(Funcao);
-				setState(207);
-				match(IDENT);
-				setState(208);
-				match(ABREPAR);
-				setState(210);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==Var || _la==IDENT) {
-					{
-					setState(209);
-					parametros();
-					}
-				}
-
-				setState(212);
-				match(FECHAPAR);
-				setState(213);
-				match(DELIM);
-				setState(214);
-				tipo_estendido();
-				setState(218);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Declare) | (1L << Constante) | (1L << Tipo))) != 0)) {
-					{
-					{
-					setState(215);
-					declaracao_local();
-					}
-					}
-					setState(220);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(224);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-					{
-					{
-					setState(221);
-					cmd();
-					}
-					}
-					setState(226);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(227);
-				match(Fim_funcao);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ParametroContext extends ParserRuleContext {
-		public List<IdentificadorContext> identificador() {
-			return getRuleContexts(IdentificadorContext.class);
-		}
-		public IdentificadorContext identificador(int i) {
-			return getRuleContext(IdentificadorContext.class,i);
-		}
-		public TerminalNode DELIM() { return getToken(trab4Parser.DELIM, 0); }
-		public Tipo_estendidoContext tipo_estendido() {
-			return getRuleContext(Tipo_estendidoContext.class,0);
-		}
-		public TerminalNode Var() { return getToken(trab4Parser.Var, 0); }
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public ParametroContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parametro; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterParametro(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitParametro(this);
-		}
-	}
-
-	public final ParametroContext parametro() throws RecognitionException {
-		ParametroContext _localctx = new ParametroContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_parametro);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(232);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Var) {
-				{
-				setState(231);
-				match(Var);
-				}
-			}
-
-			setState(234);
-			identificador();
-			setState(239);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Virgula) {
-				{
-				{
-				setState(235);
-				match(Virgula);
-				setState(236);
-				identificador();
-				}
-				}
-				setState(241);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(242);
-			match(DELIM);
-			setState(243);
-			tipo_estendido();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ParametrosContext extends ParserRuleContext {
-		public List<ParametroContext> parametro() {
-			return getRuleContexts(ParametroContext.class);
-		}
-		public ParametroContext parametro(int i) {
-			return getRuleContext(ParametroContext.class,i);
-		}
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public ParametrosContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parametros; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterParametros(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitParametros(this);
-		}
-	}
-
-	public final ParametrosContext parametros() throws RecognitionException {
-		ParametrosContext _localctx = new ParametrosContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_parametros);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(245);
-			parametro();
-			setState(250);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Virgula) {
-				{
-				{
-				setState(246);
-				match(Virgula);
-				setState(247);
-				parametro();
-				}
-				}
-				setState(252);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CorpoContext extends ParserRuleContext {
-		public List<Declaracao_localContext> declaracao_local() {
-			return getRuleContexts(Declaracao_localContext.class);
-		}
-		public Declaracao_localContext declaracao_local(int i) {
-			return getRuleContext(Declaracao_localContext.class,i);
-		}
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public CorpoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_corpo; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCorpo(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCorpo(this);
-		}
-	}
-
-	public final CorpoContext corpo() throws RecognitionException {
-		CorpoContext _localctx = new CorpoContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_corpo);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(256);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Declare) | (1L << Constante) | (1L << Tipo))) != 0)) {
-				{
-				{
-				setState(253);
-				declaracao_local();
-				}
-				}
-				setState(258);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(262);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-				{
-				{
-				setState(259);
-				cmd();
-				}
-				}
-				setState(264);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdContext extends ParserRuleContext {
-		public CmdLeiaContext cmdLeia() {
-			return getRuleContext(CmdLeiaContext.class,0);
-		}
-		public CmdEscrevaContext cmdEscreva() {
-			return getRuleContext(CmdEscrevaContext.class,0);
-		}
-		public CmdSeContext cmdSe() {
-			return getRuleContext(CmdSeContext.class,0);
-		}
-		public CmdCasoContext cmdCaso() {
-			return getRuleContext(CmdCasoContext.class,0);
-		}
-		public CmdParaContext cmdPara() {
-			return getRuleContext(CmdParaContext.class,0);
-		}
-		public CmdEnquantoContext cmdEnquanto() {
-			return getRuleContext(CmdEnquantoContext.class,0);
-		}
-		public CmdFacaContext cmdFaca() {
-			return getRuleContext(CmdFacaContext.class,0);
-		}
-		public CmdAtribuicaoContext cmdAtribuicao() {
-			return getRuleContext(CmdAtribuicaoContext.class,0);
-		}
-		public CmdChamadaContext cmdChamada() {
-			return getRuleContext(CmdChamadaContext.class,0);
-		}
-		public CmdRetorneContext cmdRetorne() {
-			return getRuleContext(CmdRetorneContext.class,0);
-		}
-		public CmdContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmd; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmd(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmd(this);
-		}
-	}
-
-	public final CmdContext cmd() throws RecognitionException {
-		CmdContext _localctx = new CmdContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_cmd);
-		try {
-			setState(275);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,22,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(265);
-				cmdLeia();
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(266);
-				cmdEscreva();
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(267);
-				cmdSe();
-				}
-				break;
-			case 4:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(268);
-				cmdCaso();
-				}
-				break;
-			case 5:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(269);
-				cmdPara();
-				}
-				break;
-			case 6:
-				enterOuterAlt(_localctx, 6);
-				{
-				setState(270);
-				cmdEnquanto();
-				}
-				break;
-			case 7:
-				enterOuterAlt(_localctx, 7);
-				{
-				setState(271);
-				cmdFaca();
-				}
-				break;
-			case 8:
-				enterOuterAlt(_localctx, 8);
-				{
-				setState(272);
-				cmdAtribuicao();
-				}
-				break;
-			case 9:
-				enterOuterAlt(_localctx, 9);
-				{
-				setState(273);
-				cmdChamada();
-				}
-				break;
-			case 10:
-				enterOuterAlt(_localctx, 10);
-				{
-				setState(274);
-				cmdRetorne();
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdLeiaContext extends ParserRuleContext {
-		public TerminalNode Leia() { return getToken(trab4Parser.Leia, 0); }
-		public TerminalNode ABREPAR() { return getToken(trab4Parser.ABREPAR, 0); }
-		public List<IdentificadorContext> identificador() {
-			return getRuleContexts(IdentificadorContext.class);
-		}
-		public IdentificadorContext identificador(int i) {
-			return getRuleContext(IdentificadorContext.class,i);
-		}
-		public TerminalNode FECHAPAR() { return getToken(trab4Parser.FECHAPAR, 0); }
-		public List<TerminalNode> Ponteiro() { return getTokens(trab4Parser.Ponteiro); }
-		public TerminalNode Ponteiro(int i) {
-			return getToken(trab4Parser.Ponteiro, i);
-		}
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public CmdLeiaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdLeia; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdLeia(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdLeia(this);
-		}
-	}
-
-	public final CmdLeiaContext cmdLeia() throws RecognitionException {
-		CmdLeiaContext _localctx = new CmdLeiaContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_cmdLeia);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(277);
-			match(Leia);
-			setState(278);
-			match(ABREPAR);
-			setState(280);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Ponteiro) {
-				{
-				setState(279);
-				match(Ponteiro);
-				}
-			}
-
-			setState(282);
-			identificador();
-			setState(290);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Virgula) {
-				{
-				{
-				setState(283);
-				match(Virgula);
-				setState(285);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==Ponteiro) {
-					{
-					setState(284);
-					match(Ponteiro);
-					}
-				}
-
-				setState(287);
-				identificador();
-				}
-				}
-				setState(292);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(293);
-			match(FECHAPAR);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdEscrevaContext extends ParserRuleContext {
-		public TerminalNode Escreva() { return getToken(trab4Parser.Escreva, 0); }
-		public TerminalNode ABREPAR() { return getToken(trab4Parser.ABREPAR, 0); }
-		public List<ExpressaoContext> expressao() {
-			return getRuleContexts(ExpressaoContext.class);
-		}
-		public ExpressaoContext expressao(int i) {
-			return getRuleContext(ExpressaoContext.class,i);
-		}
-		public TerminalNode FECHAPAR() { return getToken(trab4Parser.FECHAPAR, 0); }
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public CmdEscrevaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdEscreva; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdEscreva(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdEscreva(this);
-		}
-	}
-
-	public final CmdEscrevaContext cmdEscreva() throws RecognitionException {
-		CmdEscrevaContext _localctx = new CmdEscrevaContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_cmdEscreva);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(295);
-			match(Escreva);
-			setState(296);
-			match(ABREPAR);
-			setState(297);
-			expressao();
-			setState(302);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Virgula) {
-				{
-				{
-				setState(298);
-				match(Virgula);
-				setState(299);
-				expressao();
-				}
-				}
-				setState(304);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(305);
-			match(FECHAPAR);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdSeContext extends ParserRuleContext {
-		public TerminalNode Se() { return getToken(trab4Parser.Se, 0); }
-		public ExpressaoContext expressao() {
-			return getRuleContext(ExpressaoContext.class,0);
-		}
-		public TerminalNode Entao() { return getToken(trab4Parser.Entao, 0); }
-		public TerminalNode Fim_se() { return getToken(trab4Parser.Fim_se, 0); }
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public TerminalNode Senao() { return getToken(trab4Parser.Senao, 0); }
-		public CmdSeContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdSe; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdSe(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdSe(this);
-		}
-	}
-
-	public final CmdSeContext cmdSe() throws RecognitionException {
-		CmdSeContext _localctx = new CmdSeContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_cmdSe);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(307);
-			match(Se);
-			setState(308);
-			expressao();
-			setState(309);
-			match(Entao);
-			setState(313);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-				{
-				{
-				setState(310);
-				cmd();
-				}
-				}
-				setState(315);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(323);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Senao) {
-				{
-				setState(316);
-				match(Senao);
-				setState(320);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-					{
-					{
-					setState(317);
-					cmd();
-					}
-					}
-					setState(322);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				}
-			}
-
-			setState(325);
-			match(Fim_se);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdCasoContext extends ParserRuleContext {
-		public TerminalNode Caso() { return getToken(trab4Parser.Caso, 0); }
-		public Exp_aritmeticaContext exp_aritmetica() {
-			return getRuleContext(Exp_aritmeticaContext.class,0);
-		}
-		public TerminalNode Seja() { return getToken(trab4Parser.Seja, 0); }
-		public SelecaoContext selecao() {
-			return getRuleContext(SelecaoContext.class,0);
-		}
-		public TerminalNode Fim_caso() { return getToken(trab4Parser.Fim_caso, 0); }
-		public TerminalNode Senao() { return getToken(trab4Parser.Senao, 0); }
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public CmdCasoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdCaso; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdCaso(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdCaso(this);
-		}
-	}
-
-	public final CmdCasoContext cmdCaso() throws RecognitionException {
-		CmdCasoContext _localctx = new CmdCasoContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_cmdCaso);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(327);
-			match(Caso);
-			setState(328);
-			exp_aritmetica();
-			setState(329);
-			match(Seja);
-			setState(330);
-			selecao();
-			setState(338);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Senao) {
-				{
-				setState(331);
-				match(Senao);
-				setState(335);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-					{
-					{
-					setState(332);
-					cmd();
-					}
-					}
-					setState(337);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				}
-			}
-
-			setState(340);
-			match(Fim_caso);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdParaContext extends ParserRuleContext {
-		public TerminalNode Para() { return getToken(trab4Parser.Para, 0); }
-		public TerminalNode IDENT() { return getToken(trab4Parser.IDENT, 0); }
-		public TerminalNode Seta() { return getToken(trab4Parser.Seta, 0); }
-		public List<Exp_aritmeticaContext> exp_aritmetica() {
-			return getRuleContexts(Exp_aritmeticaContext.class);
-		}
-		public Exp_aritmeticaContext exp_aritmetica(int i) {
-			return getRuleContext(Exp_aritmeticaContext.class,i);
-		}
-		public TerminalNode Ate() { return getToken(trab4Parser.Ate, 0); }
-		public TerminalNode Faca() { return getToken(trab4Parser.Faca, 0); }
-		public TerminalNode Fim_para() { return getToken(trab4Parser.Fim_para, 0); }
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public CmdParaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdPara; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdPara(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdPara(this);
-		}
-	}
-
-	public final CmdParaContext cmdPara() throws RecognitionException {
-		CmdParaContext _localctx = new CmdParaContext(_ctx, getState());
-		enterRule(_localctx, 44, RULE_cmdPara);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(342);
-			match(Para);
-			setState(343);
-			match(IDENT);
-			setState(344);
-			match(Seta);
-			setState(345);
-			exp_aritmetica();
-			setState(346);
-			match(Ate);
-			setState(347);
-			exp_aritmetica();
-			setState(348);
-			match(Faca);
-			setState(352);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-				{
-				{
-				setState(349);
-				cmd();
-				}
-				}
-				setState(354);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(355);
-			match(Fim_para);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdEnquantoContext extends ParserRuleContext {
-		public TerminalNode Enquanto() { return getToken(trab4Parser.Enquanto, 0); }
-		public ExpressaoContext expressao() {
-			return getRuleContext(ExpressaoContext.class,0);
-		}
-		public TerminalNode Faca() { return getToken(trab4Parser.Faca, 0); }
-		public TerminalNode Fim_enquanto() { return getToken(trab4Parser.Fim_enquanto, 0); }
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public CmdEnquantoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdEnquanto; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdEnquanto(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdEnquanto(this);
-		}
-	}
-
-	public final CmdEnquantoContext cmdEnquanto() throws RecognitionException {
-		CmdEnquantoContext _localctx = new CmdEnquantoContext(_ctx, getState());
-		enterRule(_localctx, 46, RULE_cmdEnquanto);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(357);
-			match(Enquanto);
-			setState(358);
-			expressao();
-			setState(359);
-			match(Faca);
-			setState(363);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-				{
-				{
-				setState(360);
-				cmd();
-				}
-				}
-				setState(365);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(366);
-			match(Fim_enquanto);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdFacaContext extends ParserRuleContext {
-		public TerminalNode Faca() { return getToken(trab4Parser.Faca, 0); }
-		public TerminalNode Ate() { return getToken(trab4Parser.Ate, 0); }
-		public ExpressaoContext expressao() {
-			return getRuleContext(ExpressaoContext.class,0);
-		}
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public CmdFacaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdFaca; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdFaca(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdFaca(this);
-		}
-	}
-
-	public final CmdFacaContext cmdFaca() throws RecognitionException {
-		CmdFacaContext _localctx = new CmdFacaContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_cmdFaca);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(368);
-			match(Faca);
-			setState(372);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-				{
-				{
-				setState(369);
-				cmd();
-				}
-				}
-				setState(374);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(375);
-			match(Ate);
-			setState(376);
-			expressao();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdAtribuicaoContext extends ParserRuleContext {
-		public IdentificadorContext identificador() {
-			return getRuleContext(IdentificadorContext.class,0);
-		}
-		public TerminalNode Seta() { return getToken(trab4Parser.Seta, 0); }
-		public ExpressaoContext expressao() {
-			return getRuleContext(ExpressaoContext.class,0);
-		}
-		public TerminalNode Ponteiro() { return getToken(trab4Parser.Ponteiro, 0); }
-		public CmdAtribuicaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdAtribuicao; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdAtribuicao(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdAtribuicao(this);
-		}
-	}
-
-	public final CmdAtribuicaoContext cmdAtribuicao() throws RecognitionException {
-		CmdAtribuicaoContext _localctx = new CmdAtribuicaoContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_cmdAtribuicao);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(379);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Ponteiro) {
-				{
-				setState(378);
-				match(Ponteiro);
-				}
-			}
-
-			setState(381);
-			identificador();
-			setState(382);
-			match(Seta);
-			setState(383);
-			expressao();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdChamadaContext extends ParserRuleContext {
-		public TerminalNode IDENT() { return getToken(trab4Parser.IDENT, 0); }
-		public TerminalNode ABREPAR() { return getToken(trab4Parser.ABREPAR, 0); }
-		public List<ExpressaoContext> expressao() {
-			return getRuleContexts(ExpressaoContext.class);
-		}
-		public ExpressaoContext expressao(int i) {
-			return getRuleContext(ExpressaoContext.class,i);
-		}
-		public TerminalNode FECHAPAR() { return getToken(trab4Parser.FECHAPAR, 0); }
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public CmdChamadaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdChamada; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdChamada(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdChamada(this);
-		}
-	}
-
-	public final CmdChamadaContext cmdChamada() throws RecognitionException {
-		CmdChamadaContext _localctx = new CmdChamadaContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_cmdChamada);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(385);
-			match(IDENT);
-			setState(386);
-			match(ABREPAR);
-			setState(387);
-			expressao();
-			setState(392);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Virgula) {
-				{
-				{
-				setState(388);
-				match(Virgula);
-				setState(389);
-				expressao();
-				}
-				}
-				setState(394);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(395);
-			match(FECHAPAR);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdRetorneContext extends ParserRuleContext {
-		public TerminalNode Retorne() { return getToken(trab4Parser.Retorne, 0); }
-		public ExpressaoContext expressao() {
-			return getRuleContext(ExpressaoContext.class,0);
-		}
-		public CmdRetorneContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdRetorne; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterCmdRetorne(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCmdRetorne(this);
-		}
-	}
-
-	public final CmdRetorneContext cmdRetorne() throws RecognitionException {
-		CmdRetorneContext _localctx = new CmdRetorneContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_cmdRetorne);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(397);
-			match(Retorne);
-			setState(398);
-			expressao();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class SelecaoContext extends ParserRuleContext {
-		public List<Item_selecaoContext> item_selecao() {
-			return getRuleContexts(Item_selecaoContext.class);
-		}
-		public Item_selecaoContext item_selecao(int i) {
-			return getRuleContext(Item_selecaoContext.class,i);
-		}
-		public SelecaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_selecao; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterSelecao(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitSelecao(this);
-		}
-	}
-
-	public final SelecaoContext selecao() throws RecognitionException {
-		SelecaoContext _localctx = new SelecaoContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_selecao);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(403);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==NUM_INT || _la==Menos) {
-				{
-				{
-				setState(400);
-				item_selecao();
-				}
-				}
-				setState(405);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Item_selecaoContext extends ParserRuleContext {
-		public ConstantesContext constantes() {
-			return getRuleContext(ConstantesContext.class,0);
-		}
-		public TerminalNode DELIM() { return getToken(trab4Parser.DELIM, 0); }
-		public List<CmdContext> cmd() {
-			return getRuleContexts(CmdContext.class);
-		}
-		public CmdContext cmd(int i) {
-			return getRuleContext(CmdContext.class,i);
-		}
-		public Item_selecaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_item_selecao; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterItem_selecao(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitItem_selecao(this);
-		}
-	}
-
-	public final Item_selecaoContext item_selecao() throws RecognitionException {
-		Item_selecaoContext _localctx = new Item_selecaoContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_item_selecao);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(406);
-			constantes();
-			setState(407);
-			match(DELIM);
-			setState(411);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Leia) | (1L << Escreva) | (1L << Se) | (1L << Caso) | (1L << Para) | (1L << Faca) | (1L << Enquanto) | (1L << Retorne) | (1L << IDENT) | (1L << Ponteiro))) != 0)) {
-				{
-				{
-				setState(408);
-				cmd();
-				}
-				}
-				setState(413);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ConstantesContext extends ParserRuleContext {
-		public List<Numero_intervaloContext> numero_intervalo() {
-			return getRuleContexts(Numero_intervaloContext.class);
-		}
-		public Numero_intervaloContext numero_intervalo(int i) {
-			return getRuleContext(Numero_intervaloContext.class,i);
-		}
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public ConstantesContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_constantes; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterConstantes(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitConstantes(this);
-		}
-	}
-
-	public final ConstantesContext constantes() throws RecognitionException {
-		ConstantesContext _localctx = new ConstantesContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_constantes);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(414);
-			numero_intervalo();
-			setState(419);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Virgula) {
-				{
-				{
-				setState(415);
-				match(Virgula);
-				setState(416);
-				numero_intervalo();
-				}
-				}
-				setState(421);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Numero_intervaloContext extends ParserRuleContext {
-		public List<TerminalNode> NUM_INT() { return getTokens(trab4Parser.NUM_INT); }
-		public TerminalNode NUM_INT(int i) {
-			return getToken(trab4Parser.NUM_INT, i);
-		}
-		public List<Op_unarioContext> op_unario() {
-			return getRuleContexts(Op_unarioContext.class);
-		}
-		public Op_unarioContext op_unario(int i) {
-			return getRuleContext(Op_unarioContext.class,i);
-		}
-		public TerminalNode PontoPonto() { return getToken(trab4Parser.PontoPonto, 0); }
-		public Numero_intervaloContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_numero_intervalo; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterNumero_intervalo(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitNumero_intervalo(this);
-		}
-	}
-
-	public final Numero_intervaloContext numero_intervalo() throws RecognitionException {
-		Numero_intervaloContext _localctx = new Numero_intervaloContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_numero_intervalo);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(423);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Menos) {
-				{
-				setState(422);
-				op_unario();
-				}
-			}
-
-			setState(425);
-			match(NUM_INT);
-			setState(431);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==PontoPonto) {
-				{
-				setState(426);
-				match(PontoPonto);
-				setState(428);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==Menos) {
-					{
-					setState(427);
-					op_unario();
-					}
-				}
-
-				setState(430);
-				match(NUM_INT);
-				}
-			}
-
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op_unarioContext extends ParserRuleContext {
-		public TerminalNode Menos() { return getToken(trab4Parser.Menos, 0); }
-		public Op_unarioContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_op_unario; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterOp_unario(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOp_unario(this);
-		}
-	}
-
-	public final Op_unarioContext op_unario() throws RecognitionException {
-		Op_unarioContext _localctx = new Op_unarioContext(_ctx, getState());
-		enterRule(_localctx, 64, RULE_op_unario);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(433);
-			match(Menos);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Exp_aritmeticaContext extends ParserRuleContext {
-		public List<TermoContext> termo() {
-			return getRuleContexts(TermoContext.class);
-		}
-		public TermoContext termo(int i) {
-			return getRuleContext(TermoContext.class,i);
-		}
-		public List<Op1Context> op1() {
-			return getRuleContexts(Op1Context.class);
-		}
-		public Op1Context op1(int i) {
-			return getRuleContext(Op1Context.class,i);
-		}
-		public Exp_aritmeticaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_exp_aritmetica; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterExp_aritmetica(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitExp_aritmetica(this);
-		}
-	}
-
-	public final Exp_aritmeticaContext exp_aritmetica() throws RecognitionException {
-		Exp_aritmeticaContext _localctx = new Exp_aritmeticaContext(_ctx, getState());
-		enterRule(_localctx, 66, RULE_exp_aritmetica);
-		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(435);
-			termo();
-			setState(441);
-			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,43,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					{
-					{
-					setState(436);
-					op1();
-					setState(437);
-					termo();
-					}
-					} 
-				}
-				setState(443);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,43,_ctx);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class TermoContext extends ParserRuleContext {
-		public List<FatorContext> fator() {
-			return getRuleContexts(FatorContext.class);
-		}
-		public FatorContext fator(int i) {
-			return getRuleContext(FatorContext.class,i);
-		}
-		public List<Op2Context> op2() {
-			return getRuleContexts(Op2Context.class);
-		}
-		public Op2Context op2(int i) {
-			return getRuleContext(Op2Context.class,i);
-		}
-		public TermoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_termo; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTermo(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTermo(this);
-		}
-	}
-
-	public final TermoContext termo() throws RecognitionException {
-		TermoContext _localctx = new TermoContext(_ctx, getState());
-		enterRule(_localctx, 68, RULE_termo);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(444);
-			fator();
-			setState(450);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Vezes || _la==Dividir) {
-				{
-				{
-				setState(445);
-				op2();
-				setState(446);
-				fator();
-				}
-				}
-				setState(452);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class FatorContext extends ParserRuleContext {
-		public List<ParcelaContext> parcela() {
-			return getRuleContexts(ParcelaContext.class);
-		}
-		public ParcelaContext parcela(int i) {
-			return getRuleContext(ParcelaContext.class,i);
-		}
-		public List<Op3Context> op3() {
-			return getRuleContexts(Op3Context.class);
-		}
-		public Op3Context op3(int i) {
-			return getRuleContext(Op3Context.class,i);
-		}
-		public FatorContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_fator; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterFator(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitFator(this);
-		}
-	}
-
-	public final FatorContext fator() throws RecognitionException {
-		FatorContext _localctx = new FatorContext(_ctx, getState());
-		enterRule(_localctx, 70, RULE_fator);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(453);
-			parcela();
-			setState(459);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Porcent) {
-				{
-				{
-				setState(454);
-				op3();
-				setState(455);
-				parcela();
-				}
-				}
-				setState(461);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op1Context extends ParserRuleContext {
-		public TerminalNode Mais() { return getToken(trab4Parser.Mais, 0); }
-		public TerminalNode Menos() { return getToken(trab4Parser.Menos, 0); }
-		public Op1Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_op1; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterOp1(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOp1(this);
-		}
-	}
-
-	public final Op1Context op1() throws RecognitionException {
-		Op1Context _localctx = new Op1Context(_ctx, getState());
-		enterRule(_localctx, 72, RULE_op1);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(462);
-			_la = _input.LA(1);
-			if ( !(_la==Mais || _la==Menos) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op2Context extends ParserRuleContext {
-		public TerminalNode Vezes() { return getToken(trab4Parser.Vezes, 0); }
-		public TerminalNode Dividir() { return getToken(trab4Parser.Dividir, 0); }
-		public Op2Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_op2; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterOp2(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOp2(this);
-		}
-	}
-
-	public final Op2Context op2() throws RecognitionException {
-		Op2Context _localctx = new Op2Context(_ctx, getState());
-		enterRule(_localctx, 74, RULE_op2);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(464);
-			_la = _input.LA(1);
-			if ( !(_la==Vezes || _la==Dividir) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op3Context extends ParserRuleContext {
-		public TerminalNode Porcent() { return getToken(trab4Parser.Porcent, 0); }
-		public Op3Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_op3; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterOp3(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOp3(this);
-		}
-	}
-
-	public final Op3Context op3() throws RecognitionException {
-		Op3Context _localctx = new Op3Context(_ctx, getState());
-		enterRule(_localctx, 76, RULE_op3);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(466);
-			match(Porcent);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ParcelaContext extends ParserRuleContext {
-		public Parcela_unarioContext parcela_unario() {
-			return getRuleContext(Parcela_unarioContext.class,0);
-		}
-		public Op_unarioContext op_unario() {
-			return getRuleContext(Op_unarioContext.class,0);
-		}
-		public Parcela_nao_unarioContext parcela_nao_unario() {
-			return getRuleContext(Parcela_nao_unarioContext.class,0);
-		}
-		public ParcelaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parcela; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterParcela(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitParcela(this);
-		}
-	}
-
-	public final ParcelaContext parcela() throws RecognitionException {
-		ParcelaContext _localctx = new ParcelaContext(_ctx, getState());
-		enterRule(_localctx, 78, RULE_parcela);
-		int _la;
-		try {
-			setState(473);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case ABREPAR:
-			case NUM_INT:
-			case NUM_REAL:
-			case IDENT:
-			case Ponteiro:
-			case Menos:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(469);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==Menos) {
-					{
-					setState(468);
-					op_unario();
-					}
-				}
-
-				setState(471);
-				parcela_unario();
-				}
-				break;
-			case CADEIA:
-			case Endereco:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(472);
-				parcela_nao_unario();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Parcela_unarioContext extends ParserRuleContext {
-		public IdentificadorContext identificador() {
-			return getRuleContext(IdentificadorContext.class,0);
-		}
-		public TerminalNode Ponteiro() { return getToken(trab4Parser.Ponteiro, 0); }
-		public TerminalNode IDENT() { return getToken(trab4Parser.IDENT, 0); }
-		public TerminalNode ABREPAR() { return getToken(trab4Parser.ABREPAR, 0); }
-		public List<ExpressaoContext> expressao() {
-			return getRuleContexts(ExpressaoContext.class);
-		}
-		public ExpressaoContext expressao(int i) {
-			return getRuleContext(ExpressaoContext.class,i);
-		}
-		public TerminalNode FECHAPAR() { return getToken(trab4Parser.FECHAPAR, 0); }
-		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
-		public TerminalNode Virgula(int i) {
-			return getToken(trab4Parser.Virgula, i);
-		}
-		public TerminalNode NUM_INT() { return getToken(trab4Parser.NUM_INT, 0); }
-		public TerminalNode NUM_REAL() { return getToken(trab4Parser.NUM_REAL, 0); }
-		public Parcela_unarioContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parcela_unario; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterParcela_unario(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitParcela_unario(this);
-		}
-	}
-
-	public final Parcela_unarioContext parcela_unario() throws RecognitionException {
-		Parcela_unarioContext _localctx = new Parcela_unarioContext(_ctx, getState());
-		enterRule(_localctx, 80, RULE_parcela_unario);
-		int _la;
-		try {
-			setState(497);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,50,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(476);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==Ponteiro) {
-					{
-					setState(475);
-					match(Ponteiro);
-					}
-				}
-
-				setState(478);
-				identificador();
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(479);
-				match(IDENT);
-				setState(480);
-				match(ABREPAR);
-				setState(481);
-				expressao();
-				setState(486);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while (_la==Virgula) {
-					{
-					{
-					setState(482);
-					match(Virgula);
-					setState(483);
-					expressao();
-					}
-					}
-					setState(488);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(489);
-				match(FECHAPAR);
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(491);
-				match(NUM_INT);
-				}
-				break;
-			case 4:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(492);
-				match(NUM_REAL);
-				}
-				break;
-			case 5:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(493);
-				match(ABREPAR);
-				setState(494);
-				expressao();
-				setState(495);
-				match(FECHAPAR);
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Parcela_nao_unarioContext extends ParserRuleContext {
-		public TerminalNode Endereco() { return getToken(trab4Parser.Endereco, 0); }
-		public IdentificadorContext identificador() {
-			return getRuleContext(IdentificadorContext.class,0);
-		}
-		public TerminalNode CADEIA() { return getToken(trab4Parser.CADEIA, 0); }
-		public Parcela_nao_unarioContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parcela_nao_unario; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterParcela_nao_unario(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitParcela_nao_unario(this);
-		}
-	}
-
-	public final Parcela_nao_unarioContext parcela_nao_unario() throws RecognitionException {
-		Parcela_nao_unarioContext _localctx = new Parcela_nao_unarioContext(_ctx, getState());
-		enterRule(_localctx, 82, RULE_parcela_nao_unario);
-		try {
-			setState(502);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Endereco:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(499);
-				match(Endereco);
-				setState(500);
-				identificador();
-				}
-				break;
-			case CADEIA:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(501);
-				match(CADEIA);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Exp_relacionalContext extends ParserRuleContext {
-		public List<Exp_aritmeticaContext> exp_aritmetica() {
-			return getRuleContexts(Exp_aritmeticaContext.class);
-		}
-		public Exp_aritmeticaContext exp_aritmetica(int i) {
-			return getRuleContext(Exp_aritmeticaContext.class,i);
-		}
-		public Op_relacionalContext op_relacional() {
-			return getRuleContext(Op_relacionalContext.class,0);
-		}
-		public Exp_relacionalContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_exp_relacional; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterExp_relacional(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitExp_relacional(this);
-		}
-	}
-
-	public final Exp_relacionalContext exp_relacional() throws RecognitionException {
-		Exp_relacionalContext _localctx = new Exp_relacionalContext(_ctx, getState());
-		enterRule(_localctx, 84, RULE_exp_relacional);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(504);
-			exp_aritmetica();
-			setState(508);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Maior) | (1L << MaiorIgual) | (1L << Menor) | (1L << MenosIgual) | (1L << Diferente) | (1L << Igual))) != 0)) {
-				{
-				setState(505);
-				op_relacional();
-				setState(506);
-				exp_aritmetica();
-				}
-			}
-
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op_relacionalContext extends ParserRuleContext {
+	public static class ValueContext extends ParserRuleContext {
+		public TerminalNode VALUE() { return getToken(trab4Parser.VALUE, 0); }
 		public TerminalNode Igual() { return getToken(trab4Parser.Igual, 0); }
-		public TerminalNode Diferente() { return getToken(trab4Parser.Diferente, 0); }
-		public TerminalNode MaiorIgual() { return getToken(trab4Parser.MaiorIgual, 0); }
-		public TerminalNode MenosIgual() { return getToken(trab4Parser.MenosIgual, 0); }
-		public TerminalNode Maior() { return getToken(trab4Parser.Maior, 0); }
-		public TerminalNode Menor() { return getToken(trab4Parser.Menor, 0); }
-		public Op_relacionalContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode CADEIA() { return getToken(trab4Parser.CADEIA, 0); }
+		public ValueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_op_relacional; }
+		@Override public int getRuleIndex() { return RULE_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterOp_relacional(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterValue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOp_relacional(this);
+			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitValue(this);
 		}
 	}
 
-	public final Op_relacionalContext op_relacional() throws RecognitionException {
-		Op_relacionalContext _localctx = new Op_relacionalContext(_ctx, getState());
-		enterRule(_localctx, 86, RULE_op_relacional);
-		int _la;
+	public final ValueContext value() throws RecognitionException {
+		ValueContext _localctx = new ValueContext(_ctx, getState());
+		enterRule(_localctx, 40, RULE_value);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(510);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Maior) | (1L << MaiorIgual) | (1L << Menor) | (1L << MenosIgual) | (1L << Diferente) | (1L << Igual))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ExpressaoContext extends ParserRuleContext {
-		public List<Termo_logicoContext> termo_logico() {
-			return getRuleContexts(Termo_logicoContext.class);
-		}
-		public Termo_logicoContext termo_logico(int i) {
-			return getRuleContext(Termo_logicoContext.class,i);
-		}
-		public List<Op_logico_1Context> op_logico_1() {
-			return getRuleContexts(Op_logico_1Context.class);
-		}
-		public Op_logico_1Context op_logico_1(int i) {
-			return getRuleContext(Op_logico_1Context.class,i);
-		}
-		public ExpressaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expressao; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterExpressao(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitExpressao(this);
-		}
-	}
-
-	public final ExpressaoContext expressao() throws RecognitionException {
-		ExpressaoContext _localctx = new ExpressaoContext(_ctx, getState());
-		enterRule(_localctx, 88, RULE_expressao);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(512);
-			termo_logico();
-			setState(518);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==Ou) {
-				{
-				{
-				setState(513);
-				op_logico_1();
-				setState(514);
-				termo_logico();
-				}
-				}
-				setState(520);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Termo_logicoContext extends ParserRuleContext {
-		public List<Fator_logicoContext> fator_logico() {
-			return getRuleContexts(Fator_logicoContext.class);
-		}
-		public Fator_logicoContext fator_logico(int i) {
-			return getRuleContext(Fator_logicoContext.class,i);
-		}
-		public List<Op_logico_2Context> op_logico_2() {
-			return getRuleContexts(Op_logico_2Context.class);
-		}
-		public Op_logico_2Context op_logico_2(int i) {
-			return getRuleContext(Op_logico_2Context.class,i);
-		}
-		public Termo_logicoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_termo_logico; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTermo_logico(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTermo_logico(this);
-		}
-	}
-
-	public final Termo_logicoContext termo_logico() throws RecognitionException {
-		Termo_logicoContext _localctx = new Termo_logicoContext(_ctx, getState());
-		enterRule(_localctx, 90, RULE_termo_logico);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(521);
-			fator_logico();
-			setState(527);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==E) {
-				{
-				{
-				setState(522);
-				op_logico_2();
-				setState(523);
-				fator_logico();
-				}
-				}
-				setState(529);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Fator_logicoContext extends ParserRuleContext {
-		public Parcela_logicaContext parcela_logica() {
-			return getRuleContext(Parcela_logicaContext.class,0);
-		}
-		public TerminalNode Nao() { return getToken(trab4Parser.Nao, 0); }
-		public Fator_logicoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_fator_logico; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterFator_logico(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitFator_logico(this);
-		}
-	}
-
-	public final Fator_logicoContext fator_logico() throws RecognitionException {
-		Fator_logicoContext _localctx = new Fator_logicoContext(_ctx, getState());
-		enterRule(_localctx, 92, RULE_fator_logico);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(531);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Nao) {
-				{
-				setState(530);
-				match(Nao);
-				}
-			}
-
-			setState(533);
-			parcela_logica();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Parcela_logicaContext extends ParserRuleContext {
-		public TerminalNode Verdadeiro() { return getToken(trab4Parser.Verdadeiro, 0); }
-		public TerminalNode Falso() { return getToken(trab4Parser.Falso, 0); }
-		public Exp_relacionalContext exp_relacional() {
-			return getRuleContext(Exp_relacionalContext.class,0);
-		}
-		public Parcela_logicaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parcela_logica; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterParcela_logica(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitParcela_logica(this);
-		}
-	}
-
-	public final Parcela_logicaContext parcela_logica() throws RecognitionException {
-		Parcela_logicaContext _localctx = new Parcela_logicaContext(_ctx, getState());
-		enterRule(_localctx, 94, RULE_parcela_logica);
-		int _la;
-		try {
-			setState(537);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Falso:
-			case Verdadeiro:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(535);
-				_la = _input.LA(1);
-				if ( !(_la==Falso || _la==Verdadeiro) ) {
-				_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
-				}
-				break;
-			case ABREPAR:
-			case CADEIA:
-			case NUM_INT:
-			case NUM_REAL:
-			case IDENT:
-			case Ponteiro:
-			case Endereco:
-			case Menos:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(536);
-				exp_relacional();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op_logico_1Context extends ParserRuleContext {
-		public TerminalNode Ou() { return getToken(trab4Parser.Ou, 0); }
-		public Op_logico_1Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_op_logico_1; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterOp_logico_1(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOp_logico_1(this);
-		}
-	}
-
-	public final Op_logico_1Context op_logico_1() throws RecognitionException {
-		Op_logico_1Context _localctx = new Op_logico_1Context(_ctx, getState());
-		enterRule(_localctx, 96, RULE_op_logico_1);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(539);
-			match(Ou);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op_logico_2Context extends ParserRuleContext {
-		public TerminalNode E() { return getToken(trab4Parser.E, 0); }
-		public Op_logico_2Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_op_logico_2; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterOp_logico_2(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOp_logico_2(this);
-		}
-	}
-
-	public final Op_logico_2Context op_logico_2() throws RecognitionException {
-		Op_logico_2Context _localctx = new Op_logico_2Context(_ctx, getState());
-		enterRule(_localctx, 98, RULE_op_logico_2);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(541);
-			match(E);
+			setState(179);
+			match(VALUE);
+			setState(180);
+			match(Igual);
+			setState(181);
+			match(CADEIA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3524,204 +1421,56 @@ public class trab4Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3F\u0222\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3F\u00ba\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
-		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
-		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4"+
-		",\t,\4-\t-\4.\t.\4/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\3\2\3\2"+
-		"\3\2\3\2\3\2\3\3\7\3m\n\3\f\3\16\3p\13\3\3\4\3\4\5\4t\n\4\3\5\3\5\3\5"+
-		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5\u0083\n\5\3\6\3\6\3\6\7\6"+
-		"\u0088\n\6\f\6\16\6\u008b\13\6\3\6\3\6\3\6\3\7\3\7\3\7\7\7\u0093\n\7\f"+
-		"\7\16\7\u0096\13\7\3\7\3\7\3\b\3\b\3\b\3\b\7\b\u009e\n\b\f\b\16\b\u00a1"+
-		"\13\b\3\t\3\t\5\t\u00a5\n\t\3\n\3\n\3\13\3\13\5\13\u00ab\n\13\3\f\5\f"+
-		"\u00ae\n\f\3\f\3\f\3\r\3\r\3\16\3\16\7\16\u00b6\n\16\f\16\16\16\u00b9"+
-		"\13\16\3\16\3\16\3\17\3\17\3\17\3\17\5\17\u00c1\n\17\3\17\3\17\7\17\u00c5"+
-		"\n\17\f\17\16\17\u00c8\13\17\3\17\7\17\u00cb\n\17\f\17\16\17\u00ce\13"+
-		"\17\3\17\3\17\3\17\3\17\3\17\5\17\u00d5\n\17\3\17\3\17\3\17\3\17\7\17"+
-		"\u00db\n\17\f\17\16\17\u00de\13\17\3\17\7\17\u00e1\n\17\f\17\16\17\u00e4"+
-		"\13\17\3\17\3\17\5\17\u00e8\n\17\3\20\5\20\u00eb\n\20\3\20\3\20\3\20\7"+
-		"\20\u00f0\n\20\f\20\16\20\u00f3\13\20\3\20\3\20\3\20\3\21\3\21\3\21\7"+
-		"\21\u00fb\n\21\f\21\16\21\u00fe\13\21\3\22\7\22\u0101\n\22\f\22\16\22"+
-		"\u0104\13\22\3\22\7\22\u0107\n\22\f\22\16\22\u010a\13\22\3\23\3\23\3\23"+
-		"\3\23\3\23\3\23\3\23\3\23\3\23\3\23\5\23\u0116\n\23\3\24\3\24\3\24\5\24"+
-		"\u011b\n\24\3\24\3\24\3\24\5\24\u0120\n\24\3\24\7\24\u0123\n\24\f\24\16"+
-		"\24\u0126\13\24\3\24\3\24\3\25\3\25\3\25\3\25\3\25\7\25\u012f\n\25\f\25"+
-		"\16\25\u0132\13\25\3\25\3\25\3\26\3\26\3\26\3\26\7\26\u013a\n\26\f\26"+
-		"\16\26\u013d\13\26\3\26\3\26\7\26\u0141\n\26\f\26\16\26\u0144\13\26\5"+
-		"\26\u0146\n\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\7\27\u0150\n\27"+
-		"\f\27\16\27\u0153\13\27\5\27\u0155\n\27\3\27\3\27\3\30\3\30\3\30\3\30"+
-		"\3\30\3\30\3\30\3\30\7\30\u0161\n\30\f\30\16\30\u0164\13\30\3\30\3\30"+
-		"\3\31\3\31\3\31\3\31\7\31\u016c\n\31\f\31\16\31\u016f\13\31\3\31\3\31"+
-		"\3\32\3\32\7\32\u0175\n\32\f\32\16\32\u0178\13\32\3\32\3\32\3\32\3\33"+
-		"\5\33\u017e\n\33\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34\7\34\u0189"+
-		"\n\34\f\34\16\34\u018c\13\34\3\34\3\34\3\35\3\35\3\35\3\36\7\36\u0194"+
-		"\n\36\f\36\16\36\u0197\13\36\3\37\3\37\3\37\7\37\u019c\n\37\f\37\16\37"+
-		"\u019f\13\37\3 \3 \3 \7 \u01a4\n \f \16 \u01a7\13 \3!\5!\u01aa\n!\3!\3"+
-		"!\3!\5!\u01af\n!\3!\5!\u01b2\n!\3\"\3\"\3#\3#\3#\3#\7#\u01ba\n#\f#\16"+
-		"#\u01bd\13#\3$\3$\3$\3$\7$\u01c3\n$\f$\16$\u01c6\13$\3%\3%\3%\3%\7%\u01cc"+
-		"\n%\f%\16%\u01cf\13%\3&\3&\3\'\3\'\3(\3(\3)\5)\u01d8\n)\3)\3)\5)\u01dc"+
-		"\n)\3*\5*\u01df\n*\3*\3*\3*\3*\3*\3*\7*\u01e7\n*\f*\16*\u01ea\13*\3*\3"+
-		"*\3*\3*\3*\3*\3*\3*\5*\u01f4\n*\3+\3+\3+\5+\u01f9\n+\3,\3,\3,\3,\5,\u01ff"+
-		"\n,\3-\3-\3.\3.\3.\3.\7.\u0207\n.\f.\16.\u020a\13.\3/\3/\3/\3/\7/\u0210"+
-		"\n/\f/\16/\u0213\13/\3\60\5\60\u0216\n\60\3\60\3\60\3\61\3\61\5\61\u021c"+
-		"\n\61\3\62\3\62\3\63\3\63\3\63\2\2\64\2\4\6\b\n\f\16\20\22\24\26\30\32"+
-		"\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bd\2\b\4\2\5\6\n\13\4"+
-		"\2\b\t\60\62\3\2@A\3\2BC\3\2:?\3\2\b\t\2\u0234\2f\3\2\2\2\4n\3\2\2\2\6"+
-		"s\3\2\2\2\b\u0082\3\2\2\2\n\u0084\3\2\2\2\f\u008f\3\2\2\2\16\u009f\3\2"+
-		"\2\2\20\u00a4\3\2\2\2\22\u00a6\3\2\2\2\24\u00aa\3\2\2\2\26\u00ad\3\2\2"+
-		"\2\30\u00b1\3\2\2\2\32\u00b3\3\2\2\2\34\u00e7\3\2\2\2\36\u00ea\3\2\2\2"+
-		" \u00f7\3\2\2\2\"\u0102\3\2\2\2$\u0115\3\2\2\2&\u0117\3\2\2\2(\u0129\3"+
-		"\2\2\2*\u0135\3\2\2\2,\u0149\3\2\2\2.\u0158\3\2\2\2\60\u0167\3\2\2\2\62"+
-		"\u0172\3\2\2\2\64\u017d\3\2\2\2\66\u0183\3\2\2\28\u018f\3\2\2\2:\u0195"+
-		"\3\2\2\2<\u0198\3\2\2\2>\u01a0\3\2\2\2@\u01a9\3\2\2\2B\u01b3\3\2\2\2D"+
-		"\u01b5\3\2\2\2F\u01be\3\2\2\2H\u01c7\3\2\2\2J\u01d0\3\2\2\2L\u01d2\3\2"+
-		"\2\2N\u01d4\3\2\2\2P\u01db\3\2\2\2R\u01f3\3\2\2\2T\u01f8\3\2\2\2V\u01fa"+
-		"\3\2\2\2X\u0200\3\2\2\2Z\u0202\3\2\2\2\\\u020b\3\2\2\2^\u0215\3\2\2\2"+
-		"`\u021b\3\2\2\2b\u021d\3\2\2\2d\u021f\3\2\2\2fg\5\4\3\2gh\7\3\2\2hi\5"+
-		"\"\22\2ij\7\'\2\2j\3\3\2\2\2km\5\6\4\2lk\3\2\2\2mp\3\2\2\2nl\3\2\2\2n"+
-		"o\3\2\2\2o\5\3\2\2\2pn\3\2\2\2qt\5\b\5\2rt\5\34\17\2sq\3\2\2\2sr\3\2\2"+
-		"\2t\7\3\2\2\2uv\7\4\2\2v\u0083\5\n\6\2wx\7\7\2\2xy\7\63\2\2yz\7-\2\2z"+
-		"{\5\22\n\2{|\7?\2\2|}\5\30\r\2}\u0083\3\2\2\2~\177\7 \2\2\177\u0080\7"+
-		"\63\2\2\u0080\u0081\7-\2\2\u0081\u0083\5\20\t\2\u0082u\3\2\2\2\u0082w"+
-		"\3\2\2\2\u0082~\3\2\2\2\u0083\t\3\2\2\2\u0084\u0089\5\f\7\2\u0085\u0086"+
-		"\7*\2\2\u0086\u0088\5\f\7\2\u0087\u0085\3\2\2\2\u0088\u008b\3\2\2\2\u0089"+
-		"\u0087\3\2\2\2\u0089\u008a\3\2\2\2\u008a\u008c\3\2\2\2\u008b\u0089\3\2"+
-		"\2\2\u008c\u008d\7-\2\2\u008d\u008e\5\20\t\2\u008e\13\3\2\2\2\u008f\u0094"+
-		"\7\63\2\2\u0090\u0091\7+\2\2\u0091\u0093\7\63\2\2\u0092\u0090\3\2\2\2"+
-		"\u0093\u0096\3\2\2\2\u0094\u0092\3\2\2\2\u0094\u0095\3\2\2\2\u0095\u0097"+
-		"\3\2\2\2\u0096\u0094\3\2\2\2\u0097\u0098\5\16\b\2\u0098\r\3\2\2\2\u0099"+
-		"\u009a\7(\2\2\u009a\u009b\5D#\2\u009b\u009c\7)\2\2\u009c\u009e\3\2\2\2"+
-		"\u009d\u0099\3\2\2\2\u009e\u00a1\3\2\2\2\u009f\u009d\3\2\2\2\u009f\u00a0"+
-		"\3\2\2\2\u00a0\17\3\2\2\2\u00a1\u009f\3\2\2\2\u00a2\u00a5\5\32\16\2\u00a3"+
-		"\u00a5\5\26\f\2\u00a4\u00a2\3\2\2\2\u00a4\u00a3\3\2\2\2\u00a5\21\3\2\2"+
-		"\2\u00a6\u00a7\t\2\2\2\u00a7\23\3\2\2\2\u00a8\u00ab\5\22\n\2\u00a9\u00ab"+
-		"\7\63\2\2\u00aa\u00a8\3\2\2\2\u00aa\u00a9\3\2\2\2\u00ab\25\3\2\2\2\u00ac"+
-		"\u00ae\7\66\2\2\u00ad\u00ac\3\2\2\2\u00ad\u00ae\3\2\2\2\u00ae\u00af\3"+
-		"\2\2\2\u00af\u00b0\5\24\13\2\u00b0\27\3\2\2\2\u00b1\u00b2\t\3\2\2\u00b2"+
-		"\31\3\2\2\2\u00b3\u00b7\7\36\2\2\u00b4\u00b6\5\n\6\2\u00b5\u00b4\3\2\2"+
-		"\2\u00b6\u00b9\3\2\2\2\u00b7\u00b5\3\2\2\2\u00b7\u00b8\3\2\2\2\u00b8\u00ba"+
-		"\3\2\2\2\u00b9\u00b7\3\2\2\2\u00ba\u00bb\7\37\2\2\u00bb\33\3\2\2\2\u00bc"+
-		"\u00bd\7!\2\2\u00bd\u00be\7\63\2\2\u00be\u00c0\7.\2\2\u00bf\u00c1\5 \21"+
-		"\2\u00c0\u00bf\3\2\2\2\u00c0\u00c1\3\2\2\2\u00c1\u00c2\3\2\2\2\u00c2\u00c6"+
-		"\7/\2\2\u00c3\u00c5\5\b\5\2\u00c4\u00c3\3\2\2\2\u00c5\u00c8\3\2\2\2\u00c6"+
-		"\u00c4\3\2\2\2\u00c6\u00c7\3\2\2\2\u00c7\u00cc\3\2\2\2\u00c8\u00c6\3\2"+
-		"\2\2\u00c9\u00cb\5$\23\2\u00ca\u00c9\3\2\2\2\u00cb\u00ce\3\2\2\2\u00cc"+
-		"\u00ca\3\2\2\2\u00cc\u00cd\3\2\2\2\u00cd\u00cf\3\2\2\2\u00ce\u00cc\3\2"+
-		"\2\2\u00cf\u00e8\7#\2\2\u00d0\u00d1\7$\2\2\u00d1\u00d2\7\63\2\2\u00d2"+
-		"\u00d4\7.\2\2\u00d3\u00d5\5 \21\2\u00d4\u00d3\3\2\2\2\u00d4\u00d5\3\2"+
-		"\2\2\u00d5\u00d6\3\2\2\2\u00d6\u00d7\7/\2\2\u00d7\u00d8\7-\2\2\u00d8\u00dc"+
-		"\5\26\f\2\u00d9\u00db\5\b\5\2\u00da\u00d9\3\2\2\2\u00db\u00de\3\2\2\2"+
-		"\u00dc\u00da\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd\u00e2\3\2\2\2\u00de\u00dc"+
-		"\3\2\2\2\u00df\u00e1\5$\23\2\u00e0\u00df\3\2\2\2\u00e1\u00e4\3\2\2\2\u00e2"+
-		"\u00e0\3\2\2\2\u00e2\u00e3\3\2\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00e2\3\2"+
-		"\2\2\u00e5\u00e6\7%\2\2\u00e6\u00e8\3\2\2\2\u00e7\u00bc\3\2\2\2\u00e7"+
-		"\u00d0\3\2\2\2\u00e8\35\3\2\2\2\u00e9\u00eb\7\"\2\2\u00ea\u00e9\3\2\2"+
-		"\2\u00ea\u00eb\3\2\2\2\u00eb\u00ec\3\2\2\2\u00ec\u00f1\5\f\7\2\u00ed\u00ee"+
-		"\7*\2\2\u00ee\u00f0\5\f\7\2\u00ef\u00ed\3\2\2\2\u00f0\u00f3\3\2\2\2\u00f1"+
-		"\u00ef\3\2\2\2\u00f1\u00f2\3\2\2\2\u00f2\u00f4\3\2\2\2\u00f3\u00f1\3\2"+
-		"\2\2\u00f4\u00f5\7-\2\2\u00f5\u00f6\5\26\f\2\u00f6\37\3\2\2\2\u00f7\u00fc"+
-		"\5\36\20\2\u00f8\u00f9\7*\2\2\u00f9\u00fb\5\36\20\2\u00fa\u00f8\3\2\2"+
-		"\2\u00fb\u00fe\3\2\2\2\u00fc\u00fa\3\2\2\2\u00fc\u00fd\3\2\2\2\u00fd!"+
-		"\3\2\2\2\u00fe\u00fc\3\2\2\2\u00ff\u0101\5\b\5\2\u0100\u00ff\3\2\2\2\u0101"+
-		"\u0104\3\2\2\2\u0102\u0100\3\2\2\2\u0102\u0103\3\2\2\2\u0103\u0108\3\2"+
-		"\2\2\u0104\u0102\3\2\2\2\u0105\u0107\5$\23\2\u0106\u0105\3\2\2\2\u0107"+
-		"\u010a\3\2\2\2\u0108\u0106\3\2\2\2\u0108\u0109\3\2\2\2\u0109#\3\2\2\2"+
-		"\u010a\u0108\3\2\2\2\u010b\u0116\5&\24\2\u010c\u0116\5(\25\2\u010d\u0116"+
-		"\5*\26\2\u010e\u0116\5,\27\2\u010f\u0116\5.\30\2\u0110\u0116\5\60\31\2"+
-		"\u0111\u0116\5\62\32\2\u0112\u0116\5\64\33\2\u0113\u0116\5\66\34\2\u0114"+
-		"\u0116\58\35\2\u0115\u010b\3\2\2\2\u0115\u010c\3\2\2\2\u0115\u010d\3\2"+
-		"\2\2\u0115\u010e\3\2\2\2\u0115\u010f\3\2\2\2\u0115\u0110\3\2\2\2\u0115"+
-		"\u0111\3\2\2\2\u0115\u0112\3\2\2\2\u0115\u0113\3\2\2\2\u0115\u0114\3\2"+
-		"\2\2\u0116%\3\2\2\2\u0117\u0118\7\f\2\2\u0118\u011a\7.\2\2\u0119\u011b"+
-		"\7\66\2\2\u011a\u0119\3\2\2\2\u011a\u011b\3\2\2\2\u011b\u011c\3\2\2\2"+
-		"\u011c\u0124\5\f\7\2\u011d\u011f\7*\2\2\u011e\u0120\7\66\2\2\u011f\u011e"+
-		"\3\2\2\2\u011f\u0120\3\2\2\2\u0120\u0121\3\2\2\2\u0121\u0123\5\f\7\2\u0122"+
-		"\u011d\3\2\2\2\u0123\u0126\3\2\2\2\u0124\u0122\3\2\2\2\u0124\u0125\3\2"+
-		"\2\2\u0125\u0127\3\2\2\2\u0126\u0124\3\2\2\2\u0127\u0128\7/\2\2\u0128"+
-		"\'\3\2\2\2\u0129\u012a\7\r\2\2\u012a\u012b\7.\2\2\u012b\u0130\5Z.\2\u012c"+
-		"\u012d\7*\2\2\u012d\u012f\5Z.\2\u012e\u012c\3\2\2\2\u012f\u0132\3\2\2"+
-		"\2\u0130\u012e\3\2\2\2\u0130\u0131\3\2\2\2\u0131\u0133\3\2\2\2\u0132\u0130"+
-		"\3\2\2\2\u0133\u0134\7/\2\2\u0134)\3\2\2\2\u0135\u0136\7\21\2\2\u0136"+
-		"\u0137\5Z.\2\u0137\u013b\7\22\2\2\u0138\u013a\5$\23\2\u0139\u0138\3\2"+
-		"\2\2\u013a\u013d\3\2\2\2\u013b\u0139\3\2\2\2\u013b\u013c\3\2\2\2\u013c"+
-		"\u0145\3\2\2\2\u013d\u013b\3\2\2\2\u013e\u0142\7\23\2\2\u013f\u0141\5"+
-		"$\23\2\u0140\u013f\3\2\2\2\u0141\u0144\3\2\2\2\u0142\u0140\3\2\2\2\u0142"+
-		"\u0143\3\2\2\2\u0143\u0146\3\2\2\2\u0144\u0142\3\2\2\2\u0145\u013e\3\2"+
-		"\2\2\u0145\u0146\3\2\2\2\u0146\u0147\3\2\2\2\u0147\u0148\7\24\2\2\u0148"+
-		"+\3\2\2\2\u0149\u014a\7\25\2\2\u014a\u014b\5D#\2\u014b\u014c\7\26\2\2"+
-		"\u014c\u0154\5:\36\2\u014d\u0151\7\23\2\2\u014e\u0150\5$\23\2\u014f\u014e"+
-		"\3\2\2\2\u0150\u0153\3\2\2\2\u0151\u014f\3\2\2\2\u0151\u0152\3\2\2\2\u0152"+
-		"\u0155\3\2\2\2\u0153\u0151\3\2\2\2\u0154\u014d\3\2\2\2\u0154\u0155\3\2"+
-		"\2\2\u0155\u0156\3\2\2\2\u0156\u0157\7\27\2\2\u0157-\3\2\2\2\u0158\u0159"+
-		"\7\30\2\2\u0159\u015a\7\63\2\2\u015a\u015b\79\2\2\u015b\u015c\5D#\2\u015c"+
-		"\u015d\7\31\2\2\u015d\u015e\5D#\2\u015e\u0162\7\32\2\2\u015f\u0161\5$"+
-		"\23\2\u0160\u015f\3\2\2\2\u0161\u0164\3\2\2\2\u0162\u0160\3\2\2\2\u0162"+
-		"\u0163\3\2\2\2\u0163\u0165\3\2\2\2\u0164\u0162\3\2\2\2\u0165\u0166\7\33"+
-		"\2\2\u0166/\3\2\2\2\u0167\u0168\7\34\2\2\u0168\u0169\5Z.\2\u0169\u016d"+
-		"\7\32\2\2\u016a\u016c\5$\23\2\u016b\u016a\3\2\2\2\u016c\u016f\3\2\2\2"+
-		"\u016d\u016b\3\2\2\2\u016d\u016e\3\2\2\2\u016e\u0170\3\2\2\2\u016f\u016d"+
-		"\3\2\2\2\u0170\u0171\7\35\2\2\u0171\61\3\2\2\2\u0172\u0176\7\32\2\2\u0173"+
-		"\u0175\5$\23\2\u0174\u0173\3\2\2\2\u0175\u0178\3\2\2\2\u0176\u0174\3\2"+
-		"\2\2\u0176\u0177\3\2\2\2\u0177\u0179\3\2\2\2\u0178\u0176\3\2\2\2\u0179"+
-		"\u017a\7\31\2\2\u017a\u017b\5Z.\2\u017b\63\3\2\2\2\u017c\u017e\7\66\2"+
-		"\2\u017d\u017c\3\2\2\2\u017d\u017e\3\2\2\2\u017e\u017f\3\2\2\2\u017f\u0180"+
-		"\5\f\7\2\u0180\u0181\79\2\2\u0181\u0182\5Z.\2\u0182\65\3\2\2\2\u0183\u0184"+
-		"\7\63\2\2\u0184\u0185\7.\2\2\u0185\u018a\5Z.\2\u0186\u0187\7*\2\2\u0187"+
-		"\u0189\5Z.\2\u0188\u0186\3\2\2\2\u0189\u018c\3\2\2\2\u018a\u0188\3\2\2"+
-		"\2\u018a\u018b\3\2\2\2\u018b\u018d\3\2\2\2\u018c\u018a\3\2\2\2\u018d\u018e"+
-		"\7/\2\2\u018e\67\3\2\2\2\u018f\u0190\7&\2\2\u0190\u0191\5Z.\2\u01919\3"+
-		"\2\2\2\u0192\u0194\5<\37\2\u0193\u0192\3\2\2\2\u0194\u0197\3\2\2\2\u0195"+
-		"\u0193\3\2\2\2\u0195\u0196\3\2\2\2\u0196;\3\2\2\2\u0197\u0195\3\2\2\2"+
-		"\u0198\u0199\5> \2\u0199\u019d\7-\2\2\u019a\u019c\5$\23\2\u019b\u019a"+
-		"\3\2\2\2\u019c\u019f\3\2\2\2\u019d\u019b\3\2\2\2\u019d\u019e\3\2\2\2\u019e"+
-		"=\3\2\2\2\u019f\u019d\3\2\2\2\u01a0\u01a5\5@!\2\u01a1\u01a2\7*\2\2\u01a2"+
-		"\u01a4\5@!\2\u01a3\u01a1\3\2\2\2\u01a4\u01a7\3\2\2\2\u01a5\u01a3\3\2\2"+
-		"\2\u01a5\u01a6\3\2\2\2\u01a6?\3\2\2\2\u01a7\u01a5\3\2\2\2\u01a8\u01aa"+
-		"\5B\"\2\u01a9\u01a8\3\2\2\2\u01a9\u01aa\3\2\2\2\u01aa\u01ab\3\2\2\2\u01ab"+
-		"\u01b1\7\61\2\2\u01ac\u01ae\7,\2\2\u01ad\u01af\5B\"\2\u01ae\u01ad\3\2"+
-		"\2\2\u01ae\u01af\3\2\2\2\u01af\u01b0\3\2\2\2\u01b0\u01b2\7\61\2\2\u01b1"+
-		"\u01ac\3\2\2\2\u01b1\u01b2\3\2\2\2\u01b2A\3\2\2\2\u01b3\u01b4\7A\2\2\u01b4"+
-		"C\3\2\2\2\u01b5\u01bb\5F$\2\u01b6\u01b7\5J&\2\u01b7\u01b8\5F$\2\u01b8"+
-		"\u01ba\3\2\2\2\u01b9\u01b6\3\2\2\2\u01ba\u01bd\3\2\2\2\u01bb\u01b9\3\2"+
-		"\2\2\u01bb\u01bc\3\2\2\2\u01bcE\3\2\2\2\u01bd\u01bb\3\2\2\2\u01be\u01c4"+
-		"\5H%\2\u01bf\u01c0\5L\'\2\u01c0\u01c1\5H%\2\u01c1\u01c3\3\2\2\2\u01c2"+
-		"\u01bf\3\2\2\2\u01c3\u01c6\3\2\2\2\u01c4\u01c2\3\2\2\2\u01c4\u01c5\3\2"+
-		"\2\2\u01c5G\3\2\2\2\u01c6\u01c4\3\2\2\2\u01c7\u01cd\5P)\2\u01c8\u01c9"+
-		"\5N(\2\u01c9\u01ca\5P)\2\u01ca\u01cc\3\2\2\2\u01cb\u01c8\3\2\2\2\u01cc"+
-		"\u01cf\3\2\2\2\u01cd\u01cb\3\2\2\2\u01cd\u01ce\3\2\2\2\u01ceI\3\2\2\2"+
-		"\u01cf\u01cd\3\2\2\2\u01d0\u01d1\t\4\2\2\u01d1K\3\2\2\2\u01d2\u01d3\t"+
-		"\5\2\2\u01d3M\3\2\2\2\u01d4\u01d5\78\2\2\u01d5O\3\2\2\2\u01d6\u01d8\5"+
-		"B\"\2\u01d7\u01d6\3\2\2\2\u01d7\u01d8\3\2\2\2\u01d8\u01d9\3\2\2\2\u01d9"+
-		"\u01dc\5R*\2\u01da\u01dc\5T+\2\u01db\u01d7\3\2\2\2\u01db\u01da\3\2\2\2"+
-		"\u01dcQ\3\2\2\2\u01dd\u01df\7\66\2\2\u01de\u01dd\3\2\2\2\u01de\u01df\3"+
-		"\2\2\2\u01df\u01e0\3\2\2\2\u01e0\u01f4\5\f\7\2\u01e1\u01e2\7\63\2\2\u01e2"+
-		"\u01e3\7.\2\2\u01e3\u01e8\5Z.\2\u01e4\u01e5\7*\2\2\u01e5\u01e7\5Z.\2\u01e6"+
-		"\u01e4\3\2\2\2\u01e7\u01ea\3\2\2\2\u01e8\u01e6\3\2\2\2\u01e8\u01e9\3\2"+
-		"\2\2\u01e9\u01eb\3\2\2\2\u01ea\u01e8\3\2\2\2\u01eb\u01ec\7/\2\2\u01ec"+
-		"\u01f4\3\2\2\2\u01ed\u01f4\7\61\2\2\u01ee\u01f4\7\62\2\2\u01ef\u01f0\7"+
-		".\2\2\u01f0\u01f1\5Z.\2\u01f1\u01f2\7/\2\2\u01f2\u01f4\3\2\2\2\u01f3\u01de"+
-		"\3\2\2\2\u01f3\u01e1\3\2\2\2\u01f3\u01ed\3\2\2\2\u01f3\u01ee\3\2\2\2\u01f3"+
-		"\u01ef\3\2\2\2\u01f4S\3\2\2\2\u01f5\u01f6\7\67\2\2\u01f6\u01f9\5\f\7\2"+
-		"\u01f7\u01f9\7\60\2\2\u01f8\u01f5\3\2\2\2\u01f8\u01f7\3\2\2\2\u01f9U\3"+
-		"\2\2\2\u01fa\u01fe\5D#\2\u01fb\u01fc\5X-\2\u01fc\u01fd\5D#\2\u01fd\u01ff"+
-		"\3\2\2\2\u01fe\u01fb\3\2\2\2\u01fe\u01ff\3\2\2\2\u01ffW\3\2\2\2\u0200"+
-		"\u0201\t\6\2\2\u0201Y\3\2\2\2\u0202\u0208\5\\/\2\u0203\u0204\5b\62\2\u0204"+
-		"\u0205\5\\/\2\u0205\u0207\3\2\2\2\u0206\u0203\3\2\2\2\u0207\u020a\3\2"+
-		"\2\2\u0208\u0206\3\2\2\2\u0208\u0209\3\2\2\2\u0209[\3\2\2\2\u020a\u0208"+
-		"\3\2\2\2\u020b\u0211\5^\60\2\u020c\u020d\5d\63\2\u020d\u020e\5^\60\2\u020e"+
-		"\u0210\3\2\2\2\u020f\u020c\3\2\2\2\u0210\u0213\3\2\2\2\u0211\u020f\3\2"+
-		"\2\2\u0211\u0212\3\2\2\2\u0212]\3\2\2\2\u0213\u0211\3\2\2\2\u0214\u0216"+
-		"\7\17\2\2\u0215\u0214\3\2\2\2\u0215\u0216\3\2\2\2\u0216\u0217\3\2\2\2"+
-		"\u0217\u0218\5`\61\2\u0218_\3\2\2\2\u0219\u021c\t\7\2\2\u021a\u021c\5"+
-		"V,\2\u021b\u0219\3\2\2\2\u021b\u021a\3\2\2\2\u021ca\3\2\2\2\u021d\u021e"+
-		"\7\20\2\2\u021ec\3\2\2\2\u021f\u0220\7\16\2\2\u0220e\3\2\2\2;ns\u0082"+
-		"\u0089\u0094\u009f\u00a4\u00aa\u00ad\u00b7\u00c0\u00c6\u00cc\u00d4\u00dc"+
-		"\u00e2\u00e7\u00ea\u00f1\u00fc\u0102\u0108\u0115\u011a\u011f\u0124\u0130"+
-		"\u013b\u0142\u0145\u0151\u0154\u0162\u016d\u0176\u017d\u018a\u0195\u019d"+
-		"\u01a5\u01a9\u01ae\u01b1\u01bb\u01c4\u01cd\u01d7\u01db\u01de\u01e8\u01f3"+
-		"\u01f8\u01fe\u0208\u0211\u0215\u021b";
+		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3"+
+		"\3\3\3\3\4\3\4\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\7\6"+
+		"E\n\6\f\6\16\6H\13\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\7\bS\n\b\f\b"+
+		"\16\bV\13\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\te\n"+
+		"\t\f\t\16\th\13\t\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3"+
+		"\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r"+
+		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17"+
+		"\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\21"+
+		"\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\24\3\24\3\24"+
+		"\3\24\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\26\2\2\27\2\4\6\b\n\f"+
+		"\16\20\22\24\26\30\32\34\36 \"$&(*\2\2\2\u00ba\2,\3\2\2\2\4\61\3\2\2\2"+
+		"\6\65\3\2\2\2\b9\3\2\2\2\nF\3\2\2\2\fI\3\2\2\2\16M\3\2\2\2\20f\3\2\2\2"+
+		"\22i\3\2\2\2\24n\3\2\2\2\26t\3\2\2\2\30}\3\2\2\2\32\u0086\3\2\2\2\34\u008f"+
+		"\3\2\2\2\36\u0098\3\2\2\2 \u00a1\3\2\2\2\"\u00a5\3\2\2\2$\u00a9\3\2\2"+
+		"\2&\u00ad\3\2\2\2(\u00b1\3\2\2\2*\u00b5\3\2\2\2,-\7\t\2\2-.\5\4\3\2./"+
+		"\5\6\4\2/\60\7\n\2\2\60\3\3\2\2\2\61\62\7\13\2\2\62\63\5\b\5\2\63\64\7"+
+		"\f\2\2\64\5\3\2\2\2\65\66\7\r\2\2\66\67\5\n\6\2\678\7\16\2\28\7\3\2\2"+
+		"\29:\5\f\7\2:\t\3\2\2\2;E\79\2\2<E\5\16\b\2=E\5\22\n\2>E\7\36\2\2?E\5"+
+		"\26\f\2@E\5\30\r\2AE\5\32\16\2BE\5\34\17\2CE\5\36\20\2D;\3\2\2\2D<\3\2"+
+		"\2\2D=\3\2\2\2D>\3\2\2\2D?\3\2\2\2D@\3\2\2\2DA\3\2\2\2DB\3\2\2\2DC\3\2"+
+		"\2\2EH\3\2\2\2FD\3\2\2\2FG\3\2\2\2G\13\3\2\2\2HF\3\2\2\2IJ\7\17\2\2JK"+
+		"\79\2\2KL\7\20\2\2L\r\3\2\2\2MT\7\21\2\2NS\5 \21\2OS\5$\23\2PS\5&\24\2"+
+		"QS\5(\25\2RN\3\2\2\2RO\3\2\2\2RP\3\2\2\2RQ\3\2\2\2SV\3\2\2\2TR\3\2\2\2"+
+		"TU\3\2\2\2UW\3\2\2\2VT\3\2\2\2WX\7+\2\2XY\5\20\t\2YZ\7\22\2\2Z\17\3\2"+
+		"\2\2[e\79\2\2\\e\7\3\2\2]e\5\22\n\2^e\7\36\2\2_e\5\26\f\2`e\5\30\r\2a"+
+		"e\5\32\16\2be\5\34\17\2ce\5\36\20\2d[\3\2\2\2d\\\3\2\2\2d]\3\2\2\2d^\3"+
+		"\2\2\2d_\3\2\2\2d`\3\2\2\2da\3\2\2\2db\3\2\2\2dc\3\2\2\2eh\3\2\2\2fd\3"+
+		"\2\2\2fg\3\2\2\2g\21\3\2\2\2hf\3\2\2\2ij\7\23\2\2jk\5\24\13\2kl\79\2\2"+
+		"lm\7\24\2\2m\23\3\2\2\2no\7\25\2\2op\5\"\22\2pq\5$\23\2qr\5*\26\2rs\7"+
+		"\26\2\2s\25\3\2\2\2tu\7*\2\2uv\7\4\2\2vw\7+\2\2wx\79\2\2xy\7*\2\2yz\7"+
+		",\2\2z{\7\4\2\2{|\7+\2\2|\27\3\2\2\2}~\7*\2\2~\177\7\5\2\2\177\u0080\7"+
+		"+\2\2\u0080\u0081\79\2\2\u0081\u0082\7*\2\2\u0082\u0083\7,\2\2\u0083\u0084"+
+		"\7\5\2\2\u0084\u0085\7+\2\2\u0085\31\3\2\2\2\u0086\u0087\7*\2\2\u0087"+
+		"\u0088\7\6\2\2\u0088\u0089\7+\2\2\u0089\u008a\79\2\2\u008a\u008b\7*\2"+
+		"\2\u008b\u008c\7,\2\2\u008c\u008d\7\6\2\2\u008d\u008e\7+\2\2\u008e\33"+
+		"\3\2\2\2\u008f\u0090\7*\2\2\u0090\u0091\7\7\2\2\u0091\u0092\7+\2\2\u0092"+
+		"\u0093\79\2\2\u0093\u0094\7*\2\2\u0094\u0095\7,\2\2\u0095\u0096\7\7\2"+
+		"\2\u0096\u0097\7+\2\2\u0097\35\3\2\2\2\u0098\u0099\7*\2\2\u0099\u009a"+
+		"\7\b\2\2\u009a\u009b\7+\2\2\u009b\u009c\79\2\2\u009c\u009d\7*\2\2\u009d"+
+		"\u009e\7,\2\2\u009e\u009f\7\b\2\2\u009f\u00a0\7+\2\2\u00a0\37\3\2\2\2"+
+		"\u00a1\u00a2\7\32\2\2\u00a2\u00a3\7A\2\2\u00a3\u00a4\7\64\2\2\u00a4!\3"+
+		"\2\2\2\u00a5\u00a6\7\27\2\2\u00a6\u00a7\7A\2\2\u00a7\u00a8\7\64\2\2\u00a8"+
+		"#\3\2\2\2\u00a9\u00aa\7\30\2\2\u00aa\u00ab\7A\2\2\u00ab\u00ac\7\64\2\2"+
+		"\u00ac%\3\2\2\2\u00ad\u00ae\7\33\2\2\u00ae\u00af\7A\2\2\u00af\u00b0\7"+
+		"\64\2\2\u00b0\'\3\2\2\2\u00b1\u00b2\7\34\2\2\u00b2\u00b3\7A\2\2\u00b3"+
+		"\u00b4\7\64\2\2\u00b4)\3\2\2\2\u00b5\u00b6\7\31\2\2\u00b6\u00b7\7A\2\2"+
+		"\u00b7\u00b8\7\64\2\2\u00b8+\3\2\2\2\bDFRTdf";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
