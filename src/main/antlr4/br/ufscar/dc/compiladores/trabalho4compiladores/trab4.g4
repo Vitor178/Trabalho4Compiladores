@@ -2,71 +2,20 @@ grammar trab4;
 
 
 // ************************************* Palavras Reservadas *************************************
-HTML_abre      : '<html>' ;
 
-HTML_fecha     : '</html>' ;
+Inicio         : 'inicio' ;
 
-HEAD_abre      : '<head>' ;
+Fim            : 'fim' ;
 
-HEAD_fecha     : '</head>' ;
+Titulo         : 'titulo' ;
 
-BODY_abre      : '<body>' ;
+Enunciado      : 'enunciado' ;
 
-BODY_fecha     : '</body>' ;
+Definir        : 'definir' ;
 
-TITLE_abre     : '<title>' ;
+Pergunta       : 'pergunta' ;
 
-TITLE_fecha    : '</title>' ;
-
-FORM_abre      : '<form' ;
-
-FORM_fecha     : '</form>' ;
-
-LABEL_abre     : '<label>' ;
-
-LABEL_fecha    : '</label>' ;
-
-INPUT_abre     : '<input' ;
-
-INPUT_fecha     : '/>' ;
-
-TYPE           : 'type' ; 
-
-NAME           : 'name' ;
-
-VALUE          : 'value' ;
-
-ID             : 'id' ;
-
-METHOD         : 'method' ;
-
-ACTION         : 'action' ;
-
-CLASS          : 'class' ;
-
-BR             : '<br/>' ;
-
-P              : '<p>'  ;
-
-H1_abre        : '<h1>' ;
-
-H1_fecha       : '</h1>' ;
-
-H2_abre        : '<h2>' ;
-
-H2_fecha       : '</h2>' ;
-
-H3_abre        : '<h3>' ;
-
-H3_fecha       : '</h3>' ;
-
-H4_abre        : '<h4>' ;
-
-H4_fecha       : '</h4>' ;
-
-H5_abre        : '<h5>' ;
-
-H5_fecha       : '</h5>' ;
+Opcao          : 'opcao' ;
 
 // ************************************* Elementos do código *************************************
 
@@ -147,50 +96,24 @@ ERROR          : . ;
 	
 // ************************************* Gramatica *************************************
 
-codigo         : '<html>' head body '</html>' ;
+codigo         : 'inicio' titulo enunciado definicoes 'fim' ;
 
-head           : '<head>' head_interno '</head>' ;
+titulo         : 'titulo' '(' texto ')';
 
-body           : '<body>' body_interno '</body>' ;
+enunciado      : 'enunciado' '(' texto ')' ;
 
-head_interno   : ( title ) ;
+definicoes     : (definicao)+ ;
 
-body_interno   : ( FRASE | form | label | '<br/>' | h1 | h2 | h3 | h4 | h5 )* ;
+definicao      : 'definir' IDENT pergunta opcoes ;
 
-title          : '<title>' FRASE '</title>' ;
+pergunta       : 'pergunta' '(' texto ')' ;
 
-form           : '<form' ( id | name | method | action )* '>' form_interno '</form>' ;
+opcoes         : (opcao)+ ;
 
-form_interno   : ( FRASE | '<p/>' | label | '<br/>' | h1 | h2 | h3 | h4 | h5 )* ;
+opcao          : 'opcao' '(' texto ')' ;
 
-label          : '<label>' input FRASE '</label>' ;
+texto          : .*? ;
 
-input          : '<input' type name value '/>' ;
-
-h1             : '<' 'h1' '>' FRASE '<' '/' 'h1' '>' ;
-
-h2             : '<' 'h2' '>' FRASE '<' '/' 'h2' '>' ;
-
-h3             : '<' 'h3' '>' FRASE '<' '/' 'h3' '>' ;
-
-h4             : '<' 'h4' '>' FRASE '<' '/' 'h4' '>' ;
-
-h5             : '<' 'h5' '>' FRASE '<' '/' 'h5' '>' ;
-
-id             : 'id' '=' CADEIA ;
-
-type           : 'type' '=' CADEIA ;
-
-name           : 'name' '=' CADEIA ;
-
-method         : 'method' '=' CADEIA ;
-
-action         : 'action' '=' CADEIA ;
-
-value          : 'value' '=' CADEIA ;
-
-
-//********************************************************************************
 
 //programa : declaracoes 'algoritmo' corpo 'fim_algoritmo';
 
@@ -296,4 +219,3 @@ value          : 'value' '=' CADEIA ;
 //op_logico_1 : 'ou' ;
 
 //op_logico_2 : 'e' ;
-
