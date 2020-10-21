@@ -15,25 +15,25 @@ Definir        : 'definir' ;
 
 Pergunta       : 'pergunta' ;
 
-Opcao          : 'opcao' ;
+Opcao          : 'op' ;
 
 // ************************************* Elementos do código *************************************
 
-Menor          : '<' ;
+//Barra          : '/' ;
 
-Maior          : '>' ;
+//Abre_colchete  : '[' ;
 
-Barra          : '/' ;
+//Fecha_colchete : ']' ;
 
-Abre_colchete  : '[' ;
+Abre_col       : '{' ;
 
-Fecha_colchete : ']' ;
+Fecha_col      : '}' ;
 
-Virgula        : ',' ;
+//Virgula        : ',' ;
 
-Ponto          : '.' ;
+//Ponto          : '.' ;
 
-DELIM	       : ':' ;
+//DELIM	       : ':' ;
 
 ABREPAR        : '(' ;
 
@@ -41,7 +41,7 @@ FECHAPAR       : ')' ;
 
 //tudo o que estiver dentro do ()* poderá ocorrer nenhuma, uma ou várias vezes
 // o ~() significa "qualquer coisa é permitida menos o que está dentro dos parênteses"
-CADEIA         : '"' ( ESC_SEQ | ~('"'|'\\'|'\n') )* '"' ;
+TEXTO         : '"' ( ESC_SEQ | ~('"') )* '"' ;
 
 // o 'fragment' é usado quando a regra não gerará um token
 // ,ou seja, só será usada por outra regra
@@ -59,37 +59,39 @@ IDENT          : ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 // o skip() é usado para ignorar a regra
 COMENTARIO     : '<!--' .*? '-->' {skip();} ;
 
-FRASE          : ~( '\n' | '\t' | '<' )+;
+//FRASE          : ~( '\n' | '\t' | '<' )+;
 
 WS             : ( ' ' | '\t' | '\r' | '\n' ) {skip();} ;
 
-Ponteiro       : '^' ;
-
-Endereco       : '&' ;
-
-Porcent        : '%' ;
 
 // ************************************* Operadores *************************************
 
-MaiorIgual     : '>=' ;
+//Menor          : '<' ;
 
-MenosIgual     : '<=' ;
+//Maior          : '>' ;
 
-Diferente      : '<>' ;
+//MaiorIgual     : '>=' ;
 
-Igual          : '=' ;
+//MenosIgual     : '<=' ;
 
-Mais           : '+' ;
+//Diferente      : '<>' ;
 
-Menos          : '-' ;
+//Igual          : '=' ;
 
-Vezes          : '*' ;
+//Mais           : '+' ;
+
+//Menos          : '-' ;
+
+//Vezes          : '*' ;
 
 
 // ************************************* Erros *************************************
 
 // quando há um '\n' antes do fim da cadeia
-Cadeia_errada  : '"' ( ESC_SEQ | ~('"'|'\\') )* '\n' ;
+//Cadeia_errada  : '"' ( ESC_SEQ | ~('"'|'\\') )* '\n' ;
+
+//quando o comentário não é fechado
+Coment_N_fechado : '<!--' .*?  ;
 
 // quando não foi encontrada regra que representa o elemento
 ERROR          : . ;
@@ -98,19 +100,19 @@ ERROR          : . ;
 
 codigo         : 'inicio' titulo enunciado definicoes 'fim' ;
 
-titulo         : 'titulo' '(' texto ')';
+titulo         : 'titulo' '(' TEXTO ')';
 
-enunciado      : 'enunciado' '(' texto ')' ;
+enunciado      : 'enunciado' '(' TEXTO ')' ;
 
-definicoes     : (definicao)+ ;
+definicoes     : (definicao)* ;
 
-definicao      : 'definir' IDENT pergunta opcoes ;
+definicao      : 'definir' IDENT '{' pergunta opcoes '}' ;
 
-pergunta       : 'pergunta' '(' texto ')' ;
+pergunta       : 'pergunta' '(' TEXTO ')' ;
 
 opcoes         : (opcao)+ ;
 
-opcao          : 'opcao' '(' texto ')' ;
+opcao          : 'op' '(' TEXTO ')' ;
 
 texto          : .*? ;
 

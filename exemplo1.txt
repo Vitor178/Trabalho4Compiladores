@@ -1,0 +1,40 @@
+
+inicio
+
+<!-- testando comntário-->
+
+    titulo ("Exemplo")
+    enunciado("O questionário é sobre blablabla")
+
+    definir Q1{
+        pergunta(" blablablablabla")
+<!-- testando comntário-->
+	op("opção1")
+	op("opção2")
+	op("opção3")
+    }
+
+definir Q2{
+pergunta(" dbasbdhjasbdhjasbdh?
+sdfsdfsdfsdffdfsfdfsdfs     sdfsdf
+sdfsdfs")
+op("jhdfjksdfjksdbjfk")
+op("jkashdkjasbdkjas")
+op("8")
+
+}
+
+definir Q3{
+pergunta("jfjsfjksdnfjksd")
+op("fdsfsdfsdfsd")
+op ("sdfhsdjkfsd")
+}
+
+<!--definir Q4{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
+    definir Q5{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
+    definir Q6{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
+
+-->
+
+fim
+
