@@ -1,5 +1,6 @@
 package br.ufscar.dc.compiladores.trabalho4compiladores;
 
+import br.ufscar.dc.compiladores.trabalho4compiladores.trab4Parser.CodigoContext;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.List;
@@ -50,6 +51,7 @@ public class Principal {
             CharStream cs = CharStreams.fromFileName(args[0]);
             trab4Lexer lexer = new trab4Lexer(cs);
             
+            
             // Faz com que a saida seja escrita em um arquivo
             // Tal arquivo é passado por linha de comando durante a execução
             PrintStream ps = new PrintStream(args[1]);
@@ -81,7 +83,7 @@ public class Principal {
             trab4Parser parser = new trab4Parser(tokens);
             parser.removeErrorListeners();
             parser.addErrorListener(meuErrorListener);
-            parser.codigo();
+            CodigoContext arvore = parser.codigo();
             
             // Retorna o primeiro erro gerado na lista de erros
             // A criação de tal lista foi necessária pois em alguns casos de texte ocorriam dois erros sintaticos
@@ -102,6 +104,24 @@ public class Principal {
             System.out.println("Linha " + line + ": erro sintatico proximo a " + palavra);
             }
             System.out.println("Fim da compilacao");
+            
+            // Erros semanticos
+            
+            Semantico as = new Semantico();
+            as.visitCodigo(arvore);
+            SemanticoUtils.errosSemanticos.forEach((s) -> System.out.println(s));
+            if(!(SemanticoUtils.errosSemanticos.isEmpty())) {
+                System.out.println("Fim da compilacao");
+            }
+            
+//            if(SemanticoUtils.errosSemanticos.isEmpty()) {
+//                GeradorHTML agc = new GeradorHTML();
+//                agc.visitPrograma(arvore);
+//                System.out.println(agc.saida.toString());
+//                //try(PrintWriter pw = new PrintWriter(args[1])) {
+//                //pw.print(agc.saida.toString());
+//                //}
+//            }
             
         }catch (IOException ex) {
         }
