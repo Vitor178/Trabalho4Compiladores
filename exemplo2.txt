@@ -1,0 +1,29 @@
+inicio
+	titulo("exemplo")
+	enunciado("eh apenas um teste")
+	definir Q1{
+		pergunta("escolha a opcao correta")
+		op("A")
+		<!-- opcao repetida-->
+		op("A")
+		op("C")
+	}
+	
+	<!--identificador repetido-->
+	definir Q1{
+		pergunta("escolha a opcao incorreta")
+		op("3")
+		op("2")
+		op("1")
+	}
+
+	definir Q2{
+		<!--pergunta repepida-->
+		pergunta("escolha a opcao correta")
+		op("A")
+		op("B")
+		op("C")
+	}
+		
+
+fim
