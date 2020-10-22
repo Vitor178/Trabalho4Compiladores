@@ -1,1 +1,39 @@
-Fim da compilacao
+<html>
+	<head>
+		<title>"Exemplo de Criação de quetionário html"</title>
+	</head>
+
+	<body>
+		<h2>"Questionários de teste"</h2>
+		<form id="" name="" method="" action="">
+		<h2>Q1</h2>
+		<h3>" Será que deu certo?"</h3>
+		<label><input type="radio" name="" value="" />"sim"</label>
+		<br>
+		<label><input type="radio" name="" value="" />"não"</label>
+		<br>
+		<label><input type="radio" name="" value="" />"mais ou menos"</label>
+		<br>
+		<br>
+		<h2>Q2</h2>
+		<h3>" dbasbdhjasbdhjasbdh?
+sdfsdfsdfsdffdfsfdfsdfs     sdfsdf
+sdfsdfs"</h3>
+		<label><input type="radio" name="" value="" />"jhdfjksdfjksdbjfk"</label>
+		<br>
+		<label><input type="radio" name="" value="" />"jkashdkjasbdkjas"</label>
+		<br>
+		<label><input type="radio" name="" value="" />"8"</label>
+		<br>
+		<br>
+		<h2>Q3</h2>
+		<h3>"jfjsfjksdnfjksd"</h3>
+		<label><input type="radio" name="" value="" />"fdsfsdfsdfsd"</label>
+		<br>
+		<label><input type="radio" name="" value="" />"sdfhsdjkfsd"</label>
+		<br>
+		<br>
+		</form>
+	</body>
+</html>
+

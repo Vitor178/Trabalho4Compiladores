@@ -19,21 +19,9 @@ Opcao          : 'op' ;
 
 // ************************************* Elementos do código *************************************
 
-//Barra          : '/' ;
-
-//Abre_colchete  : '[' ;
-
-//Fecha_colchete : ']' ;
-
 Abre_col       : '{' ;
 
 Fecha_col      : '}' ;
-
-//Virgula        : ',' ;
-
-//Ponto          : '.' ;
-
-//DELIM	       : ':' ;
 
 ABREPAR        : '(' ;
 
@@ -66,29 +54,8 @@ WS             : ( ' ' | '\t' | '\r' | '\n' ) {skip();} ;
 
 // ************************************* Operadores *************************************
 
-//Menor          : '<' ;
-
-//Maior          : '>' ;
-
-//MaiorIgual     : '>=' ;
-
-//MenosIgual     : '<=' ;
-
-//Diferente      : '<>' ;
-
-//Igual          : '=' ;
-
-//Mais           : '+' ;
-
-//Menos          : '-' ;
-
-//Vezes          : '*' ;
-
 
 // ************************************* Erros *************************************
-
-// quando há um '\n' antes do fim da cadeia
-//Cadeia_errada  : '"' ( ESC_SEQ | ~('"'|'\\') )* '\n' ;
 
 //quando o comentário não é fechado
 Coment_N_fechado : '<!--' .*?  ;

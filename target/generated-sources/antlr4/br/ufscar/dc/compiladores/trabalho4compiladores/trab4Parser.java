@@ -121,6 +121,11 @@ public class trab4Parser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitCodigo(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitCodigo(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CodigoContext codigo() throws RecognitionException {
@@ -169,6 +174,11 @@ public class trab4Parser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTitulo(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitTitulo(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TituloContext titulo() throws RecognitionException {
@@ -214,6 +224,11 @@ public class trab4Parser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitEnunciado(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitEnunciado(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -262,6 +277,11 @@ public class trab4Parser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitDefinicoes(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitDefinicoes(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -322,6 +342,11 @@ public class trab4Parser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitDefinicao(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitDefinicao(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefinicaoContext definicao() throws RecognitionException {
@@ -372,6 +397,11 @@ public class trab4Parser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitPergunta(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitPergunta(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PerguntaContext pergunta() throws RecognitionException {
@@ -419,6 +449,11 @@ public class trab4Parser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOpcoes(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitOpcoes(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -473,6 +508,11 @@ public class trab4Parser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitOpcao(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitOpcao(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final OpcaoContext opcao() throws RecognitionException {
@@ -514,6 +554,11 @@ public class trab4Parser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTexto(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitTexto(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

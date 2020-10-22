@@ -92,18 +92,15 @@ public class Principal {
             if(!(meuErrorListener.getErrors().isEmpty())){
                 SyntaxError erro1 = meuErrorListener.getErrors().get(0);
             
-            // retorna o elemento próximo ao erro sintatico e a linha do mesmo
-            String palavra = erro1.getOffendingToken().getText();
-            int line = erro1.getOffendingToken().getLine();
+                // retorna o elemento próximo ao erro sintatico e a linha do mesmo
+                String palavra = erro1.getOffendingToken().getText();
+                int line = erro1.getOffendingToken().getLine();
             
-            // substituição necessária para um caso de teste
-            if("<EOF>".equals(palavra)){
-                palavra = "EOF";
-            }
                        
-            System.out.println("Linha " + line + ": erro sintatico proximo a " + palavra);
+                System.out.println("Linha " + line + ": erro sintatico proximo a " + palavra);
+                System.out.println("Fim da compilacao");
             }
-            System.out.println("Fim da compilacao");
+         
             
             // Erros semanticos
             
@@ -114,14 +111,14 @@ public class Principal {
                 System.out.println("Fim da compilacao");
             }
             
-//            if(SemanticoUtils.errosSemanticos.isEmpty()) {
-//                GeradorHTML agc = new GeradorHTML();
-//                agc.visitPrograma(arvore);
-//                System.out.println(agc.saida.toString());
-//                //try(PrintWriter pw = new PrintWriter(args[1])) {
-//                //pw.print(agc.saida.toString());
-//                //}
-//            }
+            if(SemanticoUtils.errosSemanticos.isEmpty()) {
+                Gerador agc = new Gerador();
+                agc.visitCodigo(arvore);
+                System.out.println(agc.saida.toString());
+                //try(PrintWriter pw = new PrintWriter(args[1])) {
+                //pw.print(agc.saida.toString());
+                //}
+            }
             
         }catch (IOException ex) {
         }
