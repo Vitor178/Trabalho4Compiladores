@@ -1,7 +1,5 @@
 package br.ufscar.dc.compiladores.trabalho4compiladores;
 
-import br.ufscar.dc.compiladores.trabalho4compiladores.TabelaDeSimbolos.Tipo;
-import java.util.ArrayList;
 
 public class Gerador extends trab4BaseVisitor<Void>{
     StringBuilder saida;
@@ -26,6 +24,10 @@ public class Gerador extends trab4BaseVisitor<Void>{
     public Void visitTitulo(trab4Parser.TituloContext ctx){
         String ident = "\t";
         saida.append(ident + "<head>\n");
+        saida.append(ident +"<style>\n" +
+                     "\t\tbody {background-color: powderblue;}\n" +
+                     "\t\th4   {color: blue;}\n" +
+                     ident +"</style>\n");
         String texto = ctx.TEXTO().getText();
         saida.append(ident + "\t<title>" + texto.substring(1,texto.length()-1) + "</title>\n");
         saida.append(ident + "</head>\n\n");

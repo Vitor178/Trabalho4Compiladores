@@ -87,14 +87,4 @@ public interface trab4Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOpcao(trab4Parser.OpcaoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link trab4Parser#texto}.
-	 * @param ctx the parse tree
-	 */
-	void enterTexto(trab4Parser.TextoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link trab4Parser#texto}.
-	 * @param ctx the parse tree
-	 */
-	void exitTexto(trab4Parser.TextoContext ctx);
 }

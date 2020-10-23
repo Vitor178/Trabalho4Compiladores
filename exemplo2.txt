@@ -1,3 +1,6 @@
+
+<!-- Exemplo de erros semânticos -->
+
 inicio
 	titulo("exemplo")
 	enunciado("eh apenas um teste")

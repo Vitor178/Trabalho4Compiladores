@@ -107,18 +107,6 @@ public class trab4BaseListener implements trab4Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitOpcao(trab4Parser.OpcaoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTexto(trab4Parser.TextoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTexto(trab4Parser.TextoContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

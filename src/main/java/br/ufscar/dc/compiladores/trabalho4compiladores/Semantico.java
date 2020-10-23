@@ -1,8 +1,7 @@
 package br.ufscar.dc.compiladores.trabalho4compiladores;
 
 import br.ufscar.dc.compiladores.trabalho4compiladores.TabelaDeSimbolos.Tipo;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Semantico extends trab4BaseVisitor<Void> {
 
@@ -17,6 +16,7 @@ public class Semantico extends trab4BaseVisitor<Void> {
     @Override
     public Void visitTitulo(trab4Parser.TituloContext ctx){
         return super.visitTitulo(ctx);
+        
     }
     
     @Override
@@ -46,6 +46,7 @@ public class Semantico extends trab4BaseVisitor<Void> {
     @Override
     public Void visitPergunta(trab4Parser.PerguntaContext ctx){
         TabelaDeSimbolos escopoAtual = escoposAninhados.obterEscopoAtual();
+        
         String pergunta = ctx.TEXTO().getText();
         if (escopoAtual.existe(pergunta)){
             SemanticoUtils.adicionarErroSemantico(ctx.getStart(), "Pergunta " + pergunta + " ja declarada anteriormente");

@@ -7,33 +7,33 @@ inicio
 
     definir Q1{
         pergunta(" Será que deu certo?")
-	   op("sim")
-	   op("não")
-	   op("mais ou menos")
+	    op("sim")
+	    op("não")
+	    op("mais ou menos")
     }
 
-definir Q2{
-pergunta("será que deu certo2?")
-op("jhdfjksdfjksdbjfk")
-op("jkashdkjasbdkjas")
-op("8")
-op("dfsdnfsdf2")
-op("dfsdnfsdf3")
-op("dfsdnfsdf4")
-op("dfsdnfsdf5")
+    definir Q2{
+        pergunta("será que deu certo2?")
+        op("jhdfjksdfjksdbjfk")
+        op("jkashdkjasbdkjas")
+        op("8")
+        op("dfsdnfsdf2")
+        op("dfsdnfsdf3")
+        op("dfsdnfsdf4")
+        op("dfsdnfsdf5")
 
+    }
+
+    definir Q3{
+        pergunta("Pergunta 3")
+        op("teste")
+        op ("teste2")
 }
 
-definir Q3{
-pergunta("jfjsfjksdnfjksd")
-op("fdsfsdfsdfsd")
-op ("sdfhsdjkfsd")
-}
-
-<!--definir Q4{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
-    definir Q5{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
-    definir Q6{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
-
+<!--
+    definir Q4{pergunta("pergunta4")op("A) opção a")op("B) opção b")}
+    definir Q5{pergunta("pergunta5")op("A) opção a")op("B) opção b")}
+    definir Q6{pergunta("pergunta6")op("A) opção a")op("B) opção b")}
 -->
 
 fim

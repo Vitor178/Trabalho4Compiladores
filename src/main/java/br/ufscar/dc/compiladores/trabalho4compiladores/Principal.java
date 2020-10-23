@@ -11,41 +11,8 @@ import org.antlr.v4.runtime.Token;
 
 public class Principal {
     
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, NullPointerException {
         try {
-//            // Lê todo o conteúdo do arquivo passado em args[0] e o transforma em
-//            // uma source de caracteres(CharStream) necessário para o analizador léxico do antlr4
-//            CharStream cs = CharStreams.fromFileName(args[0]);
-//            trab4Lexer lex = new trab4Lexer(cs);
-//        
-//            Token t = null;
-//            
-//            // Faz com que a saida seja escrita em um arquivo
-//            // Tal arquivo é passado por linha de comando durante a execução
-//            PrintStream ps = new PrintStream(args[1]);
-//            System.setOut(ps);
-//            
-//            //while responsável por verificar todos os token gerados do arquivo de entrada
-//            //a condição de saida é o fim do arquivo
-//            while ((t = lex.nextToken()).getType() != Token.EOF) {
-//                //switch usado para identificar os tokens relacionados a erros lexicos
-//                //tipo 19 == simbolo não identificado
-//                switch (t.getType()) {
-//                    case 18:
-//                        System.out.println("Linha "+t.getLine()+": "+t.getText() + " - comentário não fechado");
-//                        return;
-//                    case 19:
-//                        System.out.println("Linha "+t.getLine()+": "+t.getText() + " - simbolo nao identificado");
-//                        return;
-//                    default:
-//                        break;
-//                }
-//                //Print responsavel por printar a saida no formato especificado nos testes
-//                // <'texto', 'tipo token'>
-//                System.out.println("<" + "'" + t.getText() + "'" + "," + trab4Lexer.VOCABULARY.getDisplayName(t.getType()) + ">");
-//            }
-            
-//********************* CLASSE PRINCIPAL PARA SINTATICO *******************************************
 
             MeuErrorListener meuErrorListener = new MeuErrorListener();
             CharStream cs = CharStreams.fromFileName(args[0]);
@@ -86,9 +53,6 @@ public class Principal {
             CodigoContext arvore = parser.codigo();
             
             // Retorna o primeiro erro gerado na lista de erros
-            // A criação de tal lista foi necessária pois em alguns casos de texte ocorriam dois erros sintaticos
-            // sendo sempre o ultimo a ser impresso.
-            // Porem na saida esperada o erro necessário era sempre o primeiro.
             if(!(meuErrorListener.getErrors().isEmpty())){
                 SyntaxError erro1 = meuErrorListener.getErrors().get(0);
             
@@ -99,6 +63,7 @@ public class Principal {
                        
                 System.out.println("Linha " + line + ": erro sintatico proximo a " + palavra);
                 System.out.println("Fim da compilacao");
+                System.exit(0);
             }
          
             
@@ -115,12 +80,10 @@ public class Principal {
                 Gerador agc = new Gerador();
                 agc.visitCodigo(arvore);
                 System.out.println(agc.saida.toString());
-                //try(PrintWriter pw = new PrintWriter(args[1])) {
-                //pw.print(agc.saida.toString());
-                //}
+                
             }
             
-        }catch (IOException ex) {
+        }catch (IOException | NullPointerException ex) {
         }
     }
     

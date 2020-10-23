@@ -58,10 +58,4 @@ public interface trab4Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitOpcao(trab4Parser.OpcaoContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link trab4Parser#texto}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTexto(trab4Parser.TextoContext ctx);
 }

@@ -18,16 +18,15 @@ public class trab4Parser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		Inicio=1, Fim=2, Titulo=3, Enunciado=4, Definir=5, Pergunta=6, Opcao=7, 
-		Abre_col=8, Fecha_col=9, ABREPAR=10, FECHAPAR=11, TEXTO=12, NUM_INT=13, 
-		NUM_REAL=14, IDENT=15, COMENTARIO=16, WS=17, Coment_N_fechado=18, ERROR=19;
+		Abre_col=8, Fecha_col=9, ABREPAR=10, FECHAPAR=11, TEXTO=12, IDENT=13, 
+		COMENTARIO=14, WS=15, Coment_N_fechado=16, ERROR=17;
 	public static final int
 		RULE_codigo = 0, RULE_titulo = 1, RULE_enunciado = 2, RULE_definicoes = 3, 
-		RULE_definicao = 4, RULE_pergunta = 5, RULE_opcoes = 6, RULE_opcao = 7, 
-		RULE_texto = 8;
+		RULE_definicao = 4, RULE_pergunta = 5, RULE_opcoes = 6, RULE_opcao = 7;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"codigo", "titulo", "enunciado", "definicoes", "definicao", "pergunta", 
-			"opcoes", "opcao", "texto"
+			"opcoes", "opcao"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -42,8 +41,8 @@ public class trab4Parser extends Parser {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, "Inicio", "Fim", "Titulo", "Enunciado", "Definir", "Pergunta", 
-			"Opcao", "Abre_col", "Fecha_col", "ABREPAR", "FECHAPAR", "TEXTO", "NUM_INT", 
-			"NUM_REAL", "IDENT", "COMENTARIO", "WS", "Coment_N_fechado", "ERROR"
+			"Opcao", "Abre_col", "Fecha_col", "ABREPAR", "FECHAPAR", "TEXTO", "IDENT", 
+			"COMENTARIO", "WS", "Coment_N_fechado", "ERROR"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -134,15 +133,15 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(18);
+			setState(16);
 			match(Inicio);
-			setState(19);
+			setState(17);
 			titulo();
-			setState(20);
+			setState(18);
 			enunciado();
-			setState(21);
+			setState(19);
 			definicoes();
-			setState(22);
+			setState(20);
 			match(Fim);
 			}
 		}
@@ -187,13 +186,13 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(24);
+			setState(22);
 			match(Titulo);
-			setState(25);
+			setState(23);
 			match(ABREPAR);
-			setState(26);
+			setState(24);
 			match(TEXTO);
-			setState(27);
+			setState(25);
 			match(FECHAPAR);
 			}
 		}
@@ -238,13 +237,13 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(29);
+			setState(27);
 			match(Enunciado);
-			setState(30);
+			setState(28);
 			match(ABREPAR);
-			setState(31);
+			setState(29);
 			match(TEXTO);
-			setState(32);
+			setState(30);
 			match(FECHAPAR);
 			}
 		}
@@ -292,17 +291,17 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(37);
+			setState(35);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Definir) {
 				{
 				{
-				setState(34);
+				setState(32);
 				definicao();
 				}
 				}
-				setState(39);
+				setState(37);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -355,17 +354,17 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(40);
+			setState(38);
 			match(Definir);
-			setState(41);
+			setState(39);
 			match(IDENT);
-			setState(42);
+			setState(40);
 			match(Abre_col);
-			setState(43);
+			setState(41);
 			pergunta();
-			setState(44);
+			setState(42);
 			opcoes();
-			setState(45);
+			setState(43);
 			match(Fecha_col);
 			}
 		}
@@ -410,13 +409,13 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(47);
+			setState(45);
 			match(Pergunta);
-			setState(48);
+			setState(46);
 			match(ABREPAR);
-			setState(49);
+			setState(47);
 			match(TEXTO);
-			setState(50);
+			setState(48);
 			match(FECHAPAR);
 			}
 		}
@@ -464,17 +463,17 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(53); 
+			setState(51); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(52);
+				setState(50);
 				opcao();
 				}
 				}
-				setState(55); 
+				setState(53); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==Opcao );
@@ -521,13 +520,13 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57);
+			setState(55);
 			match(Opcao);
-			setState(58);
+			setState(56);
 			match(ABREPAR);
-			setState(59);
+			setState(57);
 			match(TEXTO);
-			setState(60);
+			setState(58);
 			match(FECHAPAR);
 			}
 		}
@@ -542,80 +541,22 @@ public class trab4Parser extends Parser {
 		return _localctx;
 	}
 
-	public static class TextoContext extends ParserRuleContext {
-		public TextoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_texto; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).enterTexto(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof trab4Listener ) ((trab4Listener)listener).exitTexto(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof trab4Visitor ) return ((trab4Visitor<? extends T>)visitor).visitTexto(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final TextoContext texto() throws RecognitionException {
-		TextoContext _localctx = new TextoContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_texto);
-		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(65);
-			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
-			while ( _alt!=1 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1+1 ) {
-					{
-					{
-					setState(62);
-					matchWildcard();
-					}
-					} 
-				}
-				setState(67);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\25G\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\3\2\3\2\3\2"+
-		"\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\5\7\5&\n\5\f\5"+
-		"\16\5)\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\b\6\b8\n"+
-		"\b\r\b\16\b9\3\t\3\t\3\t\3\t\3\t\3\n\7\nB\n\n\f\n\16\nE\13\n\3\n\3C\2"+
-		"\13\2\4\6\b\n\f\16\20\22\2\2\2@\2\24\3\2\2\2\4\32\3\2\2\2\6\37\3\2\2\2"+
-		"\b\'\3\2\2\2\n*\3\2\2\2\f\61\3\2\2\2\16\67\3\2\2\2\20;\3\2\2\2\22C\3\2"+
-		"\2\2\24\25\7\3\2\2\25\26\5\4\3\2\26\27\5\6\4\2\27\30\5\b\5\2\30\31\7\4"+
-		"\2\2\31\3\3\2\2\2\32\33\7\5\2\2\33\34\7\f\2\2\34\35\7\16\2\2\35\36\7\r"+
-		"\2\2\36\5\3\2\2\2\37 \7\6\2\2 !\7\f\2\2!\"\7\16\2\2\"#\7\r\2\2#\7\3\2"+
-		"\2\2$&\5\n\6\2%$\3\2\2\2&)\3\2\2\2\'%\3\2\2\2\'(\3\2\2\2(\t\3\2\2\2)\'"+
-		"\3\2\2\2*+\7\7\2\2+,\7\21\2\2,-\7\n\2\2-.\5\f\7\2./\5\16\b\2/\60\7\13"+
-		"\2\2\60\13\3\2\2\2\61\62\7\b\2\2\62\63\7\f\2\2\63\64\7\16\2\2\64\65\7"+
-		"\r\2\2\65\r\3\2\2\2\668\5\20\t\2\67\66\3\2\2\289\3\2\2\29\67\3\2\2\29"+
-		":\3\2\2\2:\17\3\2\2\2;<\7\t\2\2<=\7\f\2\2=>\7\16\2\2>?\7\r\2\2?\21\3\2"+
-		"\2\2@B\13\2\2\2A@\3\2\2\2BE\3\2\2\2CD\3\2\2\2CA\3\2\2\2D\23\3\2\2\2EC"+
-		"\3\2\2\2\5\'9C";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\23?\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\3\2\3\2\3\2\3\2\3\2"+
+		"\3\2\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\5\7\5$\n\5\f\5\16\5\'\13"+
+		"\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\b\6\b\66\n\b\r\b"+
+		"\16\b\67\3\t\3\t\3\t\3\t\3\t\3\t\2\2\n\2\4\6\b\n\f\16\20\2\2\28\2\22\3"+
+		"\2\2\2\4\30\3\2\2\2\6\35\3\2\2\2\b%\3\2\2\2\n(\3\2\2\2\f/\3\2\2\2\16\65"+
+		"\3\2\2\2\209\3\2\2\2\22\23\7\3\2\2\23\24\5\4\3\2\24\25\5\6\4\2\25\26\5"+
+		"\b\5\2\26\27\7\4\2\2\27\3\3\2\2\2\30\31\7\5\2\2\31\32\7\f\2\2\32\33\7"+
+		"\16\2\2\33\34\7\r\2\2\34\5\3\2\2\2\35\36\7\6\2\2\36\37\7\f\2\2\37 \7\16"+
+		"\2\2 !\7\r\2\2!\7\3\2\2\2\"$\5\n\6\2#\"\3\2\2\2$\'\3\2\2\2%#\3\2\2\2%"+
+		"&\3\2\2\2&\t\3\2\2\2\'%\3\2\2\2()\7\7\2\2)*\7\17\2\2*+\7\n\2\2+,\5\f\7"+
+		"\2,-\5\16\b\2-.\7\13\2\2.\13\3\2\2\2/\60\7\b\2\2\60\61\7\f\2\2\61\62\7"+
+		"\16\2\2\62\63\7\r\2\2\63\r\3\2\2\2\64\66\5\20\t\2\65\64\3\2\2\2\66\67"+
+		"\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28\17\3\2\2\29:\7\t\2\2:;\7\f\2\2;<\7"+
+		"\16\2\2<=\7\r\2\2=\21\3\2\2\2\4%\67";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

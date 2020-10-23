@@ -1,12 +1,14 @@
 
+<!-- Exemplo de erros semânticos -->
+
 inicio
 
-<!-- testando comntário-->
+<!-- testando comentário-->
 
-    titulo ("Exemplo")
+    titulo ("Exemplo1")
     enunciado("O questionário é sobre blablabla")
 
-    definir Q1{
+    definir 1){
         pergunta(" blablablablabla")
 <!-- testando comntário-->
 	op("opção1")
@@ -14,26 +16,54 @@ inicio
 	op("opção3")
     }
 
-definir Q2{
-pergunta(" dbasbdhjasbdhjasbdh?
-sdfsdfsdfsdffdfsfdfsdfs     sdfsdf
-sdfsdfs")
-op("jhdfjksdfjksdbjfk")
-op("jkashdkjasbdkjas")
-op("8")
+definir 2){
+pergunta(" Sobre o texto,
+blablablablablablblablablablablablablbla
+blablablablablablblablablablablablablbla
+blablablablablablblablablablablablablbla
+responda:")
+op("opção1")
+op("opção2")
+op("opção3")
 
 }
 
-definir Q3{
-pergunta("jfjsfjksdnfjksd")
-op("fdsfsdfsdfsd")
-op ("sdfhsdjkfsd")
+definir 3){
+pergunta("Pergunta 3")
+op("A) opção a")
+op ("B) opção b")
+op ("C) opção c")
+op ("D) opção d")
 }
 
-<!--definir Q4{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
-    definir Q5{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
-    definir Q6{pergunta("jsdnfjksdfnsjd")op("sdjfhsdjfh")op("jdfjdhfjsdhfjsd")}
+<!-- Erros
+     Caracteres que não são utilizados no formato padrão da linguagem não são aceitos(a não ser que estejam dentro das aspas nos textos) -->
+<!-- [ ] , . ~ ^ @ ! | $ % & * - + / ?                                                                                                   --> 
 
+<!--
+	definir Q4{
+		
+		op("A) opção a")
+		op("B) opção b")
+
+	}
+-->
+
+<!--
+	definir{
+		pergunta("pergunta 4")
+		op("A) opção a")
+		op("B) opção b")
+
+	}
+-->
+
+<!--
+	definir Q4{
+		pergunta("Pergunta 4")
+		
+
+	}
 -->
 
 fim
