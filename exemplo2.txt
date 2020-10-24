@@ -2,31 +2,53 @@
 <!-- Exemplo de erros semânticos -->
 
 inicio
-	titulo("exemplo")
-	enunciado("eh apenas um teste")
-	definir Q1{
-		pergunta("escolha a opcao correta")
-		op("A")
-		<!-- opcao repetida-->
-		op("A")
-		op("C")
-	}
-	
-	<!--identificador repetido-->
-	definir Q1{
-		pergunta("escolha a opcao incorreta")
-		op("3")
-		op("2")
-		op("1")
-	}
 
-	definir Q2{
-		<!--pergunta repepida-->
-		pergunta("escolha a opcao correta")
-		op("A")
-		op("B")
-		op("C")
-	}
+	titulo("Exemplo2")
+	enunciado("eh apenas um teste")
+
+	definicoes(questionario, POST, resposta.java){
+
+		definir Q1{
+			pergunta("Pergunta 1")
+			op("opçãoA", questao1, a)
+	        op("opçãoB", questao1, b)
+	        <!-- texto repetido -->
+	        op("opçãoA", questao1, c)
+	        <!-- valor repetido -->
+	        op("opçãoD", questao1, b)
+		}
 		
+		<!--identificador repetido-->
+		definir Q1{
+			pergunta("Pergunta 2")
+			op("3", questao2, a)
+	        op("2", questao2, b)
+	        op("1", questao2, c)
+		}
+
+		definir Q3{
+			<!--pergunta repepida-->
+			pergunta("Pergunta 1")
+			op("opçãoA", questao3, a)
+	        op("opçãoB", questao3, b)
+	        op("opçãoC", questao3, c)
+		}
+
+		definir Q4{
+			pergunta("Pergunta 4")
+			op("opçãoA", questao4, a)
+			<!-- nome já declarado anteriormente e diferente dos demais -->
+	        op("opçãoB", questao2, b)
+	        op("opçãoC", questao4, c)
+		}
+
+		definir Q5{
+			pergunta("Pergunta 5")
+			op("opçãoA", questao5, a)
+			<!-- nome diferente dos demais -->
+	        op("opçãoB", questaox, b)
+	        op("opçãoC", questao5, c)
+		}
+	}
 
 fim

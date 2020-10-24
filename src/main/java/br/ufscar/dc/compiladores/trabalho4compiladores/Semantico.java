@@ -58,15 +58,42 @@ public class Semantico extends trab4BaseVisitor<Void> {
     }
     
     @Override
-    public Void visitOpcoes(trab4Parser.OpcoesContext ctx){
+    public Void visitOpcoes(trab4Parser.OpcoesContext ctx){        
+        // verificar se no nome da alternativa ja não foi usado em outra questão
+        TabelaDeSimbolos escopoAtualTemp = escoposAninhados.obterEscopoAtual();
+        boolean ok = true;
+        for(var o : ctx.opcao()){
+            if (escopoAtualTemp.existe(o.IDENT(0).getText())){
+                SemanticoUtils.adicionarErroSemantico(o.getStart(), "Nome da alternativa " + o.TEXTO().getText() + " ja declarado em outra questão");
+                ok = false;                     
+            }
+        }
+        //se o nome não foi usado em outra questão a variavel ok é true
+        if(ok){
+            escopoAtualTemp.adicionar(ctx.opcao(0).IDENT(0).getText(), Tipo.NOME);
+        }
+        
         escoposAninhados.criarNovoEscopo();
         TabelaDeSimbolos escopoAtual = escoposAninhados.obterEscopoAtual();
-
+        //adiciona o primeiro nome da primeira alternativa para verificar se as outras alternativas
+        //terão o mesmo nome
+        escopoAtual.adicionar(ctx.opcao(0).IDENT(0).getText(), Tipo.NOME);
+        
         for(var d : ctx.opcao()){
+            //se o nome da alternativa não existir na mesma questão
+            if (!(escopoAtualTemp.existe(d.IDENT(0).getText()))){
+                SemanticoUtils.adicionarErroSemantico(d.getStart(), "Todas as alternativas de uma mesma questão precisam ter o mesmo nome ");
+            }
+            //se o texto da alternativa já existir na mesma questão
             if (escopoAtual.existe(d.TEXTO().getText())){
-                SemanticoUtils.adicionarErroSemantico(d.getStart(), "Opcao " + d.TEXTO().getText() + " ja declarada anteriormente");
+                SemanticoUtils.adicionarErroSemantico(d.getStart(), "Alternativa " + d.TEXTO().getText() + " ja declarada anteriormente");
+            }
+            // se o valor da alternativa já existir na mesma questãos
+            if (escopoAtual.existe(d.IDENT(1).getText())){
+                SemanticoUtils.adicionarErroSemantico(d.getStart(), "Valor da alternativa " + d.IDENT(1).getText() + " ja declarado anteriormente");
             } else {
                 escopoAtual.adicionar(d.TEXTO().getText(), Tipo.OPCAO);
+                escopoAtual.adicionar(d.IDENT(1).getText(), Tipo.VALOR);
             }
         }
         escoposAninhados.abandonarEscopo();

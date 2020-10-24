@@ -13,11 +13,16 @@ Enunciado      : 'enunciado' ;
 
 Definir        : 'definir' ;
 
+Definicoes     : 'definicoes' ;
+
 Pergunta       : 'pergunta' ;
 
 Opcao          : 'op' ;
 
 // ************************************* Elementos do código *************************************
+Ponto          : '.' ;
+
+Virgula        : ',' ;
 
 Abre_col       : '{' ;
 
@@ -36,7 +41,7 @@ TEXTO         : '"' ( ESC_SEQ | ~('"') )* '"' ;
 fragment
 ESC_SEQ        : '\\"';	
 
-IDENT          : ('a'..'z'|'A'..'Z'|'0'..'9') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|')')* ;
+IDENT          : ('a'..'z'|'A'..'Z'|'0'..'9') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.')* ;
 
 // o skip() é usado para ignorar a regra
 COMENTARIO     : '<!--' .*? '-->' {skip();} ;
@@ -63,7 +68,7 @@ titulo         : 'titulo' '(' TEXTO ')';
 
 enunciado      : 'enunciado' '(' TEXTO ')' ;
 
-definicoes     : (definicao)* ;
+definicoes     : 'definicoes' '(' IDENT ',' IDENT ',' IDENT ')' '{' (definicao)* '}' ;
 
 definicao      : 'definir' IDENT '{' pergunta opcoes '}' ;
 
@@ -71,6 +76,6 @@ pergunta       : 'pergunta' '(' TEXTO ')' ;
 
 opcoes         : (opcao)+ ;
 
-opcao          : 'op' '(' TEXTO ')' ;
+opcao          : 'op' '(' TEXTO ',' IDENT ',' IDENT ')' ;
 
 

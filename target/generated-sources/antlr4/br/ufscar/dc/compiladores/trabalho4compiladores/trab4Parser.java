@@ -17,9 +17,9 @@ public class trab4Parser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		Inicio=1, Fim=2, Titulo=3, Enunciado=4, Definir=5, Pergunta=6, Opcao=7, 
-		Abre_col=8, Fecha_col=9, ABREPAR=10, FECHAPAR=11, TEXTO=12, IDENT=13, 
-		COMENTARIO=14, WS=15, Coment_N_fechado=16, ERROR=17;
+		Inicio=1, Fim=2, Titulo=3, Enunciado=4, Definir=5, Definicoes=6, Pergunta=7, 
+		Opcao=8, Ponto=9, Virgula=10, Abre_col=11, Fecha_col=12, ABREPAR=13, FECHAPAR=14, 
+		TEXTO=15, IDENT=16, COMENTARIO=17, WS=18, Coment_N_fechado=19, ERROR=20;
 	public static final int
 		RULE_codigo = 0, RULE_titulo = 1, RULE_enunciado = 2, RULE_definicoes = 3, 
 		RULE_definicao = 4, RULE_pergunta = 5, RULE_opcoes = 6, RULE_opcao = 7;
@@ -33,16 +33,17 @@ public class trab4Parser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'inicio'", "'fim'", "'titulo'", "'enunciado'", "'definir'", "'pergunta'", 
-			"'op'", "'{'", "'}'", "'('", "')'"
+			null, "'inicio'", "'fim'", "'titulo'", "'enunciado'", "'definir'", "'definicoes'", 
+			"'pergunta'", "'op'", "'.'", "','", "'{'", "'}'", "'('", "')'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "Inicio", "Fim", "Titulo", "Enunciado", "Definir", "Pergunta", 
-			"Opcao", "Abre_col", "Fecha_col", "ABREPAR", "FECHAPAR", "TEXTO", "IDENT", 
-			"COMENTARIO", "WS", "Coment_N_fechado", "ERROR"
+			null, "Inicio", "Fim", "Titulo", "Enunciado", "Definir", "Definicoes", 
+			"Pergunta", "Opcao", "Ponto", "Virgula", "Abre_col", "Fecha_col", "ABREPAR", 
+			"FECHAPAR", "TEXTO", "IDENT", "COMENTARIO", "WS", "Coment_N_fechado", 
+			"ERROR"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -259,6 +260,19 @@ public class trab4Parser extends Parser {
 	}
 
 	public static class DefinicoesContext extends ParserRuleContext {
+		public TerminalNode Definicoes() { return getToken(trab4Parser.Definicoes, 0); }
+		public TerminalNode ABREPAR() { return getToken(trab4Parser.ABREPAR, 0); }
+		public List<TerminalNode> IDENT() { return getTokens(trab4Parser.IDENT); }
+		public TerminalNode IDENT(int i) {
+			return getToken(trab4Parser.IDENT, i);
+		}
+		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
+		public TerminalNode Virgula(int i) {
+			return getToken(trab4Parser.Virgula, i);
+		}
+		public TerminalNode FECHAPAR() { return getToken(trab4Parser.FECHAPAR, 0); }
+		public TerminalNode Abre_col() { return getToken(trab4Parser.Abre_col, 0); }
+		public TerminalNode Fecha_col() { return getToken(trab4Parser.Fecha_col, 0); }
 		public List<DefinicaoContext> definicao() {
 			return getRuleContexts(DefinicaoContext.class);
 		}
@@ -291,20 +305,40 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
+			setState(32);
+			match(Definicoes);
+			setState(33);
+			match(ABREPAR);
+			setState(34);
+			match(IDENT);
 			setState(35);
+			match(Virgula);
+			setState(36);
+			match(IDENT);
+			setState(37);
+			match(Virgula);
+			setState(38);
+			match(IDENT);
+			setState(39);
+			match(FECHAPAR);
+			setState(40);
+			match(Abre_col);
+			setState(44);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Definir) {
 				{
 				{
-				setState(32);
+				setState(41);
 				definicao();
 				}
 				}
-				setState(37);
+				setState(46);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
+			setState(47);
+			match(Fecha_col);
 			}
 		}
 		catch (RecognitionException re) {
@@ -354,17 +388,17 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(38);
+			setState(49);
 			match(Definir);
-			setState(39);
+			setState(50);
 			match(IDENT);
-			setState(40);
+			setState(51);
 			match(Abre_col);
-			setState(41);
+			setState(52);
 			pergunta();
-			setState(42);
+			setState(53);
 			opcoes();
-			setState(43);
+			setState(54);
 			match(Fecha_col);
 			}
 		}
@@ -409,13 +443,13 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(45);
+			setState(56);
 			match(Pergunta);
-			setState(46);
+			setState(57);
 			match(ABREPAR);
-			setState(47);
+			setState(58);
 			match(TEXTO);
-			setState(48);
+			setState(59);
 			match(FECHAPAR);
 			}
 		}
@@ -463,17 +497,17 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(51); 
+			setState(62); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(50);
+				setState(61);
 				opcao();
 				}
 				}
-				setState(53); 
+				setState(64); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==Opcao );
@@ -494,6 +528,14 @@ public class trab4Parser extends Parser {
 		public TerminalNode Opcao() { return getToken(trab4Parser.Opcao, 0); }
 		public TerminalNode ABREPAR() { return getToken(trab4Parser.ABREPAR, 0); }
 		public TerminalNode TEXTO() { return getToken(trab4Parser.TEXTO, 0); }
+		public List<TerminalNode> Virgula() { return getTokens(trab4Parser.Virgula); }
+		public TerminalNode Virgula(int i) {
+			return getToken(trab4Parser.Virgula, i);
+		}
+		public List<TerminalNode> IDENT() { return getTokens(trab4Parser.IDENT); }
+		public TerminalNode IDENT(int i) {
+			return getToken(trab4Parser.IDENT, i);
+		}
 		public TerminalNode FECHAPAR() { return getToken(trab4Parser.FECHAPAR, 0); }
 		public OpcaoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -520,13 +562,21 @@ public class trab4Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(55);
+			setState(66);
 			match(Opcao);
-			setState(56);
+			setState(67);
 			match(ABREPAR);
-			setState(57);
+			setState(68);
 			match(TEXTO);
-			setState(58);
+			setState(69);
+			match(Virgula);
+			setState(70);
+			match(IDENT);
+			setState(71);
+			match(Virgula);
+			setState(72);
+			match(IDENT);
+			setState(73);
 			match(FECHAPAR);
 			}
 		}
@@ -542,21 +592,24 @@ public class trab4Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\23?\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\26N\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\3\2\3\2\3\2\3\2\3\2"+
-		"\3\2\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\5\7\5$\n\5\f\5\16\5\'\13"+
-		"\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\b\6\b\66\n\b\r\b"+
-		"\16\b\67\3\t\3\t\3\t\3\t\3\t\3\t\2\2\n\2\4\6\b\n\f\16\20\2\2\28\2\22\3"+
-		"\2\2\2\4\30\3\2\2\2\6\35\3\2\2\2\b%\3\2\2\2\n(\3\2\2\2\f/\3\2\2\2\16\65"+
-		"\3\2\2\2\209\3\2\2\2\22\23\7\3\2\2\23\24\5\4\3\2\24\25\5\6\4\2\25\26\5"+
-		"\b\5\2\26\27\7\4\2\2\27\3\3\2\2\2\30\31\7\5\2\2\31\32\7\f\2\2\32\33\7"+
-		"\16\2\2\33\34\7\r\2\2\34\5\3\2\2\2\35\36\7\6\2\2\36\37\7\f\2\2\37 \7\16"+
-		"\2\2 !\7\r\2\2!\7\3\2\2\2\"$\5\n\6\2#\"\3\2\2\2$\'\3\2\2\2%#\3\2\2\2%"+
-		"&\3\2\2\2&\t\3\2\2\2\'%\3\2\2\2()\7\7\2\2)*\7\17\2\2*+\7\n\2\2+,\5\f\7"+
-		"\2,-\5\16\b\2-.\7\13\2\2.\13\3\2\2\2/\60\7\b\2\2\60\61\7\f\2\2\61\62\7"+
-		"\16\2\2\62\63\7\r\2\2\63\r\3\2\2\2\64\66\5\20\t\2\65\64\3\2\2\2\66\67"+
-		"\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28\17\3\2\2\29:\7\t\2\2:;\7\f\2\2;<\7"+
-		"\16\2\2<=\7\r\2\2=\21\3\2\2\2\4%\67";
+		"\3\2\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3"+
+		"\5\3\5\3\5\3\5\7\5-\n\5\f\5\16\5\60\13\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3"+
+		"\6\3\6\3\7\3\7\3\7\3\7\3\7\3\b\6\bA\n\b\r\b\16\bB\3\t\3\t\3\t\3\t\3\t"+
+		"\3\t\3\t\3\t\3\t\3\t\2\2\n\2\4\6\b\n\f\16\20\2\2\2G\2\22\3\2\2\2\4\30"+
+		"\3\2\2\2\6\35\3\2\2\2\b\"\3\2\2\2\n\63\3\2\2\2\f:\3\2\2\2\16@\3\2\2\2"+
+		"\20D\3\2\2\2\22\23\7\3\2\2\23\24\5\4\3\2\24\25\5\6\4\2\25\26\5\b\5\2\26"+
+		"\27\7\4\2\2\27\3\3\2\2\2\30\31\7\5\2\2\31\32\7\17\2\2\32\33\7\21\2\2\33"+
+		"\34\7\20\2\2\34\5\3\2\2\2\35\36\7\6\2\2\36\37\7\17\2\2\37 \7\21\2\2 !"+
+		"\7\20\2\2!\7\3\2\2\2\"#\7\b\2\2#$\7\17\2\2$%\7\22\2\2%&\7\f\2\2&\'\7\22"+
+		"\2\2\'(\7\f\2\2()\7\22\2\2)*\7\20\2\2*.\7\r\2\2+-\5\n\6\2,+\3\2\2\2-\60"+
+		"\3\2\2\2.,\3\2\2\2./\3\2\2\2/\61\3\2\2\2\60.\3\2\2\2\61\62\7\16\2\2\62"+
+		"\t\3\2\2\2\63\64\7\7\2\2\64\65\7\22\2\2\65\66\7\r\2\2\66\67\5\f\7\2\67"+
+		"8\5\16\b\289\7\16\2\29\13\3\2\2\2:;\7\t\2\2;<\7\17\2\2<=\7\21\2\2=>\7"+
+		"\20\2\2>\r\3\2\2\2?A\5\20\t\2@?\3\2\2\2AB\3\2\2\2B@\3\2\2\2BC\3\2\2\2"+
+		"C\17\3\2\2\2DE\7\n\2\2EF\7\17\2\2FG\7\21\2\2GH\7\f\2\2HI\7\22\2\2IJ\7"+
+		"\f\2\2JK\7\22\2\2KL\7\20\2\2L\21\3\2\2\2\4.B";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

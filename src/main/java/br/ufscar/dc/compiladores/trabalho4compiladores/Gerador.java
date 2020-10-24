@@ -47,9 +47,9 @@ public class Gerador extends trab4BaseVisitor<Void>{
 
     @Override
     public Void visitDefinicoes(trab4Parser.DefinicoesContext ctx){
-        saida.append("\t\t<form id=\"\" name=\"\" method=\"\" action=\"\">\n");
+        saida.append("\t\t<form name=\"" + ctx.IDENT(0) + "\" method=\"" + ctx.IDENT(1) + "\" action=\"" + ctx.IDENT(2) + "\">\n");
         ctx.definicao().forEach(dec -> visitDefinicao(dec));
-        saida.append("\t\t<input type=\"submit\" name=\"\" id = \"\" value=\"\"/>\n");
+        saida.append("\t\t<input type=\"submit\" value=\"ENVIAR\"/>\n");
         saida.append("\t\t</form>\n");
         saida.append("\t</body>\n");
         return null;
@@ -61,8 +61,7 @@ public class Gerador extends trab4BaseVisitor<Void>{
         saida.append(ident + "<h4>" + ctx.IDENT().getText() + "</h4>\n");
         visitPergunta(ctx.pergunta());
         visitOpcoes(ctx.opcoes());
-        saida.append(ident + "<br>\n");
-        
+        saida.append(ident + "<br>\n");        
         
         return null;
     }
@@ -87,8 +86,9 @@ public class Gerador extends trab4BaseVisitor<Void>{
     public Void visitOpcao(trab4Parser.OpcaoContext ctx){
         String ident = "\t\t";
         String texto = ctx.TEXTO().getText();
-        saida.append(ident + "<label><input type=\"radio\" name=\"\" value=\"\" />" + texto.substring(1,texto.length()-1) + "</label>\n");
+        saida.append(ident + "<label><input type=\"radio\" name=\"" + ctx.IDENT(0) + "\" value=\"" + ctx.IDENT(1) + "\" />" + texto.substring(1,texto.length()-1) + "</label>\n");
         saida.append(ident + "<br>\n");
+        
         return null;
     }
     

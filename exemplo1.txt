@@ -1,5 +1,5 @@
 
-<!-- Exemplo de erros semânticos -->
+<!-- Exemplo de erros léxicos e sintáticos -->
 
 inicio
 
@@ -8,63 +8,68 @@ inicio
     titulo ("Exemplo1")
     enunciado("O questionário é sobre blablabla")
 
-    definir 1){
-        pergunta(" blablablablabla")
-<!-- testando comntário-->
-	op("opção1")
-	op("opção2")
-	op("opção3")
-    }
+	definicoes(questionario, POST, resposta.java){
 
-definir 2){
-pergunta(" Sobre o texto,
-blablablablablablblablablablablablablbla
-blablablablablablblablablablablablablbla
-blablablablablablblablablablablablablbla
-responda:")
-op("opção1")
-op("opção2")
-op("opção3")
+    	definir Questao1{
+        	pergunta("Pergunta1")
+			<!-- testando comntário-->
+            op("opçãoA", questao1, a)
+            op("opçãoB", questao1, b)
+            op("opçãoC", questao1, c)
+    	}
 
-}
+		definir Questao2{
+			pergunta(" Sobre o texto,
+			blablablablablablblablablablablablablbla
+			blablablablablablblablablablablablablbla
+			blablablablablablblablablablablablablbla
+			responda:")
+			op("opçãoA", questao2, a)
+            op("opçãoB", questao2, b)
+            op("opçãoC", questao2, c)
 
-definir 3){
-pergunta("Pergunta 3")
-op("A) opção a")
-op ("B) opção b")
-op ("C) opção c")
-op ("D) opção d")
-}
+		}
 
-<!-- Erros
-     Caracteres que não são utilizados no formato padrão da linguagem não são aceitos(a não ser que estejam dentro das aspas nos textos) -->
-<!-- [ ] , . ~ ^ @ ! | $ % & * - + / ?                                                                                                   --> 
+		definir Questao3{
+			pergunta("Pergunta 3")
+			op("opçãoA", questao3, a)
+            op("opçãoB", questao3, b)
+            op("opçãoC", questao3, c)
+            op("opçãoD", questao3, d)
+		}
+
+<!-- Erros:
+
+     Caracteres que não são utilizados no formato padrão da linguagem não são aceitos(a não ser que estejam dentro das aspas nos textos) 
+     Exemplos:                                                                                                                       -->
+<!-- [ ]  ~ ^ @ ! | $ % & * - + / ?                                                                                                  --> 
+
 
 <!--
-	definir Q4{
-		
-		op("A) opção a")
-		op("B) opção b")
-
-	}
+	definir Questao4{
+        op("opçãoA", questao4, a)
+        op("opçãoB", questao4, b)
+        op("opçãoC", questao4, c)
+    }
 -->
 
 <!--
 	definir{
-		pergunta("pergunta 4")
-		op("A) opção a")
-		op("B) opção b")
-
+		pergunta("Pergunta 5")
+		op("opçãoA", questao5, a)
+        op("opçãoB", questao5, b)
+        op("opçãoC", questao5, c)
 	}
 -->
 
 <!--
-	definir Q4{
-		pergunta("Pergunta 4")
-		
+	definir Questao6{
+		pergunta("Pergunta 6")
 
 	}
 -->
+
+}
 
 fim
 

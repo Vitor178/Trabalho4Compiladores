@@ -1,39 +1,43 @@
+<!-- Exemplo para testagem -->
+
 inicio
 
-<!-- testando comntário-->
 
     titulo ("Exemplo de Criação de quetionário html")
     enunciado("Questionários de teste")
 
-    definir Q1{
-        pergunta(" Será que deu certo?")
-	    op("sim")
-	    op("não")
-	    op("mais ou menos")
+    definicoes(questionario, POST, resposta.java){
+
+        definir Q1{
+            pergunta(" Será que deu certo?")
+	       op("sim", questao1, a)
+	       op("não", questao1, b)
+	       op("mais ou menos", questao1, c)
+        }
+
+        definir Q2{
+            pergunta("será que deu certo2?")
+            op("opçãoA", questao2, a)
+            op("opçãoB", questao2, b)
+            op("opçãoC", questao2, c)
+            op("opçãoD", questao2, d)
+            op("opçãoE", questao2, e)
+            op("opçãoF", questao2, f)
+            op("opçãoG", questao2, g)
+
+        }
+
+        definir Q3{
+            pergunta("Pergunta 3")
+            op("opçãoA", questao3, a)
+            op("opçãoB", questao3, b)
+            op("opçãoC", questao3, c)
+        }
     }
-
-    definir Q2{
-        pergunta("será que deu certo2?")
-        op("jhdfjksdfjksdbjfk")
-        op("jkashdkjasbdkjas")
-        op("8")
-        op("dfsdnfsdf2")
-        op("dfsdnfsdf3")
-        op("dfsdnfsdf4")
-        op("dfsdnfsdf5")
-
-    }
-
-    definir Q3{
-        pergunta("Pergunta 3")
-        op("teste")
-        op ("teste2")
-}
 
 <!--
-    definir Q4{pergunta("pergunta4")op("A) opção a")op("B) opção b")}
-    definir Q5{pergunta("pergunta5")op("A) opção a")op("B) opção b")}
-    definir Q6{pergunta("pergunta6")op("A) opção a")op("B) opção b")}
+    definir Q4{ pergunta("Pergunta 4") op("opçãoA", questao4, a) op("opçãoB", questao4, b) op("opçãoC", questao4, c) }
+    
 -->
 
 fim

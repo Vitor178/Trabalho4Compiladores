@@ -9,6 +9,8 @@ public class TabelaDeSimbolos {
         IDENTIFICADOR,
         PERGUNTA,
         OPCAO,
+        VALOR,
+        NOME,
         INVALIDO
     }
     
