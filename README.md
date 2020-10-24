@@ -34,21 +34,26 @@ inicio
 titulo(“ texto que será adicionado na tag <title> ”)
 enunciado(" texto de explicação dos questionários")
 
-definir Identificador_da_questão {
-    pergunta(“ enunciado do respectivo questionário “)
-    op(“ texto da alternativa ”)
+definicoes(nome_tag_<form>, metodo_tag_<form>, acão_tag_<form>){
+
+    definir Identificador_da_questão {
+        pergunta(“ enunciado do respectivo questionário “)
+        op(“ texto da alternativa ”, nome_tag_<input>, valor_tag_<input>)
+        .
+        .   “sem limite de alternativas”
+        .
+    }
     .
-    .   “sem limite de opções”
+    .  “sem limite de questões”
     .
 }
-.
-.  “sem limite de questões”
-.
 fim
 ```
 * Diferentes questões não podem possuir mesmo identificador.
-* Diferentes questões não podem possuir mesmo enunciado
-* As alternativas de uma mesma questão não podem ser iguais
+* Diferentes questões não podem possuir a mesma pergunta
+* O texto e o valor de uma mesma alternativa não podem ser repetidos dentro de uma mesma questão
+* Todos os nomes das alternativas devem ser iguais para uma mesma questão
+* Um nome de alternativa que já foi utilizado em outra questão não poderá ser usado em outra
 
 
 ### Compilação
