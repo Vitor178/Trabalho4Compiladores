@@ -12,6 +12,7 @@ public class Gerador extends trab4BaseVisitor<Void>{
     
     @Override
     public Void visitCodigo(trab4Parser.CodigoContext ctx) {
+        saida.append("<!DOCTYPE html>\n");
         saida.append("<html>\n");
         visitTitulo(ctx.titulo());
         visitEnunciado(ctx.enunciado());
@@ -24,6 +25,7 @@ public class Gerador extends trab4BaseVisitor<Void>{
     public Void visitTitulo(trab4Parser.TituloContext ctx){
         String ident = "\t";
         saida.append(ident + "<head>\n");
+        saida.append(ident + "\t<meta charset=\"utf-8\">\n");
         saida.append(ident +"<style>\n" +
                      "\t\tbody {background-color: powderblue;}\n" +
                      "\t\th4   {color: blue;}\n" +
